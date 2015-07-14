@@ -1,0 +1,72 @@
+/**
+ * @file
+ * Layout rules for 3-up content
+ */
+
+// =============================================================================
+// Ruleset for content going from 1-column at mobile,
+// to two-column, to 3-column as horizontal space allows
+// $omega-gutter: "false" = will wrap an item
+// $omega-gutter: "true"  = will not wrap an item
+// =============================================================================
+
+.l-3up {
+  float: left;
+  @include zen-grid-item-base();
+  @include zen-grid-flow-item(12, 12, $omega-gutter: false);
+  @include breakpoint($bp1){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: true);
+  }
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: true);
+  }
+}
+// make every 2nd list item wrap
+.l-3up:nth-of-type(2n) {
+  @include breakpoint($bp1){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: false);
+  }
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: true);
+  }
+}
+// make every 3rd list item wrap
+.l-3up:nth-of-type(3n) {
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: false);
+  }
+}
+// clears a new row from the tallest element in the row above
+.l-3up:nth-of-type(3n+1) {
+  @include breakpoint($bp3){
+    @include zen-clear();
+  }
+}
+
+// =============================================================================
+// Basic 3-up layouts
+// =============================================================================
+
+.l-3up--1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(4,1);
+  }
+}
+.l-3up--2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(4,5);
+  }
+}
+.l-3up--3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(4,9);
+  }
+}

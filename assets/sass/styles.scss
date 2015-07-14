@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Centralize your imports here.
+ * Styles are organized using the SMACSS technique.
+ * @see http://smacss.com/book/
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+/* HTML element (SMACSS base) rules */
+@import "normalize";
+
+/* Layout rules */
+@import "layouts/l-zen-grids-base";
+@import "layouts/l-1up";
+@import "layouts/l-66-33";
+@import "layouts/l-33-66";
+@import "layouts/l-2up";
+@import "layouts/l-3up";
+@import "layouts/l-4up";
+@import "layouts/l-6up";
+
+/* Component (SMACSS module) rules */
+
+/* Unique rules for styleguide aspect--not related to site styles */
+@import "styleguide/styleguide";
+
+/* print rules */
+@import "print";
+
+body{
+  background: pink;
+}

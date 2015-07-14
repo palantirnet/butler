@@ -1,0 +1,6 @@
+name: Site Name Here
+markdown: redcarpet
+pygments: true
+permalink: none
+url: http://localhost:4000/
+exclude: [node_modules, fed-init.sh, Gemfile, Gemfile.lock, gulp_config.js, gulp_config.sh, Gulpfile.js, package.json, test-results]

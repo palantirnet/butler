@@ -1,0 +1,52 @@
+/**
+ * @file
+ * Layout rules for 2-up content
+ */
+
+// =============================================================================
+// Ruleset for content going from 1-column at mobile,
+// to 2-column as horizontal space allows
+// $omega-gutter: "false" = will wrap an item
+// $omega-gutter: "true"  = will not wrap an item
+// =============================================================================
+
+.l-2up {
+  float: left;
+  @include zen-grid-item-base();
+  @include zen-grid-flow-item(12, 12, $omega-gutter: false);
+  @include breakpoint($bp2){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: true);
+  }
+}
+// make every 2nd list item wrap
+.l-2up:nth-of-type(2n) {
+  @include breakpoint($bp2){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: false);
+  }
+}
+// clears a new row from the tallest element in the row above
+.l-2up:nth-of-type(2n+1) {
+  @include breakpoint($bp2){
+    @include zen-clear();
+  }
+}
+
+// =============================================================================
+// Basic 2-up layouts
+// =============================================================================
+
+.l-2up--1 {
+  @include zen-clear();  
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(6,1);
+  }
+}
+.l-2up--2 {
+  @include zen-clear();  
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);  
+    @include zen-grid-item(6,7);
+  }
+}

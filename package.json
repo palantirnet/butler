@@ -1,0 +1,20 @@
+{
+  "name": "fed-automation",
+  "version": "1.0.0",
+  "description": "The beginnings of a Jekyll based style guide creation tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labyrwa/fed-automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labyrwa/fed-automation/issues"
+  },
+  "homepage": "https://github.com/labyrwa/fed-automation"
+}
