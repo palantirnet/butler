@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Layout rules for 6-up content
+ */
+
+.l-6up--1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(2,1);
+  }
+}
+
+.l-6up--2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(2,3);
+  }
+}
+
+.l-6up--3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(2,5);
+  }
+}
+
+.l-6up--4 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(2,7);
+  }
+}
+
+.l-6up--5 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(2,9);
+  }
+}
+
+.l-6up--6 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(2,11);
+  }
+}

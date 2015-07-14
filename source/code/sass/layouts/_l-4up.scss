@@ -1,0 +1,80 @@
+/**
+ * @file
+ * Layout rules for 4-up content
+ */
+
+// =============================================================================
+// Ruleset for content going from 1-column at mobile,
+// to two-column, to 4-column as horizontal space allows
+// $omega-gutter: "false" = will wrap an item
+// $omega-gutter: "true"  = will not wrap an item
+// =============================================================================
+
+.l-4up {
+  float: left;
+  @include zen-grid-item-base();
+  @include zen-grid-flow-item(12, 12, $omega-gutter: false);
+  @include breakpoint($bp1){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: true);
+  }
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(3, 12, $omega-gutter: true);
+  }
+}
+// make every 2nd list item wrap
+.l-4up:nth-of-type(2n) {
+  @include breakpoint($bp1){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: false);
+  }
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(3, 12, $omega-gutter: true);
+  }
+}
+// make every 4th list item wrap
+.l-4up:nth-of-type(4n) {
+  @include breakpoint($bp3){
+    @include zen-grid-flow-item(3, 12, $omega-gutter: false);
+  }
+}
+// clears a new row from the tallest element in the row above
+.l-4up:nth-of-type(4n+1) {
+  @include breakpoint($bp3){
+    @include zen-clear();
+  }
+}
+
+// =============================================================================
+// Basic 4-up layouts
+// =============================================================================
+
+.l-4up--1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(3,1);
+  }
+}
+.l-4up--2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,4);
+  }
+}
+.l-4up--3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,7);
+  }
+}
+.l-4up--4 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,10);
+  }
+}
