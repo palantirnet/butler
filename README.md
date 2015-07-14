@@ -1,4 +1,4 @@
-# Butler
+# Butler Style Guide Starter
 The beginnings of a Jekyll based style guide creation tool. Now using Butler. 
 
 ## Dependencies
@@ -6,8 +6,6 @@ The beginnings of a Jekyll based style guide creation tool. Now using Butler.
 1. Bundler - https://github.com/bundler/bundler
 
 ## Getting Started
-Currently Butler lives in two branches of this repository one for the jekyll base and one for the sculpin base, please pull the appropriate branch for your project and follow the directions. (You will find the same README with instructions on each branch as well.)
-
 1. From inside the project root, run `sh fed-init.sh`
 1. Step through the prompts with any desired answers. This will create a gulp_config.js.
 1. Run `gulp` or `gulp develop` and begin developing normally
