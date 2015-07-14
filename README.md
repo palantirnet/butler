@@ -67,7 +67,7 @@ We recommend committing the gulp-config files to make them available to all team
 1. Enjoy!
 
 ## Making Changes to Gulpfile.js
-Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
+Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project. Issues to the Butler base should be added to the <a href="https://github.com/palantirnet/butler/issues">GitHub Issue Queue</a> and assigned to Lauren or Ryan. If you feel that the changes should be ported back to the base Butler install please bring it up to the DEFEND meeting for review.
 
 ## Troubleshooting
 For now, if you have comments/questions/concerns about working with this please talk to Lauren or Ryan.
