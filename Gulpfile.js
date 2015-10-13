@@ -1,6 +1,5 @@
 var gulp = require('gulp');
-var paths = require('compass-options').dirs();
-var compass = require('gulp-compass');
+var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
@@ -72,13 +71,14 @@ gulp.task('js-test', function(){
 gulp.task('prototype-only-sass', function() {
   browserSync.notify('<span style="color: grey">Running:</span> Sass compiling');
   return gulp.src('source/code/sass/' + '/**/*.scss')
-    .pipe(compass({
-      config_file: 'config.rb',
-      css: 'source/code/css/',
-      sass: 'source/code/sass/',
-      time: true,
-      bundle_exec: true
-    }))
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(compass({
+    //   config_file: 'config.rb',
+    //   css: 'source/code/css/',
+    //   sass: 'source/code/sass/',
+    //   time: true,
+    //   bundle_exec: true
+    // }))
     .pipe(prefix("last 2 versions", "> 1%"))
     .pipe(gulp.dest('source/code/css/'))
     .pipe(gulp.dest('output_dev/code/css/'))
@@ -89,13 +89,14 @@ gulp.task('prototype-only-sass', function() {
 gulp.task('prototype-drupal-sass', function () {
   browserSync.notify('<span style="color: grey">Running:</span> Sass compiling');
   return gulp.src('source/code/sass/' + '/**/*.scss')
-    .pipe(compass({
-      config_file: 'config.rb',
-      css: 'source/code/css/',
-      sass: 'source/code/sass/',
-      time: true,
-      bundle_exec: true
-    }))
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(compass({
+    //   config_file: 'config.rb',
+    //   css: 'source/code/css/',
+    //   sass: 'source/code/sass/',
+    //   time: true,
+    //   bundle_exec: true
+    // }))
     .pipe(prefix("last 2 versions", "> 1%"))
     .pipe(gulp.dest('source/code/css/'))
     .pipe(bs_drupal.reload({stream: true}))
