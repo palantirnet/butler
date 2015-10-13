@@ -3,7 +3,7 @@ The beginnings of a Sculpin based style guide creation tool. Now with Gulp and B
 
 ## Dependencies
 1. NodeJS 0.12+ and NPM - https://nodejs.org/download/
-1. Bundler - https://github.com/bundler/bundler
+1. Bower - http://bower.io/
 
 ## Getting Started
 1. From inside the project root, run `sh fed-init.sh`
