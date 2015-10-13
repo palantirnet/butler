@@ -91,3 +91,11 @@
   transition: all $timing $easing;
 }
 
+
+/* ==============================================================
+   Zen Clear mixin
+   ============================================================== */
+
+@mixin zen-clear($zen-clear: both) {
+  clear: $zen-clear;
+}

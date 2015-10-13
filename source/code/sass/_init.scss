@@ -175,19 +175,17 @@ $easing: ease-out;
 // =============================================================================
 
 // Add Compass' IE and vendor prefix support variables.
-@import "compass/support";
 // Better than Drupal's clearfix.
-@import "compass/utilities/general/clearfix";
 // See http://compass-style.org/help/tutorials/spriting/
-@import "compass/utilities/sprites";
 // Use one CSS3 mixin instead of multiple vendor prefixes.
-@import "compass/css3";
+@import 'compass';
 // Helps set up a vertical rhythm.
-@import "compass/typography/vertical_rhythm";
+@import 'compass_rhythm';
 // Add the Zen Grids responsive layout mixins.
-@import "zen";
+@import 'zen-grids';
+@import 'zen-grids/flow';
 // Add the Breakpoint mixin.
-@import "breakpoint";
+@import 'breakpoint';
 
 // Now we add our custom helper mixins.
 @import "mixins";

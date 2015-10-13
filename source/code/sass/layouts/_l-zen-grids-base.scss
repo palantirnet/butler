@@ -6,8 +6,8 @@
 
 // We are going to create a 980px wide, 12 column grid with 48px gutters between
 // columns (applied as 24px of left/right padding on each column).
-$zen-column-count: 12;
-$zen-gutter-width: $base-line-height * 2;
+$zen-columns: 12;
+$zen-gutters: $base-line-height * 2;
 
 // If you need IE6/7 support for box-sizing: border-box (default), see _base.scss
 //$zen-box-sizing: content-box;
@@ -18,9 +18,6 @@ $zen-gutter-width: $base-line-height * 2;
 $zen-auto-include-item-base: true;
 // $zen-auto-include-flow-item-base: false;
 
-
-// Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
-@if $zen-reverse-all-floats == false {
 
 /*
  * Center the page.
@@ -53,8 +50,6 @@ $zen-auto-include-item-base: true;
 .container {
   @include zen-grid-container();
 }
-
-} // End of @if $zen-reverse-all-floats == true
 
 // Dynamically alters the outside padding on zengrid containers
 .container {
