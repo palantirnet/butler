@@ -1,0 +1,25 @@
+{
+  "name": "bower-automation",
+  "version": "1.0.0",
+  "homepage": "https://github.com/palantirnet/butler",
+  "authors": "",
+  "description": "The beginnings of a Sculpin based bower component library.",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "compass-mixins": "~1.0.2",
+    "zen-grids": "~2.0.0-beta.3",
+    "compass-breakpoint": "~2.6.1",
+    "libsass-compass-vertical-rhythm": "~1.0.0"
+  }
+}

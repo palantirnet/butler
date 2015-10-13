@@ -6,3 +6,4 @@ output_dev/
 output_prod/
 node_modules/
 test-results/
+bower_components/
