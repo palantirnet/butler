@@ -21,25 +21,21 @@
    Typography grooming extends
    ========================================================================== */
 /* Tight tracking */
-/* line 12, ../sass/_mixins.scss */
 h1, h2, h3 {
   letter-spacing: -0.0125em;
 }
 
 /* Open tracking */
-/* line 15, ../sass/_mixins.scss */
 h5, h6 {
   letter-spacing: 0.1em;
 }
 
 /* Style larger text with a tighter tracking, change weight, etc.  */
-/* line 18, ../sass/_mixins.scss */
 h1, h2, h3 {
   font-weight: 700;
 }
 
 /* Style all caps with a slightly open tracking. */
-/* line 21, ../sass/_mixins.scss */
 h5, h6 {
   text-transform: uppercase;
 }
@@ -59,7 +55,6 @@ h5, h6 {
  * Element-invisible as defined by snook.ca
  * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 52, ../sass/_mixins.scss */
 .element-invisible,
 .element-focusable {
   position: absolute !important;
@@ -70,7 +65,6 @@ h5, h6 {
 }
 
 /* Turns off the element-invisible effect. */
-/* line 65, ../sass/_mixins.scss */
 .element-focusable:active, .element-focusable:focus {
   position: static !important;
   clip: auto;
@@ -103,7 +97,6 @@ h5, h6 {
  * HTML5 display definitions
  */
 /* Correct `block` display not defined in IE 8/9. */
-/* line 23, ../sass/_normalize.scss */
 article,
 aside,
 details,
@@ -119,7 +112,6 @@ summary {
 }
 
 /* Correct `inline-block` display not defined in IE 8/9. */
-/* line 38, ../sass/_normalize.scss */
 audio,
 canvas,
 video {
@@ -130,14 +122,12 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 52, ../sass/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
 /* Address styling not present in IE 8/9. */
-/* line 58, ../sass/_normalize.scss */
 [hidden] {
   display: none;
 }
@@ -174,7 +164,6 @@ audio:not([controls]) {
  *    `em` units.
  * 4. Makes it pretty — banishes chunky type.
  */
-/* line 97, ../sass/_normalize.scss */
 html {
   font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
   /* 1 */
@@ -194,26 +183,22 @@ html {
   line-height: 1.6em;
 }
 @media (min-width: 600px) {
-  /* line 97, ../sass/_normalize.scss */
   html {
     font-size: 105%;
   }
 }
 @media (min-width: 900px) {
-  /* line 97, ../sass/_normalize.scss */
   html {
     font-size: 116.25%;
   }
 }
 @media (min-width: 1100px) {
-  /* line 97, ../sass/_normalize.scss */
   html {
     font-size: 127.5%;
   }
 }
 
 /* Remove default margin. */
-/* line 128, ../sass/_normalize.scss */
 body {
   margin: 0;
   padding: 0;
@@ -225,33 +210,26 @@ body {
  * The order of link states are based on Eric Meyer's article:
  * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
  */
-/* line 139, ../sass/_normalize.scss */
 a:link,
 a:visited {
   color: #888888;
   text-decoration: none;
 }
 
-/* line 144, ../sass/_normalize.scss */
 a:hover,
 a:focus,
 a:active {
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   color: #F0F0F0;
   text-decoration: underline;
 }
 
 /* Address `outline` inconsistency between Chrome and other browsers. */
-/* line 153, ../sass/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
 
 /* Improve readability when focused and also mouse hovered in all browsers. */
-/* line 158, ../sass/_normalize.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -267,13 +245,11 @@ a:hover {
  * For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
  */
 /* Set 1 unit of vertical rhythm on the top and bottom margin. */
-/* line 174, ../sass/_normalize.scss */
 p,
 pre {
   margin: 0 0 1em 0;
 }
 
-/* line 178, ../sass/_normalize.scss */
 blockquote {
   /* Also indent the quote on both sides. */
   margin: rhythm(1);
@@ -284,7 +260,6 @@ blockquote {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 188, ../sass/_normalize.scss */
 h1 {
   /* Set the font-size and line-height while keeping a proper vertical rhythm. */
   font-size: 1.95em;
@@ -294,7 +269,6 @@ h1 {
   margin-bottom: 0.30769em;
 }
 
-/* line 196, ../sass/_normalize.scss */
 h2 {
   font-size: 1.56em;
   line-height: 1.53846em;
@@ -302,7 +276,6 @@ h2 {
   margin-bottom: 0.38462em;
 }
 
-/* line 202, ../sass/_normalize.scss */
 h3 {
   font-size: 1.25em;
   line-height: 1.76em;
@@ -310,7 +283,6 @@ h3 {
   margin-bottom: 0.48em;
 }
 
-/* line 208, ../sass/_normalize.scss */
 h4 {
   font-size: 1em;
   line-height: 1.6em;
@@ -318,7 +290,6 @@ h4 {
   margin-bottom: 0.6em;
 }
 
-/* line 213, ../sass/_normalize.scss */
 h5 {
   font-size: 0.8em;
   line-height: 1.75em;
@@ -326,7 +297,6 @@ h5 {
   margin-bottom: 0.5em;
 }
 
-/* line 219, ../sass/_normalize.scss */
 h6 {
   font-weight: 400;
   font-size: 0.8em;
@@ -336,29 +306,23 @@ h6 {
 }
 
 /* Address styling not present in IE 8/9, Safari 5, and Chrome. */
-/* line 229, ../sass/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
-/* line 234, ../sass/_normalize.scss */
 b,
 strong {
   font-weight: 700;
 }
 
 /* Address styling not present in Safari 5 and Chrome. */
-/* line 240, ../sass/_normalize.scss */
 dfn {
   font-style: italic;
 }
 
 /* Address differences between Firefox and other browsers. */
-/* line 245, ../sass/_normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
   border: 1px solid #ddd;
@@ -367,14 +331,12 @@ hr {
 }
 
 /* Address styling not present in IE 8/9. */
-/* line 254, ../sass/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
 /* Correct font family set oddly in Safari 5 and Chrome. */
-/* line 260, ../sass/_normalize.scss */
 code,
 kbd,
 pre,
@@ -387,25 +349,21 @@ var {
 }
 
 /* Improve readability of pre-formatted text in all browsers. */
-/* line 274, ../sass/_normalize.scss */
 pre {
   white-space: pre-wrap;
 }
 
 /* Set consistent quote types. */
-/* line 286, ../sass/_normalize.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /* Address inconsistent and variable font size in all browsers. */
-/* line 291, ../sass/_normalize.scss */
 small {
   font-size: 80%;
 }
 
 /* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-/* line 296, ../sass/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -414,12 +372,10 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 303, ../sass/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 306, ../sass/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -427,7 +383,6 @@ sub {
 /**
  * Lists
  */
-/* line 313, ../sass/_normalize.scss */
 dl,
 menu,
 ol,
@@ -436,7 +391,6 @@ ul {
   margin: 0 0 0.8em 0;
 }
 
-/* line 322, ../sass/_normalize.scss */
 ol ol,
 ol ul,
 ul ol,
@@ -445,14 +399,12 @@ ul ul {
   margin: 0 0 0.8em 0;
 }
 
-/* line 328, ../sass/_normalize.scss */
 dd {
   margin: 0 0 0 rhythm(1);
   /* LTR */
 }
 
 /* Address paddings set differently in IE 6/7. */
-/* line 333, ../sass/_normalize.scss */
 menu,
 ol,
 ul {
@@ -465,7 +417,6 @@ ul {
  *
  * @todo Look into adding responsive embedded video.
  */
-/* line 353, ../sass/_normalize.scss */
 img {
   /* Remove border when inside `a` element in IE 8/9. */
   border: 0;
@@ -477,7 +428,6 @@ img {
   width: auto;
 }
 
-/* line 373, ../sass/_normalize.scss */
 figcaption {
   color: #888888;
   font-style: italic;
@@ -490,7 +440,6 @@ figcaption {
  * Requires a "video-wrapper" class on the
  * tag containing the iframe embed code.
 */
-/* line 384, ../sass/_normalize.scss */
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -498,7 +447,6 @@ figcaption {
   height: 0;
 }
 
-/* line 389, ../sass/_normalize.scss */
 .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -510,13 +458,11 @@ figcaption {
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-/* line 401, ../sass/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* Address margin not present in IE 8/9 and Safari 5. */
-/* line 406, ../sass/_normalize.scss */
 figure {
   margin: 1.2em 0;
 }
@@ -525,7 +471,6 @@ figure {
  * Forms
  */
 /* Define consistent border, margin, and padding. */
-/* line 422, ../sass/_normalize.scss */
 fieldset {
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
@@ -549,7 +494,6 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
-/* line 437, ../sass/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -564,7 +508,6 @@ legend {
  * 4. Improve appearance and consistency with IE 6/7.
  * 5. Keep form elements constrained in their containers.
  */
-/* line 452, ../sass/_normalize.scss */
 button,
 input,
 select,
@@ -577,8 +520,6 @@ textarea {
   /* 3 */
   max-width: 100%;
   /* 5 */
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 5 */
 }
@@ -587,7 +528,6 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 471, ../sass/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -599,7 +539,6 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 482, ../sass/_normalize.scss */
 button,
 select {
   text-transform: none;
@@ -614,7 +553,6 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 496, ../sass/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -628,7 +566,6 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 510, ../sass/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -640,11 +577,8 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-/* line 521, ../sass/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -656,12 +590,9 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 536, ../sass/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 2 */
 }
@@ -670,14 +601,12 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 545, ../sass/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /* Remove inner padding and border in Firefox 4+. */
-/* line 551, ../sass/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -688,7 +617,6 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-/* line 561, ../sass/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -697,7 +625,6 @@ textarea {
 }
 
 /* Drupal-style form labels. */
-/* line 567, ../sass/_normalize.scss */
 label {
   display: block;
 }
@@ -707,7 +634,6 @@ label {
  * Please visit http://purecss.io/ for more information
  * purecss.io: Copyright 2014 Yahoo! Inc. All rights reserved.
  */
-/* line 577, ../sass/_normalize.scss */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -724,8 +650,6 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #888888;
   -webkit-user-select: none;
@@ -735,12 +659,8 @@ textarea {
   text-indent: .5em;
   border: 1px solid #F0F0F0;
   outline: none;
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
-/* line 603, ../sass/_normalize.scss */
 input[type="text"]:hover, input[type="text"]:focus, input[type="text"]:active,
 input[type="password"]:hover,
 input[type="password"]:focus,
@@ -791,7 +711,6 @@ textarea:active {
   outline: none;
 }
 
-/* line 611, ../sass/_normalize.scss */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -814,10 +733,7 @@ select {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-/* line 634, ../sass/_normalize.scss */
 input:not([type]) {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #888888;
   -webkit-user-select: none;
@@ -827,12 +743,8 @@ input:not([type]) {
   text-indent: .5em;
   border: 1px solid #888888;
   outline: none;
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
-/* line 645, ../sass/_normalize.scss */
 input:not([type]):hover, input:not([type]):focus, input:not([type]):active {
   border: 1px solid #444444;
   outline: none;
@@ -840,7 +752,6 @@ input:not([type]):hover, input:not([type]):focus, input:not([type]):active {
 
 /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
 /* May be able to remove this tweak as color inputs become more standardized across browsers. */
-/* line 656, ../sass/_normalize.scss */
 input[type="color"] {
   padding: 0.2em 0.5em;
 }
@@ -849,7 +760,6 @@ input[type="color"] {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-/* line 664, ../sass/_normalize.scss */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
@@ -857,7 +767,6 @@ input[type="checkbox"]:focus {
   outline: 1px auto #444444;
 }
 
-/* line 671, ../sass/_normalize.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="email"][disabled],
@@ -883,14 +792,12 @@ textarea[disabled] {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-/* line 696, ../sass/_normalize.scss */
 input:not([type])[disabled] {
   cursor: not-allowed;
   background-color: #F0F0F0;
   color: #888888;
 }
 
-/* line 701, ../sass/_normalize.scss */
 input[readonly],
 select[readonly],
 textarea[readonly] {
@@ -899,7 +806,6 @@ textarea[readonly] {
   border-color: #888888;
 }
 
-/* line 709, ../sass/_normalize.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
@@ -907,21 +813,18 @@ select:focus:invalid {
   border-color: #ee5f5b;
 }
 
-/* line 715, ../sass/_normalize.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
   border-color: #e9322d;
 }
 
-/* line 720, ../sass/_normalize.scss */
 input[type="file"]:focus:invalid:focus,
 input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
   outline-color: #e9322d;
 }
 
-/* line 726, ../sass/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   position: relative;
@@ -930,10 +833,7 @@ input[type="radio"] {
   float: left;
 }
 
-/* line 734, ../sass/_normalize.scss */
 select {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   -webkit-appearance: none;
@@ -946,30 +846,23 @@ select {
   background-position: 97% 50%;
   border: 1px solid #F0F0F0;
   outline: none;
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
-/* line 748, ../sass/_normalize.scss */
 select:hover, select:focus, select:active {
   outline: 0;
   border: 1px solid #888888;
 }
 
-/* line 755, ../sass/_normalize.scss */
 select[multiple] {
   height: auto;
 }
 
-/* line 760, ../sass/_normalize.scss */
 fieldset {
   margin: 0;
   padding: 0.2em 0 0.6em;
   border: 0;
 }
 
-/* line 765, ../sass/_normalize.scss */
 legend {
   display: block;
   width: 100%;
@@ -977,7 +870,6 @@ legend {
   margin-bottom: 1.2em;
 }
 
-/* line 772, ../sass/_normalize.scss */
 input + input,
 select + select,
 input + select,
@@ -985,33 +877,26 @@ select + input {
   margin-top: .5em;
 }
 
-/* line 779, ../sass/_normalize.scss */
 button {
   background: #888888;
   border: 1px solid transparent;
   color: #ffffff;
   margin: 0.8em 0;
   padding: 0.8em;
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
 
-/* line 787, ../sass/_normalize.scss */
 button:hover {
   background: #444444;
   color: #ffffff;
 }
 
-/* line 791, ../sass/_normalize.scss */
 button:focus {
   outline-style: dotted;
   outline-color: #444444;
   outline-width: 1px;
 }
 
-/* line 797, ../sass/_normalize.scss */
 button[type="reset"] {
   color: #888888;
   font-size: 14px;
@@ -1021,30 +906,25 @@ button[type="reset"] {
   padding: 0.8em 0.8em;
 }
 
-/* line 805, ../sass/_normalize.scss */
 button[type="reset"]:hover {
   color: #444444;
 }
 
 /* Styles for placeholder text */
-/* line 810, ../sass/_normalize.scss */
 ::-webkit-input-placeholder {
   color: #F0F0F0;
 }
 
-/* line 814, ../sass/_normalize.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: #F0F0F0;
 }
 
-/* line 818, ../sass/_normalize.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #F0F0F0;
 }
 
-/* line 822, ../sass/_normalize.scss */
 :-ms-input-placeholder {
   color: #F0F0F0;
 }
@@ -1052,7 +932,6 @@ button[type="reset"]:hover {
 /* ==========================================================================
    Tables
    ========================================================================== */
-/* line 831, ../sass/_normalize.scss */
 table {
   /* Remove most spacing between table cells. */
   border-collapse: collapse;
@@ -1073,7 +952,6 @@ table {
 /*
  * Center the page.
  */
-/* line 29, ../sass/layouts/_l-zen-grids-base.scss */
 .container {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
@@ -1083,13 +961,11 @@ table {
   /* enforces a min-width in FF. */
 }
 @media (min-width: 600px) {
-  /* line 29, ../sass/layouts/_l-zen-grids-base.scss */
   .container {
     width: 90%;
   }
 }
 @media (min-width: 900px) {
-  /* line 29, ../sass/layouts/_l-zen-grids-base.scss */
   .container {
     max-width: 1400px;
   }
@@ -1098,13 +974,10 @@ table {
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
-/* line 44, ../sass/layouts/_l-zen-grids-base.scss */
 .container,
 .grid-item {
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1113,17 +986,14 @@ table {
 /*
  * Containers for grid items and flow items.
  */
-/* line 45, ../../../../../../.rvm/gems/ruby-2.1.1/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .container:before, .container:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../../../../.rvm/gems/ruby-2.1.1/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .container:after {
   clear: both;
 }
 
-/* line 60, ../sass/layouts/_l-zen-grids-base.scss */
 .container {
   padding-left: 0;
   padding-right: 0;
@@ -1133,7 +1003,6 @@ table {
  * @file
  * Layout rules for full-width content
  */
-/* line 6, ../sass/layouts/_l-1up.scss */
 .l-1up {
   clear: left;
   float: left;
@@ -1142,8 +1011,6 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1153,7 +1020,6 @@ table {
  * @file
  * Layout rules for two thirds / one third (66/33) content
  */
-/* line 6, ../sass/layouts/_l-66-33.scss */
 .l-66-33--1 {
   clear: left;
   float: left;
@@ -1162,14 +1028,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 6, ../sass/layouts/_l-66-33.scss */
   .l-66-33--1 {
     float: left;
     width: 66.66667%;
@@ -1177,15 +1040,12 @@ table {
     margin-right: -66.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 14, ../sass/layouts/_l-66-33.scss */
 .l-66-33--2 {
   clear: left;
   float: left;
@@ -1194,14 +1054,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 14, ../sass/layouts/_l-66-33.scss */
   .l-66-33--2 {
     clear: none;
     float: left;
@@ -1210,8 +1067,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1222,7 +1077,6 @@ table {
  * @file
  * Layout rules for one third / two thirds (33/66) content
  */
-/* line 6, ../sass/layouts/_l-33-66.scss */
 .l-33-66--1 {
   clear: left;
   float: left;
@@ -1231,14 +1085,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 6, ../sass/layouts/_l-33-66.scss */
   .l-33-66--1 {
     float: left;
     width: 33.33333%;
@@ -1246,15 +1097,12 @@ table {
     margin-right: -33.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 14, ../sass/layouts/_l-33-66.scss */
 .l-33-66--2 {
   clear: left;
   float: left;
@@ -1263,14 +1111,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 14, ../sass/layouts/_l-33-66.scss */
   .l-33-66--2 {
     clear: none;
     float: left;
@@ -1279,8 +1124,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1291,20 +1134,15 @@ table {
  * @file
  * Layout rules for 2-up content
  */
-/* line 13, ../sass/layouts/_l-2up.scss */
 .l-2up {
   float: left;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1314,12 +1152,9 @@ table {
   margin-right: 0px;
 }
 @media (min-width: 900px) {
-  /* line 13, ../sass/layouts/_l-2up.scss */
   .l-2up {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1331,12 +1166,9 @@ table {
 }
 
 @media (min-width: 900px) {
-  /* line 22, ../sass/layouts/_l-2up.scss */
   .l-2up:nth-of-type(2n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1348,13 +1180,11 @@ table {
 }
 
 @media (min-width: 900px) {
-  /* line 28, ../sass/layouts/_l-2up.scss */
   .l-2up:nth-of-type(2n+1) {
     clear: left;
   }
 }
 
-/* line 38, ../sass/layouts/_l-2up.scss */
 .l-2up--1 {
   clear: left;
   float: left;
@@ -1363,14 +1193,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 38, ../sass/layouts/_l-2up.scss */
   .l-2up--1 {
     float: left;
     width: 50%;
@@ -1378,15 +1205,12 @@ table {
     margin-right: -50%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 45, ../sass/layouts/_l-2up.scss */
 .l-2up--2 {
   clear: left;
   float: left;
@@ -1395,14 +1219,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 45, ../sass/layouts/_l-2up.scss */
   .l-2up--2 {
     clear: none;
     float: left;
@@ -1411,8 +1232,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1423,20 +1242,15 @@ table {
  * @file
  * Layout rules for 3-up content
  */
-/* line 13, ../sass/layouts/_l-3up.scss */
 .l-3up {
   float: left;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1446,12 +1260,9 @@ table {
   margin-right: 0px;
 }
 @media (min-width: 600px) {
-  /* line 13, ../sass/layouts/_l-3up.scss */
   .l-3up {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1462,12 +1273,9 @@ table {
   }
 }
 @media (min-width: 1100px) {
-  /* line 13, ../sass/layouts/_l-3up.scss */
   .l-3up {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1479,12 +1287,9 @@ table {
 }
 
 @media (min-width: 600px) {
-  /* line 25, ../sass/layouts/_l-3up.scss */
   .l-3up:nth-of-type(2n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1495,12 +1300,9 @@ table {
   }
 }
 @media (min-width: 1100px) {
-  /* line 25, ../sass/layouts/_l-3up.scss */
   .l-3up:nth-of-type(2n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1512,12 +1314,9 @@ table {
 }
 
 @media (min-width: 1100px) {
-  /* line 34, ../sass/layouts/_l-3up.scss */
   .l-3up:nth-of-type(3n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1529,13 +1328,11 @@ table {
 }
 
 @media (min-width: 1100px) {
-  /* line 40, ../sass/layouts/_l-3up.scss */
   .l-3up:nth-of-type(3n+1) {
     clear: left;
   }
 }
 
-/* line 50, ../sass/layouts/_l-3up.scss */
 .l-3up--1 {
   clear: left;
   float: left;
@@ -1544,14 +1341,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 50, ../sass/layouts/_l-3up.scss */
   .l-3up--1 {
     float: left;
     width: 33.33333%;
@@ -1559,15 +1353,12 @@ table {
     margin-right: -33.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 57, ../sass/layouts/_l-3up.scss */
 .l-3up--2 {
   clear: left;
   float: left;
@@ -1576,14 +1367,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 57, ../sass/layouts/_l-3up.scss */
   .l-3up--2 {
     clear: none;
     float: left;
@@ -1592,15 +1380,12 @@ table {
     margin-right: -66.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 65, ../sass/layouts/_l-3up.scss */
 .l-3up--3 {
   clear: left;
   float: left;
@@ -1609,14 +1394,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 65, ../sass/layouts/_l-3up.scss */
   .l-3up--3 {
     clear: none;
     float: left;
@@ -1625,8 +1407,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1637,20 +1417,15 @@ table {
  * @file
  * Layout rules for 4-up content
  */
-/* line 13, ../sass/layouts/_l-4up.scss */
 .l-4up {
   float: left;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1660,12 +1435,9 @@ table {
   margin-right: 0px;
 }
 @media (min-width: 600px) {
-  /* line 13, ../sass/layouts/_l-4up.scss */
   .l-4up {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1676,12 +1448,9 @@ table {
   }
 }
 @media (min-width: 1100px) {
-  /* line 13, ../sass/layouts/_l-4up.scss */
   .l-4up {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1693,12 +1462,9 @@ table {
 }
 
 @media (min-width: 600px) {
-  /* line 25, ../sass/layouts/_l-4up.scss */
   .l-4up:nth-of-type(2n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1709,12 +1475,9 @@ table {
   }
 }
 @media (min-width: 1100px) {
-  /* line 25, ../sass/layouts/_l-4up.scss */
   .l-4up:nth-of-type(2n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1726,12 +1489,9 @@ table {
 }
 
 @media (min-width: 1100px) {
-  /* line 34, ../sass/layouts/_l-4up.scss */
   .l-4up:nth-of-type(4n) {
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1743,13 +1503,11 @@ table {
 }
 
 @media (min-width: 1100px) {
-  /* line 40, ../sass/layouts/_l-4up.scss */
   .l-4up:nth-of-type(4n+1) {
     clear: left;
   }
 }
 
-/* line 50, ../sass/layouts/_l-4up.scss */
 .l-4up--1 {
   clear: left;
   float: left;
@@ -1758,14 +1516,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 50, ../sass/layouts/_l-4up.scss */
   .l-4up--1 {
     float: left;
     width: 25%;
@@ -1773,15 +1528,12 @@ table {
     margin-right: -25%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 57, ../sass/layouts/_l-4up.scss */
 .l-4up--2 {
   clear: left;
   float: left;
@@ -1790,14 +1542,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 57, ../sass/layouts/_l-4up.scss */
   .l-4up--2 {
     clear: none;
     float: left;
@@ -1806,15 +1555,12 @@ table {
     margin-right: -50%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 65, ../sass/layouts/_l-4up.scss */
 .l-4up--3 {
   clear: left;
   float: left;
@@ -1823,14 +1569,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 65, ../sass/layouts/_l-4up.scss */
   .l-4up--3 {
     clear: none;
     float: left;
@@ -1839,15 +1582,12 @@ table {
     margin-right: -75%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 73, ../sass/layouts/_l-4up.scss */
 .l-4up--4 {
   clear: left;
   float: left;
@@ -1856,14 +1596,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 73, ../sass/layouts/_l-4up.scss */
   .l-4up--4 {
     clear: none;
     float: left;
@@ -1872,8 +1609,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -1884,7 +1619,6 @@ table {
  * @file
  * Layout rules for 6-up content
  */
-/* line 6, ../sass/layouts/_l-6up.scss */
 .l-6up--1 {
   clear: left;
   float: left;
@@ -1893,14 +1627,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 6, ../sass/layouts/_l-6up.scss */
   .l-6up--1 {
     float: left;
     width: 16.66667%;
@@ -1908,15 +1639,12 @@ table {
     margin-right: -16.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 14, ../sass/layouts/_l-6up.scss */
 .l-6up--2 {
   clear: left;
   float: left;
@@ -1925,14 +1653,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 14, ../sass/layouts/_l-6up.scss */
   .l-6up--2 {
     clear: none;
     float: left;
@@ -1941,15 +1666,12 @@ table {
     margin-right: -33.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 23, ../sass/layouts/_l-6up.scss */
 .l-6up--3 {
   clear: left;
   float: left;
@@ -1958,14 +1680,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 23, ../sass/layouts/_l-6up.scss */
   .l-6up--3 {
     clear: none;
     float: left;
@@ -1974,15 +1693,12 @@ table {
     margin-right: -50%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 32, ../sass/layouts/_l-6up.scss */
 .l-6up--4 {
   clear: left;
   float: left;
@@ -1991,14 +1707,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 32, ../sass/layouts/_l-6up.scss */
   .l-6up--4 {
     clear: none;
     float: left;
@@ -2007,15 +1720,12 @@ table {
     margin-right: -66.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 41, ../sass/layouts/_l-6up.scss */
 .l-6up--5 {
   clear: left;
   float: left;
@@ -2024,14 +1734,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 41, ../sass/layouts/_l-6up.scss */
   .l-6up--5 {
     clear: none;
     float: left;
@@ -2040,15 +1747,12 @@ table {
     margin-right: -83.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 50, ../sass/layouts/_l-6up.scss */
 .l-6up--6 {
   clear: left;
   float: left;
@@ -2057,14 +1761,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 50, ../sass/layouts/_l-6up.scss */
   .l-6up--6 {
     clear: none;
     float: left;
@@ -2073,8 +1774,6 @@ table {
     margin-right: -100%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
@@ -2089,7 +1788,6 @@ table {
  *
  * @copyright Copyright (c) 2014 Palantir.net
  */
-/* line 8, ../sass/styleguide/_styleguide.scss */
 .l-styleguide-column {
   clear: left;
   float: left;
@@ -2098,14 +1796,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 8, ../sass/styleguide/_styleguide.scss */
   .l-styleguide-column {
     float: left;
     width: 66.66667%;
@@ -2113,15 +1808,12 @@ table {
     margin-right: -66.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 @media (min-width: 900px) {
-  /* line 8, ../sass/styleguide/_styleguide.scss */
   .l-styleguide-column {
     float: left;
     width: 58.33333%;
@@ -2129,15 +1821,12 @@ table {
     margin-right: -66.66667%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 20, ../sass/styleguide/_styleguide.scss */
 .l-styleguide-rail {
   clear: left;
   float: left;
@@ -2146,14 +1835,11 @@ table {
   margin-right: -100%;
   padding-left: 12px;
   padding-right: 12px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
-  /* line 20, ../sass/styleguide/_styleguide.scss */
   .l-styleguide-rail {
     clear: none;
     float: left;
@@ -2162,15 +1848,12 @@ table {
     margin-right: -33.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 @media (min-width: 900px) {
-  /* line 20, ../sass/styleguide/_styleguide.scss */
   .l-styleguide-rail {
     float: left;
     width: 25%;
@@ -2178,15 +1861,12 @@ table {
     margin-right: -33.33333%;
     padding-left: 12px;
     padding-right: 12px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
   }
 }
 
-/* line 32, ../sass/styleguide/_styleguide.scss */
 .styleguide-copyright {
   font-size: 0.8em;
   line-height: 1.5em;
@@ -2196,63 +1876,53 @@ table {
   border-top: 1px solid #F0F0F0;
 }
 
-/* line 40, ../sass/styleguide/_styleguide.scss */
 .styleguide-label {
   color: #444444;
 }
 
-/* line 44, ../sass/styleguide/_styleguide.scss */
 .styleguide-section {
   margin-top: 4.8em;
   border-top: 1px solid #F0F0F0;
   padding-top: 2.4em;
 }
 
-/* line 53, ../sass/styleguide/_styleguide.scss */
 .styleguide-list {
   padding: 0 0 0 1.6em;
 }
-/* line 55, ../sass/styleguide/_styleguide.scss */
 .styleguide-list h4 {
   margin-top: 0em;
   margin-bottom: 0.2em;
   font-weight: 400;
 }
 
-/* line 62, ../sass/styleguide/_styleguide.scss */
 .styleguide-component {
   background-color: #ffffff;
   padding: 1.6em 0;
 }
 
-/* line 67, ../sass/styleguide/_styleguide.scss */
 .component-header {
   background-color: #F0F0F0;
   margin: 3.2em 0;
   padding: 3.2em 0;
 }
 
-/* line 73, ../sass/styleguide/_styleguide.scss */
 .color-title {
   border-bottom: 1px solid #F0F0F0;
   padding-bottom: 0.8em;
   margin: 1.6em 0;
 }
 
-/* line 79, ../sass/styleguide/_styleguide.scss */
 .color-block {
   width: 100%;
   height: 50px;
   margin-top: 0.8em;
 }
 
-/* line 85, ../sass/styleguide/_styleguide.scss */
 .color-label {
   color: #888888;
   margin-bottom: 1.6em;
 }
 
-/* line 90, ../sass/styleguide/_styleguide.scss */
 .styleguide-swatch {
   width: 50%;
   padding: 25px;
