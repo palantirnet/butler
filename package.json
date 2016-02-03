@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/labyrwa/fed-automation/issues"
   },
-  "homepage": "https://github.com/labyrwa/fed-automation",
+  "homepage": "https://github.com/palantirnet/butler",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "compass-options": "^0.1.1",
