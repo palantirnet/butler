@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/labyrwa/fed-automation.git"
+    "url": "https://github.com/palantirnet/butler.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/labyrwa/fed-automation/issues"
+    "url": "https://github.com/palantirnet/butler/issues"
   },
   "homepage": "https://github.com/palantirnet/butler",
   "devDependencies": {
