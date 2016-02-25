@@ -1,0 +1,1935 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Centralize your imports here.
+ * Styles are organized using the SMACSS technique.
+ * @see http://smacss.com/book/
+ */
+/* Import Sass mixins, variables, Compass modules, etc. */
+/* body */
+/* Link (a:) */
+/* Blockquote*/
+/* Figcaption */
+/* forms */
+/* Buttons */
+/**
+ * @file
+ * Define your custom Sass mixins and extends here.
+ * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+ */
+/* ==========================================================================
+   Typography grooming extends
+   ========================================================================== */
+/* Tight tracking */
+h1, h2, h3 {
+  letter-spacing: -0.0125em;
+}
+
+/* Open tracking */
+h5, h6 {
+  letter-spacing: 0.1em;
+}
+
+/* Style larger text with a tighter tracking, change weight, etc.  */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+/* Style all caps with a slightly open tracking. */
+h5, h6 {
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Clearfix extend
+   ========================================================================== */
+/**
+ * Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+ * do not get compiled uless they are called - removing the nesting issues that
+ * can otherwise occur with extends.
+ */
+/* ==============================================================
+   Visually hidden extend
+   ============================================================== */
+/**
+ * Element-invisible as defined by snook.ca
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.element-invisible,
+.element-focusable {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Turns off the element-invisible effect. */
+.element-focusable:active, .element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+/* ==============================================================
+   Transition mixin
+   ============================================================== */
+/* HTML element (SMACSS base) rules */
+/**
+ * @file
+ * Normalize.css is intended to be used as an alternative to CSS resets.
+ *
+ * This file is a slight fork of these original sources:
+ * - normalize.css v2.1.2 | MIT License | git.io/normalize
+ * - normalize.scss v2.1.2 | MIT/GPLv2 License | bit.ly/normalize-with-compass
+ *
+ * It's suggested that you read the normalize.scss file and customise it to meet
+ * your needs, rather then including the file in your project and overriding the
+ * defaults later in your CSS.
+ * @see http://nicolasgallagher.com/about-normalize-css/
+ *
+ * Also: @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
+ *       @see http://snook.ca/archives/html_and_css/no_css_reset/
+ */
+/**
+ * HTML5 display definitions
+ */
+/* Correct `block` display not defined in IE 8/9. */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* Correct `inline-block` display not defined in IE 8/9. */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* Address styling not present in IE 8/9. */
+[hidden] {
+  display: none;
+}
+
+/**
+ * Base
+ *
+ * Instead of relying on the fonts that are available on a user's computer, you
+ * can use web fonts which, like images, are resources downloaded to the user's
+ * browser. Because of the bandwidth and rendering resources required, web fonts
+ * should be used with care.
+ *
+ * Numerous resources for web fonts can be found on Google. Here are a few
+ * websites where you can find Open Source fonts to download:
+ * - http://www.fontsquirrel.com/fontface
+ * - http://www.theleagueofmoveabletype.com
+ *
+ * In order to use these fonts, you will need to convert them into formats
+ * suitable for web fonts. We recommend the free-to-use Font Squirrel's
+ * Font-Face Generator:
+ *   http://www.fontsquirrel.com/fontface/generator
+ *
+ * The following is an example @font-face declaration. This font can then be
+ * used in any ruleset using a property like this:  font-family: Example, serif;
+ *
+ * Since we're using Sass, you'll need to declare your font faces here, then you
+ * can add them to the font variables in the _base.scss partial.
+ */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 4. Makes it pretty — banishes chunky type.
+ */
+html {
+  font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  /* 1 */
+  font-weight: 400;
+  font-size: 93.75%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-font-smoothing: antialiased;
+  /* 4 */
+  text-rendering: optimizeLegibility;
+  /* 4 */
+  color: #444444;
+  background: #ffffff;
+  line-height: 1.6em;
+}
+@media (min-width: 600px) {
+  html {
+    font-size: 105%;
+  }
+}
+@media (min-width: 900px) {
+  html {
+    font-size: 116.25%;
+  }
+}
+@media (min-width: 1100px) {
+  html {
+    font-size: 127.5%;
+  }
+}
+
+/* Remove default margin. */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Links
+ *
+ * The order of link states are based on Eric Meyer's article:
+ * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+ */
+a:link,
+a:visited {
+  color: #888888;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  transition: all 0.5s ease-out;
+  color: #F0F0F0;
+  text-decoration: underline;
+}
+
+/* Address `outline` inconsistency between Chrome and other browsers. */
+a:focus {
+  outline: thin dotted;
+}
+
+/* Improve readability when focused and also mouse hovered in all browsers. */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * Typography
+ *
+ * To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+ * so that the line height of our base font becomes the basic unit of vertical
+ * measurement. We use multiples of that unit to set the top and bottom margins
+ * for our block level elements and to set the line heights of any fonts.
+ * For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+ */
+/* Set 1 unit of vertical rhythm on the top and bottom margin. */
+p,
+pre {
+  margin: 0 0 1em 0;
+}
+
+blockquote {
+  /* Also indent the quote on both sides. */
+  margin: rhythm(1);
+  color: #888888;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 1.95em;
+  line-height: 1.33333em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 1.23077em;
+  margin-bottom: 0.30769em;
+}
+
+h2 {
+  font-size: 1.56em;
+  line-height: 1.53846em;
+  margin-top: 1.53846em;
+  margin-bottom: 0.38462em;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.76em;
+  margin-top: 1.92em;
+  margin-bottom: 0.48em;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.6em;
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+}
+
+h5 {
+  font-size: 0.8em;
+  line-height: 1.75em;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 0.8em;
+  line-height: 1.75em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Address styling not present in IE 8/9, Safari 5, and Chrome. */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+b,
+strong {
+  font-weight: 700;
+}
+
+/* Address styling not present in Safari 5 and Chrome. */
+dfn {
+  font-style: italic;
+}
+
+/* Address differences between Firefox and other browsers. */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  border: 1px solid #ddd;
+  padding-bottom: -1px;
+  margin: 1.6em 0;
+}
+
+/* Address styling not present in IE 8/9. */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* Correct font family set oddly in Safari 5 and Chrome. */
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+  font-family: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+  font-size: 1em;
+  line-height: 1.6em;
+}
+
+/* Improve readability of pre-formatted text in all browsers. */
+pre {
+  white-space: pre-wrap;
+}
+
+/* Set consistent quote types. */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* Address inconsistent and variable font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * Lists
+ */
+dl,
+menu,
+ol,
+ul {
+  /* Address margins set differently in IE 6/7. */
+  margin: 0 0 0.8em 0;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  /* Turn off margins on nested lists. */
+  margin: 0 0 0.8em 0;
+}
+
+dd {
+  margin: 0 0 0 rhythm(1);
+  /* LTR */
+}
+
+/* Address paddings set differently in IE 6/7. */
+menu,
+ol,
+ul {
+  padding: 0 0 0 rhythm(1);
+  /* LTR */
+}
+
+/**
+ * Embedded content and figures
+ *
+ * @todo Look into adding responsive embedded video.
+ */
+img {
+  /* Remove border when inside `a` element in IE 8/9. */
+  border: 0;
+  /* Suppress the space beneath the baseline */
+  vertical-align: bottom;
+  /* Responsive images */
+  max-width: 100%;
+  /* Correct IE 8 not scaling image height when resized. */
+  width: auto;
+}
+
+figcaption {
+  color: #888888;
+  font-style: italic;
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  line-height: 2.1em;
+}
+
+/* Responsive video styles for youtube and vimeo.
+ * Requires a "video-wrapper" class on the
+ * tag containing the iframe embed code.
+*/
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 ratio */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Address margin not present in IE 8/9 and Safari 5. */
+figure {
+  margin: 1.2em 0;
+}
+
+/**
+ * Forms
+ */
+/* Define consistent border, margin, and padding. */
+fieldset {
+  margin: 0 2px;
+  /* Apply borders and padding that keep the vertical rhythm. */
+  border-color: #c0c0c0;
+  border-top-width: 0.06667em;
+  border-top-style: solid;
+  padding-top: 0.21333em;
+  border-bottom-width: 0.06667em;
+  border-bottom-style: solid;
+  padding-bottom: 0.45333em;
+  border-left-width: 0.06667em;
+  border-left-style: solid;
+  padding-left: 0.45333em;
+  border-right-width: 0.06667em;
+  border-right-style: solid;
+  padding-right: 0.45333em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ * 4. Improve appearance and consistency with IE 6/7.
+ * 5. Keep form elements constrained in their containers.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  max-width: 100%;
+  /* 5 */
+  box-sizing: border-box;
+  /* 5 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* Drupal-style form labels. */
+label {
+  display: block;
+}
+
+/**
+ * SITE SPECIFIC form element styles. Adapted from purecss, under the Yahoo! Inc. BSD license
+ * Please visit http://purecss.io/ for more information
+ * purecss.io: Copyright 2014 Yahoo! Inc. All rights reserved.
+ */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  box-sizing: border-box;
+  color: #888888;
+  -webkit-user-select: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  width: 100%;
+  text-indent: .5em;
+  border: 1px solid #F0F0F0;
+  outline: none;
+  transition: all 0.1s ease-out;
+}
+input[type="text"]:hover, input[type="text"]:focus, input[type="text"]:active,
+input[type="password"]:hover,
+input[type="password"]:focus,
+input[type="password"]:active,
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="email"]:active,
+input[type="url"]:hover,
+input[type="url"]:focus,
+input[type="url"]:active,
+input[type="date"]:hover,
+input[type="date"]:focus,
+input[type="date"]:active,
+input[type="month"]:hover,
+input[type="month"]:focus,
+input[type="month"]:active,
+input[type="time"]:hover,
+input[type="time"]:focus,
+input[type="time"]:active,
+input[type="datetime"]:hover,
+input[type="datetime"]:focus,
+input[type="datetime"]:active,
+input[type="datetime-local"]:hover,
+input[type="datetime-local"]:focus,
+input[type="datetime-local"]:active,
+input[type="week"]:hover,
+input[type="week"]:focus,
+input[type="week"]:active,
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="number"]:active,
+input[type="search"]:hover,
+input[type="search"]:focus,
+input[type="search"]:active,
+input[type="tel"]:hover,
+input[type="tel"]:focus,
+input[type="tel"]:active,
+input[type="color"]:hover,
+input[type="color"]:focus,
+input[type="color"]:active,
+select:hover,
+select:focus,
+select:active,
+textarea:hover,
+textarea:focus,
+textarea:active {
+  border: 1px solid #444444;
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select {
+  height: 2.5em;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+input:not([type]) {
+  box-sizing: border-box;
+  color: #888888;
+  -webkit-user-select: none;
+  -webkit-appearance: none;
+  background: #F0F0F0;
+  width: 100%;
+  text-indent: .5em;
+  border: 1px solid #888888;
+  outline: none;
+  transition: all 0.1s ease-out;
+}
+input:not([type]):hover, input:not([type]):focus, input:not([type]):active {
+  border: 1px solid #444444;
+  outline: none;
+}
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+input[type="color"] {
+  padding: 0.2em 0.5em;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #444444;
+  outline: 1px auto #444444;
+}
+
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #F0F0F0;
+  color: #888888;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #F0F0F0;
+  color: #888888;
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background: #F0F0F0;
+  color: #888888;
+  border-color: #888888;
+}
+
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+}
+
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+  border-color: #e9322d;
+}
+
+input[type="file"]:focus:invalid:focus,
+input[type="radio"]:focus:invalid:focus,
+input[type="checkbox"]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: relative;
+  top: 7px;
+  margin-right: .5em;
+  float: left;
+}
+
+select {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 0;
+  height: 2em;
+  text-indent: .5em;
+  background-color: #ffffff;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4QTMzNkUyNDAwQzExRTNBOEY4OTE4N0E1NkQ4QjVCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4QTMzNkUzNDAwQzExRTNBOEY4OTE4N0E1NkQ4QjVCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RThBMzM2RTA0MDBDMTFFM0E4Rjg5MTg3QTU2RDhCNUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RThBMzM2RTE0MDBDMTFFM0E4Rjg5MTg3QTU2RDhCNUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4x37VGAAAAWklEQVR42mI0NjZeysDAEMWAHyxlAhKZQPwAj6L7QJwFUvgJiKOB+C8WRX+gcp+YoALHgLgZi0KQ2HEQgwlJsAWIjyLxjwBxK4yDrBBkdQwQf4DiGGTnAAQYAGJbEyV4nwHtAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  border: 1px solid #F0F0F0;
+  outline: none;
+  transition: all 0.1s ease-out;
+}
+select:hover, select:focus, select:active {
+  outline: 0;
+  border: 1px solid #888888;
+}
+
+select[multiple] {
+  height: auto;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.2em 0 0.6em;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0.4em 0;
+  margin-bottom: 1.2em;
+}
+
+input + input,
+select + select,
+input + select,
+select + input {
+  margin-top: .5em;
+}
+
+button {
+  background: #888888;
+  border: 1px solid transparent;
+  color: #ffffff;
+  margin: 0.8em 0;
+  padding: 0.8em;
+  transition: all 0.1s ease-out;
+}
+
+button:hover {
+  background: #444444;
+  color: #ffffff;
+}
+
+button:focus {
+  outline-style: dotted;
+  outline-color: #444444;
+  outline-width: 1px;
+}
+
+button[type="reset"] {
+  color: #888888;
+  font-size: 14px;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  padding: 0.8em 0.8em;
+}
+
+button[type="reset"]:hover {
+  color: #444444;
+}
+
+/* Styles for placeholder text */
+::-webkit-input-placeholder {
+  color: #F0F0F0;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #F0F0F0;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #F0F0F0;
+}
+
+:-ms-input-placeholder {
+  color: #F0F0F0;
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+table {
+  /* Remove most spacing between table cells. */
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* Prevent cramped-looking tables */
+  /* width: 100%; */
+  /* Add vertical rhythm margins. */
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* Layout rules */
+/**
+ * @file
+ * Define zen grids base settings here.
+ * @see http://zengrids.com
+ */
+/*
+ * Center the page.
+ */
+.container {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 260px;
+  /* enforces a min-width in FF. */
+}
+@media (min-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+.container,
+.grid-item {
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/*
+ * Containers for grid items and flow items.
+ */
+.container:before, .container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/**
+ * @file
+ * Layout rules for full-width content
+ */
+.l-1up {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/**
+ * @file
+ * Layout rules for two thirds / one third (66/33) content
+ */
+.l-66-33--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-66-33--1 {
+    float: left;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: -66.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-66-33--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-66-33--2 {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/**
+ * @file
+ * Layout rules for one third / two thirds (33/66) content
+ */
+.l-33-66--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-33-66--1 {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-33-66--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-33-66--2 {
+    clear: none;
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/**
+ * @file
+ * Layout rules for 2-up content
+ */
+.l-2up {
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+@media (min-width: 900px) {
+  .l-2up {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (min-width: 900px) {
+  .l-2up:nth-of-type(2n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+}
+
+@media (min-width: 900px) {
+  .l-2up:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+
+.l-2up--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-2up--1 {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-2up--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-2up--2 {
+    clear: none;
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/**
+ * @file
+ * Layout rules for 3-up content
+ */
+.l-3up {
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+@media (min-width: 600px) {
+  .l-3up {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+}
+@media (min-width: 1100px) {
+  .l-3up {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 33.33333%;
+    padding-left: 0;
+    padding-right: 16px;
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 600px) {
+  .l-3up:nth-of-type(2n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+}
+@media (min-width: 1100px) {
+  .l-3up:nth-of-type(2n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 33.33333%;
+    padding-left: 0;
+    padding-right: 16px;
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-3up:nth-of-type(3n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 33.33333%;
+    padding-left: 0;
+    padding-right: 16px;
+    margin-right: -16px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-3up:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+.l-3up--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-3up--1 {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-3up--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-3up--2 {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 33.33333%;
+    margin-right: -66.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-3up--3 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-3up--3 {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/**
+ * @file
+ * Layout rules for 4-up content
+ */
+.l-4up {
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+@media (min-width: 600px) {
+  .l-4up {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+}
+@media (min-width: 1100px) {
+  .l-4up {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 600px) {
+  .l-4up:nth-of-type(2n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+}
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(2n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(4n) {
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: -18px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+.l-4up--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-4up--1 {
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-4up--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-4up--2 {
+    clear: none;
+    float: left;
+    width: 25%;
+    margin-left: 25%;
+    margin-right: -50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-4up--3 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-4up--3 {
+    clear: none;
+    float: left;
+    width: 25%;
+    margin-left: 50%;
+    margin-right: -75%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-4up--4 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-4up--4 {
+    clear: none;
+    float: left;
+    width: 25%;
+    margin-left: 75%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/**
+ * @file
+ * Layout rules for 6-up content
+ */
+.l-6up--1 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--1 {
+    float: left;
+    width: 16.66667%;
+    margin-left: 0%;
+    margin-right: -16.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-6up--2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--2 {
+    clear: none;
+    float: left;
+    width: 16.66667%;
+    margin-left: 16.66667%;
+    margin-right: -33.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-6up--3 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--3 {
+    clear: none;
+    float: left;
+    width: 16.66667%;
+    margin-left: 33.33333%;
+    margin-right: -50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-6up--4 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--4 {
+    clear: none;
+    float: left;
+    width: 16.66667%;
+    margin-left: 50%;
+    margin-right: -66.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-6up--5 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--5 {
+    clear: none;
+    float: left;
+    width: 16.66667%;
+    margin-left: 66.66667%;
+    margin-right: -83.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-6up--6 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-6up--6 {
+    clear: none;
+    float: left;
+    width: 16.66667%;
+    margin-left: 83.33333%;
+    margin-right: -100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+/* Component (SMACSS module) rules */
+/* Styleguide Specific rules */
+/**
+ * @file
+ * Define the styles for the styleguide. This is not css for the site.
+ *
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+.l-styleguide-column {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-styleguide-column {
+    float: left;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: -66.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+@media (min-width: 900px) {
+  .l-styleguide-column {
+    float: left;
+    width: 58.33333%;
+    margin-left: 8.33333%;
+    margin-right: -66.66667%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.l-styleguide-rail {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+@media (min-width: 600px) {
+  .l-styleguide-rail {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+@media (min-width: 900px) {
+  .l-styleguide-rail {
+    float: left;
+    width: 25%;
+    margin-left: 8.33333%;
+    margin-right: -33.33333%;
+    padding-left: 12px;
+    padding-right: 12px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
+.styleguide-copyright {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  color: #888888;
+  padding: 4.8em 0;
+  margin-top: 8em;
+  border-top: 1px solid #F0F0F0;
+}
+
+.styleguide-label {
+  color: #444444;
+}
+
+.styleguide-section {
+  margin-top: 4.8em;
+  border-top: 1px solid #F0F0F0;
+  padding-top: 2.4em;
+}
+
+.styleguide-list {
+  padding: 0 0 0 1.6em;
+}
+.styleguide-list h4 {
+  margin-top: 0em;
+  margin-bottom: 0.2em;
+  font-weight: 400;
+}
+
+.styleguide-component {
+  background-color: #ffffff;
+  padding: 1.6em 0;
+}
+
+.component-header {
+  background-color: #F0F0F0;
+  margin: 3.2em 0;
+  padding: 3.2em 0;
+}
+
+.color-title {
+  border-bottom: 1px solid #F0F0F0;
+  padding-bottom: 0.8em;
+  margin: 1.6em 0;
+}
+
+.color-block {
+  width: 100%;
+  height: 50px;
+  margin-top: 0.8em;
+}
+
+.color-label {
+  color: #888888;
+  margin-bottom: 1.6em;
+}
+
+.styleguide-swatch {
+  width: 50%;
+  padding: 25px;
+}
+
+/* print rules */
+/**
+ * @file
+ * Define print styles here.
+ */
