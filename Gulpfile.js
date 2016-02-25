@@ -29,7 +29,7 @@ gulp.task('inject-default', function () {
   // It's not necessary to read the files (will speed up things), we're only after their paths:
   var sources = gulp.src(['source/code/css/*.css', 'source/code/js/*.js'], {read: false});
   // Inject but trim the path to be relative to HTML
-  return target.pipe(inject(sources, {ignorePath: 'source', addRootSlash: false }))
+  return target.pipe(inject(sources, {ignorePath: 'source', addRootSlash: true }))
     .pipe(gulp.dest('source/code/_views'));
 });
 
@@ -39,7 +39,7 @@ gulp.task('inject-min', function () {
   // It's not necessary to read the files (will speed up things), we're only after their paths:
   var sources = gulp.src(['source/code/min/*.css', 'source/code/min/*.js'], {read: false});
   // Inject but trim the path to be relative to HTML
-  return target.pipe(inject(sources, {ignorePath: 'source', addRootSlash: false }))
+  return target.pipe(inject(sources, {ignorePath: 'source', addRootSlash: true }))
     .pipe(gulp.dest('source/code/_views'));
 });
 
