@@ -1,7 +1,6 @@
 // Require the dependencies so that we can use their functionality
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var exec = require('gulp-exec');
 
@@ -29,11 +28,8 @@ gulp.task('compile-sass', function() {
   return gulp
     // Find all `.scss` from the `source/code/sass`
     .src(scss)
-    .pipe(sourcemaps.init())
     // Run Sass on those files
     .pipe(sass(sassDev).on('error',sass.logError))
-    // Write the sourcemap for the CSS
-    .pipe(sourcemaps.write())
     // Update the stylesheets to add vendor prefixes
     .pipe(autoprefixer(browserSupport))
     // Put the CSS in the destination dir

@@ -6,7 +6,7 @@
  */
 
 .l-styleguide-column {
-  @include zen-clear();
+  //@include zen-clear();
   @include zen-grid-item(12, 1);
   @include breakpoint($bp1){
     @include zen-grid-item(8, 1);
@@ -18,10 +18,10 @@
 }
 
 .l-styleguide-rail {
-  @include zen-clear();
+  //@include zen-clear();
   @include zen-grid-item(12, 1);
   @include breakpoint($bp1){
-    @include zen-clear(none);
+    //@include zen-clear(none);
     @include zen-grid-item(4, 1);
   }
   @include breakpoint($bp2){
@@ -30,7 +30,7 @@
 }
 
 .styleguide-copyright {
-  @include adjust-font-size-to($label, 1.5);
+  //@include adjust-font-size-to($label, 1.5);
   color:$gray-medium;
   padding: rhythm(6, $text) 0;
   margin-top: rhythm(10, $text);
@@ -53,8 +53,8 @@
 .styleguide-list {
   padding: 0 0 0 rhythm(2, $text);
   h4 {
-    @include leader(0);
-    @include trailer(0.25);
+    //@include leader(0);
+    //@include trailer(0.25);
     font-weight: 400;
   }
 }
@@ -84,7 +84,7 @@
 
 .color-label {
   color:$gray-medium;
-  @include trailer(2);
+  //@include trailer(2);
 }
 
 .styleguide-swatch {

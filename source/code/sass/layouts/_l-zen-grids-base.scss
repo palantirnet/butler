@@ -20,41 +20,41 @@ $zen-auto-include-item-base: true;
 
 
 // Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
-@if $zen-reverse-all-floats == false {
-
-/*
- * Center the page.
- */
-
-.container {
-  /* For screen sizes larger than 1200px, prevent excessively long lines of text
-     by setting a max-width. */
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 260px; /* enforces a min-width in FF. */
-  @include breakpoint($bp1) { width: 90%; } 
-  @include breakpoint($bp2) { max-width: 1400px; }
-}
-
-/*
- * Apply the shared properties of grid items in a single, efficient ruleset.
- */
-// See the note about $zen-auto-include-item-base above.
-
-.container,
-.grid-item {
-  @include zen-grid-item-base();
-}
-
-/*
- * Containers for grid items and flow items.
- */
-
-.container {
-  @include zen-grid-container();
-}
-
-} // End of @if $zen-reverse-all-floats == true
+//@if $zen-reverse-all-floats == false {
+//
+///*
+// * Center the page.
+// */
+//
+//.container {
+//  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+//     by setting a max-width. */
+//  margin-left: auto;
+//  margin-right: auto;
+//  min-width: 260px; /* enforces a min-width in FF. */
+//  @include breakpoint($bp1) { width: 90%; }
+//  @include breakpoint($bp2) { max-width: 1400px; }
+//}
+//
+///*
+// * Apply the shared properties of grid items in a single, efficient ruleset.
+// */
+//// See the note about $zen-auto-include-item-base above.
+//
+//.container,
+//.grid-item {
+//  @include zen-grid-item-base();
+//}
+//
+///*
+// * Containers for grid items and flow items.
+// */
+//
+//.container {
+//  @include zen-grid-container();
+//}
+//
+//} // End of @if $zen-reverse-all-floats == true
 
 // Dynamically alters the outside padding on zengrid containers
 .container {

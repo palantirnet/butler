@@ -4,6 +4,6 @@
  */
 
 .l-1up {
-  @include zen-clear();
+  //@include zen-clear();
   @include zen-grid-item(12,1);
 }
