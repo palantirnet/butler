@@ -175,9 +175,9 @@ $easing: ease-out;
 // =============================================================================
 
 // Add the Zen Grids responsive layout mixins.
-@import "zen-grids";
+@import "../../../node_modules/zen-grids/sass/zen-grids";
 // Add the Breakpoint mixin.
-@import "breakpoint";
+@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 // Now we add our custom helper mixins.
 @import "mixins";
