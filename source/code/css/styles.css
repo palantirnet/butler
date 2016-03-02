@@ -879,6 +879,54 @@ table {
  * Define zen grids base settings here.
  * @see http://zengrids.com
  */
+/*
+ * Center the page.
+ */
+.container {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 260px;
+  /* enforces a min-width in FF. */
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+.container,
+.grid-item {
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+/*
+ * Containers for grid items and flow items.
+ */
+.container:before {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .container {
   padding-left: 0;
   padding-right: 0;
@@ -889,12 +937,13 @@ table {
  * Layout rules for full-width content
  */
 .l-1up {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
@@ -903,45 +952,48 @@ table {
  * Layout rules for two thirds / one third (66/33) content
  */
 .l-66-33--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-66-33--1 {
     float: left;
-    width: 800%;
+    width: 66.66667%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-66-33--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-66-33--2 {
+    clear: none;
     float: left;
-    width: 400%;
-    margin-left: 800%;
+    width: 33.33333%;
+    margin-left: 66.66667%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -951,45 +1003,48 @@ table {
  * Layout rules for one third / two thirds (33/66) content
  */
 .l-33-66--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-33-66--1 {
     float: left;
-    width: 400%;
+    width: 33.33333%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-33-66--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-33-66--2 {
+    clear: none;
     float: left;
-    width: 800%;
-    margin-left: 400%;
+    width: 66.66667%;
+    margin-left: 33.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1000,51 +1055,85 @@ table {
  */
 .l-2up {
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: 900px) {
+  .l-2up {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (min-width: 900px) {
+  .l-2up:nth-of-type(2n) {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+}
+
+@media (min-width: 900px) {
+  .l-2up:nth-of-type(2n+1) {
+    clear: left;
+  }
 }
 
 .l-2up--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-2up--1 {
     float: left;
-    width: 600%;
+    width: 50%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-2up--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-2up--2 {
+    clear: none;
     float: left;
-    width: 600%;
-    margin-left: 600%;
+    width: 50%;
+    margin-left: 50%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1055,73 +1144,85 @@ table {
  */
 .l-3up {
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
+@media (min-width: 1100px) {
+  .l-3up:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
 .l-3up--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-3up--1 {
+    clear: left;
     float: left;
-    width: 400%;
+    width: 33.33333%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-3up--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-3up--2 {
+    clear: none;
     float: left;
-    width: 400%;
-    margin-left: 400%;
+    width: 33.33333%;
+    margin-left: 33.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-3up--3 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-3up--3 {
+    clear: none;
     float: left;
-    width: 400%;
-    margin-left: 800%;
+    width: 33.33333%;
+    margin-left: 66.66667%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1132,95 +1233,163 @@ table {
  */
 .l-4up {
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: 600px) {
+  .l-4up {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up {
+    box-sizing: border-box;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 600px) {
+  .l-4up:nth-of-type(2n) {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(2n) {
+    box-sizing: border-box;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(4n) {
+    box-sizing: border-box;
+    width: 25%;
+    padding-left: 0;
+    padding-right: 18px;
+    margin-right: -18px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .l-4up:nth-of-type(4n+1) {
+    clear: left;
+  }
 }
 
 .l-4up--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-4up--1 {
     float: left;
-    width: 300%;
+    width: 25%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-4up--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-4up--2 {
+    clear: none;
     float: left;
-    width: 300%;
-    margin-left: 300%;
+    width: 25%;
+    margin-left: 25%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-4up--3 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-4up--3 {
+    clear: none;
     float: left;
-    width: 300%;
-    margin-left: 600%;
+    width: 25%;
+    margin-left: 50%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-4up--4 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-4up--4 {
+    clear: none;
     float: left;
-    width: 300%;
-    margin-left: 900%;
+    width: 25%;
+    margin-left: 75%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1230,133 +1399,144 @@ table {
  * Layout rules for 6-up content
  */
 .l-6up--1 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--1 {
     float: left;
-    width: 200%;
+    width: 16.66667%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-6up--2 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--2 {
+    clear: none;
     float: left;
-    width: 200%;
-    margin-left: 200%;
+    width: 16.66667%;
+    margin-left: 16.66667%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-6up--3 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--3 {
+    clear: none;
     float: left;
-    width: 200%;
-    margin-left: 400%;
+    width: 16.66667%;
+    margin-left: 33.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-6up--4 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--4 {
+    clear: none;
     float: left;
-    width: 200%;
-    margin-left: 600%;
+    width: 16.66667%;
+    margin-left: 50%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-6up--5 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--5 {
+    clear: none;
     float: left;
-    width: 200%;
-    margin-left: 800%;
+    width: 16.66667%;
+    margin-left: 66.66667%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-6up--6 {
+  clear: left;
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-6up--6 {
+    clear: none;
     float: left;
-    width: 200%;
-    margin-left: 1000%;
+    width: 16.66667%;
+    margin-left: 83.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1371,22 +1551,22 @@ table {
  */
 .l-styleguide-column {
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-styleguide-column {
     float: left;
-    width: 800%;
+    width: 66.66667%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1394,33 +1574,33 @@ table {
 @media (min-width: 900px) {
   .l-styleguide-column {
     float: left;
-    width: 700%;
-    margin-left: 100%;
+    width: 58.33333%;
+    margin-left: 8.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
 
 .l-styleguide-rail {
   float: left;
-  width: 1200%;
+  width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
   .l-styleguide-rail {
     float: left;
-    width: 400%;
+    width: 33.33333%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }
@@ -1428,11 +1608,11 @@ table {
 @media (min-width: 900px) {
   .l-styleguide-rail {
     float: left;
-    width: 300%;
-    margin-left: 100%;
+    width: 25%;
+    margin-left: 8.33333%;
     margin-right: -100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     box-sizing: border-box;
   }
 }

@@ -39,7 +39,7 @@
 // clears a new row from the tallest element in the row above
 .l-3up:nth-of-type(3n+1) {
   @include breakpoint($bp3){
-    //@include zen-clear();
+    @include zen-new-row();
   }
 }
 
@@ -48,25 +48,26 @@
 // =============================================================================
 
 .l-3up--1 {
-  //@include zen-clear();
+  @include zen-new-row();
   @include zen-grid-item(12,1);
   @include breakpoint($bp1){
+    @include zen-new-row();
     @include zen-grid-item(4,1);
   }
 }
 .l-3up--2 {
-  //@include zen-clear();
+  @include zen-new-row();
   @include zen-grid-item(12,1);
   @include breakpoint($bp1){
-    //@include zen-clear(none);
+    @include zen-new-row(none);
     @include zen-grid-item(4,5);
   }
 }
 .l-3up--3 {
-  //@include zen-clear();
+  @include zen-new-row();
   @include zen-grid-item(12,1);
   @include breakpoint($bp1){
-    //@include zen-clear(none);
+    @include zen-new-row(none);
     @include zen-grid-item(4,9);
   }
 }
