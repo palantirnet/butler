@@ -2,4 +2,5 @@
 # via `site.*`. So for example, {{ site.title }} can be used
 # in a template to get the contents of the `title` key.
 title: Sculpin Styleguide Starter
-# url: 
+# @todo: can we make this url a variable that gets set to the gh-pages site?
+# url:

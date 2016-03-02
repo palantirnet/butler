@@ -3,9 +3,6 @@ sculpin:
   ignore:
     # Sass code doesn't need to be sent to the live server.
     - "code/sass/"
-    # @todo I don't know why the "*" is needed in this path to make the file
-    # actually be excluded but it is.
-    - "code/config.rb*"
     - "test-results"
 sculpin_content_types:
     styleguides:

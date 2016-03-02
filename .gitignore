@@ -1,8 +1,7 @@
 Rakefile
-*.DS_Store
-*.sass-cache/
+.DS_Store
+.sass-cache/
 _site/
 output_dev/
 output_prod/
 node_modules/
-test-results/
