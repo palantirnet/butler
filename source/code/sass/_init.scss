@@ -170,5 +170,14 @@ $easing: ease-out;
 
 
 
+// =============================================================================
+// Partials to be shared with all .scss files.
+// =============================================================================
+
+// Add the Zen Grids responsive layout mixins.
+@import "zen-grids";
+// Add the Breakpoint mixin.
+@import "breakpoint";
+
 // Now we add our custom helper mixins.
 @import "mixins";
