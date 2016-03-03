@@ -21,7 +21,11 @@ There are three main tasks in this gulp file:
 1. `gulp develop`/`gulp` This is the default task. This will watch your sass/sculpin files for changes and compile/build accordingly.
 
 ## Making Changes to Gulpfile.js
-Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
+Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project. If you would like to add additional functionality please do so to the butler package and create a PR. 
+
+If you are adding additional functionality you will have to also update the `npm-shrinkwrap.json` by running `update <package_name>`. You _must_ specify the exact package that needs to be updated and then re-run `npm shrinkwrap --dev` to update the `npm-shrinkwrap.json`.
+
+_To check which files have become outdated run `npm outdated`_
 
 ## Troubleshooting
 For now, if you have comments/questions/concerns about working with this please talk to Lauren.
