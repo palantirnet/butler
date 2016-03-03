@@ -1,4 +1,4 @@
-# Buter Linters
+# Butler Linters
 This document goes over the linting functionality included in Butler and how it can be ignored or extended for project use.
 
 ## Stylelint

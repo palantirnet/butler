@@ -12,13 +12,11 @@ The beginnings of a Sculpin based style guide creation tool.
 1.  Run `gulp` or `gulp develop` and begin developing normally
 
 ## What does this Butler do
-There are three main tasks in this gulp file:
-
-1.  `gulp develop`/`gulp` 
+*  `gulp develop`/`gulp` 
     
     This is the default task. This will watch your sass/sculpin files for changes and compile/build accordingly. It will also flag any sass linting errors before compiling. It will output CSS that has been been minified and optimized. 
 
-1.  `gulp test`
+*  `gulp test`
 
     This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [LINTERS.md](/docs/LINTERS.md).
 
