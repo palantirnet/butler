@@ -9,16 +9,26 @@
    ========================================================================== */
 
 /* Tight tracking */
-%track-in { letter-spacing: -0.0125em; }
+%track-in {
+  letter-spacing: -.0125em;
+}
 
 /* Open tracking */
-%track-out { letter-spacing: 0.1em; }
+%track-out {
+  letter-spacing: .1em;
+}
 
 /* Style larger text with a tighter tracking, change weight, etc.  */
-%display-type { @extend %track-in; font-weight: 700; }
+%display-type {
+  @extend %track-in;
+  font-weight: 700;
+}
 
 /* Style all caps with a slightly open tracking. */
-%allcaps { @extend %track-out; text-transform: uppercase; }
+%allcaps {
+  @extend %track-out;
+  text-transform: uppercase;
+}
 
 
 /* ==========================================================================
@@ -79,15 +89,3 @@
     @extend %element-invisible-off;
   }
 }
-
-/* ==============================================================
-   Transition mixin
-   ============================================================== */
-
-@mixin trans($timing, $easing) {
-  -webkit-transition: all $timing $easing;
-  -moz-transition: all $timing $easing;
-  -o-transition: all $timing $easing;
-  transition: all $timing $easing;
-}
-

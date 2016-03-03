@@ -97,10 +97,7 @@ audio:not([controls]) {
 html {
   font-family: $base-font-family; /* 1 */
   font-weight: 400;
-  font-size: 100% * ($base-font-size / 16px); /* 3 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -webkit-font-smoothing: antialiased; /* 4 */
+  font-size: 100% * ($base-font-size / 16px);
   text-rendering: optimizeLegibility; /* 4 */
   color: $text-color;
   background: $background-color;
@@ -109,9 +106,15 @@ html {
   //@include adjust-leading-to(2);
 
   // Adjust font-size globally per breakpoint.
-  @include breakpoint($bp1) { font-size: ($base-font-size / 16px) * 112%; }
-  @include breakpoint($bp2) { font-size: ($base-font-size / 16px) * 124%; }
-  @include breakpoint($bp3) { font-size: ($base-font-size / 16px) * 136%; }
+  @include breakpoint($bp1) {
+    font-size: ($base-font-size / 16px) * 112%;
+  }
+  @include breakpoint($bp2) {
+    font-size: ($base-font-size / 16px) * 124%;
+  }
+  @include breakpoint($bp3) {
+    font-size: ($base-font-size / 16px) * 136%;
+  }
 }
 
 @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
@@ -265,7 +268,7 @@ tt,
 var {
   font-family: $font-monospace; // The value of $font-monospace ends with ", serif".
   @if $legacy-support-for-ie6 {
-    _font-family: 'courier new', monospace;
+    _font-family: "courier new", monospace;
   }
   //@include adjust-font-size-to( $base-font-size );
 }
@@ -273,7 +276,6 @@ var {
 /* Improve readability of pre-formatted text in all browsers. */
 pre {
   @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
@@ -300,11 +302,13 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
+
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 /**
@@ -317,6 +321,7 @@ ul {
   /* Address margins set differently in IE 6/7. */
   margin: 0 0 rhythm(1) 0;
 }
+
 ol,
 ul {
   ol,
@@ -325,6 +330,7 @@ ul {
     margin: 0 0 rhythm(1) 0;
   }
 }
+
 dd {
   margin: 0 0 0 $indent-amount; /* LTR */
 }
@@ -353,11 +359,6 @@ ul {
 img {
   /* Remove border when inside `a` element in IE 8/9. */
   border: 0;
-  @if $legacy-support-for-ie7 {
-    /* Improve image quality when scaled in IE 7. */
-    -ms-interpolation-mode: bicubic;
-  }
-
   /* Suppress the space beneath the baseline */
   vertical-align: bottom;
 
@@ -373,7 +374,7 @@ img {
 figcaption {
   color: $figcaption-color;
   font-style: italic;
-  margin-top: rhythm(0.5, $label);
+  margin-top: rhythm(.5, $label);
   //@include adjust-font-size-to($label, 2.1);
 }
 
@@ -456,10 +457,6 @@ textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 2 */
   margin: 0; /* 3 */
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    vertical-align: baseline; /* 4 */
-    *vertical-align: middle; /* 4 */
-  }
   max-width: 100%; /* 5 */
   //@include box-sizing(border-box); /* 5 */
 }
@@ -487,21 +484,12 @@ select {
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
- *    Known issue: inner spacing remains in IE 6.
  */
 button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
-  @if $legacy-support-for-ie7 {
-    *overflow: visible; /* 4 */
-  }
+  cursor: pointer;
 }
 
 /**
@@ -510,48 +498,6 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
- * 3. Remove excess padding in IE 7.
- *    Known issue: excess padding remains in IE 6.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  //@include box-sizing(border-box); /* 1 */
-  padding: 0; /* 2 */
-  @if $legacy-support-for-ie7 {
-    *height: 13px; /* 3 */
-    *width: 13px; /* 3 */
-  }
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  //@include box-sizing(content-box); /* 2 */
-}
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/* Remove inner padding and border in Firefox 4+. */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
 }
 
 /**
@@ -591,9 +537,7 @@ input[type="color"],
 select,
 textarea {
   //@include box-sizing(border-box);
-  color:$form-text;
-  -webkit-user-select: none;
-  -webkit-appearance: none;
+  color: $form-text;
   background: $white;
   width: 100%;
   text-indent: .5em;
@@ -633,9 +577,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 input:not([type]) {
   //@include box-sizing(border-box);
-  color:$input-not;
-  -webkit-user-select: none;
-  -webkit-appearance: none;
+  color: $input-not;
   background: $input-not-background;
   width: 100%;
   text-indent: .5em;
@@ -654,7 +596,7 @@ input:not([type]) {
 /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
 /* May be able to remove this tweak as color inputs become more standardized across browsers. */
 input[type="color"] {
-    padding: 0.2em 0.5em;
+    padding: .2em .5em;
 }
 
 /*
@@ -664,8 +606,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-    outline: thin dotted $input-focus-outline;
-    outline: 1px auto $input-focus-outline;
+    outline: 1px dotted $input-focus-outline;
 }
 
 input[type="text"][disabled],
@@ -696,7 +637,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 input:not([type])[disabled] {
     cursor: not-allowed;
     background-color: $input-disabled-not-background;
-    color:$input-disabled-not-text;
+    color: $input-disabled-not-text;
 }
 input[readonly],
 select[readonly],
@@ -720,7 +661,7 @@ select:focus:invalid:focus {
 input[type="file"]:focus:invalid:focus,
 input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
-    outline-color:$input-check-outline;
+    outline-color: $input-check-outline;
 }
 
 input[type="checkbox"],
@@ -734,12 +675,10 @@ input[type="radio"] {
 select {
   //@include box-sizing(border-box);
   width: 100%;
-  -webkit-appearance: none;
   border-radius: 0;
   height: 2em;
   text-indent: .5em;
   background-color: $select-background;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4QTMzNkUyNDAwQzExRTNBOEY4OTE4N0E1NkQ4QjVCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4QTMzNkUzNDAwQzExRTNBOEY4OTE4N0E1NkQ4QjVCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RThBMzM2RTA0MDBDMTFFM0E4Rjg5MTg3QTU2RDhCNUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RThBMzM2RTE0MDBDMTFFM0E4Rjg5MTg3QTU2RDhCNUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4x37VGAAAAWklEQVR42mI0NjZeysDAEMWAHyxlAhKZQPwAj6L7QJwFUvgJiKOB+C8WRX+gcp+YoALHgLgZi0KQ2HEQgwlJsAWIjyLxjwBxK4yDrBBkdQwQf4DiGGTnAAQYAGJbEyV4nwHtAAAAAElFTkSuQmCC);
   background-repeat: no-repeat;
   background-position: 97% 50%;
   border: 1px solid $select-border;
@@ -752,20 +691,21 @@ select {
     border: 1px solid $select-border-hover;
   }
 }
+
 select[multiple] {
     height: auto;
 }
-label {
-}
+
 fieldset {
     margin: 0;
-    padding: rhythm(0.25, $text) 0 rhythm(0.75, $text);
+    padding: rhythm(.25, $text) 0 rhythm(.75, $text);
     border: 0;
 }
+
 legend {
     display: block;
     width: 100%;
-    padding: rhythm(0.5, $text) 0;
+    padding: rhythm(.5, $text) 0;
     //@include trailer(1.5);
 }
 
@@ -784,10 +724,12 @@ button {
   padding: rhythm(1, $text);
   //@include trans(.1s, ease-out);
 }
+
 button:hover {
   background: $button-hover-background;
   color: $button-hover-text;
 }
+
 button:focus {
   outline-style: dotted;
   outline-color: $button-focus-outline;
@@ -802,25 +744,9 @@ button[type="reset"] {
   border: none;
   padding: rhythm(1, $text) rhythm(1, $text);
 }
+
 button[type="reset"]:hover {
   color: $button-reset-text-hover;
-}
-
-/* Styles for placeholder text */
-::-webkit-input-placeholder {
-  color: $placeholder-text;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-  color: $placeholder-text;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-  color: $placeholder-text;
-}
-
-:-ms-input-placeholder {
-  color: $placeholder-text;
 }
 
 

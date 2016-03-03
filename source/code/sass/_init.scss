@@ -58,9 +58,9 @@ $xl-heading: 2.44 * $base-font-size;
 $lg-heading: 1.95 * $base-font-size;
 $md-heading: 1.56 * $base-font-size;
 $sm-heading: 1.25 * $base-font-size;
-$text:       1    * $base-font-size;
-$label:      0.8  * $base-font-size;
-$crumb:      0.6  * $base-font-size;
+$text: 1 * $base-font-size;
+$label: .8 * $base-font-size;
+$crumb: .6 * $base-font-size;
 
 $h1-font-size: $lg-heading;
 $h2-font-size: $md-heading;
@@ -82,20 +82,20 @@ $h6-font-size: $label;
 
 // First, let's create some font stacks.
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
-$times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
-$georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
-$verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
-$helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
-$arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$times: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia: Georgia, "Times New Roman", "DejaVu Serif", serif;
+$verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
-// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
-$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+// http://meyerweb.com/eric/thoughts/2510/02/12/fixed-monospace-sizing/
+$courier: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $helvetica; // The font family set on the html element.
-$font-monospace:   $courier;
+$font-monospace: $courier;
 
 // Sass color variables, etc.
 $black: #222222;
@@ -104,8 +104,8 @@ $gray-medium: #888888;
 $gray-light: #F0F0F0;
 $off-white: #fbfbfb;
 $white: #ffffff;
-$white-60: rgba($white, .60);
-$white-30: rgba($white, .30);
+$white-60: rgba($white, .6);
+$white-30: rgba($white, .3);
 
 // Use above sass variables to define defaults in normalize.scss
 /* body */
@@ -115,11 +115,11 @@ $background-color: $white;
 $link-color: $gray-medium;
 $link-hover: $gray-light;
 /* Blockquote*/
-$blockquote-color:$gray-medium;
+$blockquote-color: $gray-medium;
 /* Figcaption */
 $figcaption-color: $gray-medium;
 /* forms */
-$form-text:$gray-medium;
+$form-text: $gray-medium;
 $input-border-color: $gray-light;
 $input-border-hover: $gray-dark;
 $input-not: $gray-medium;
