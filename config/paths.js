@@ -1,4 +1,5 @@
 // Define Butler path variables
+// NOTE: these paths are relative to the gulpfile
 
 var paths = {};
 
