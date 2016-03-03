@@ -10,11 +10,8 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 
-// Define path variables
-// @todo: these should all be changed to config variables
-var scss = ['source/code/sass/*.scss', 'source/code/sass/**/*.scss'];
-var css = 'source/code/css/';
-var sculpin = '/';
+// Fetch paths from config
+var paths = require('./config/paths.js');
 
 // Autoprefixer options
 // @todo: this might need to be set on a project basis (as a config variable)
@@ -26,15 +23,15 @@ var browserSupport = {
 // Stylelint options
 var stylelintConfig = {
   // point to the configuration file
-  // @todo: this might need to be set on a project basis (as a config variable)
-  configFile: 'config/linters/stylelint.config.json'
+  configFile: paths.stylelint
 };
 
 // Just run linters
 gulp.task('lint', function() {
-  return gulp.src(scss)
+  return gulp.src(paths.scss)
     .pipe(postcss([
       stylelint(stylelintConfig),
+      semanticnaming('bem'),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
 });
@@ -47,7 +44,7 @@ gulp.task('sass', function() {
     cssnano
   ];
   // Run on all file paths defined in var scsss
-  return gulp.src(scss)
+  return gulp.src(paths.scss)
     // Run Sass on those files
     .pipe(postcss([
       stylelint(stylelintConfig),
@@ -57,13 +54,13 @@ gulp.task('sass', function() {
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
-    .pipe(gulp.dest(css));
+    .pipe(gulp.dest(paths.css));
 });
 
 
 // Sculpin Development
-gulp.task('sculpin-watch', function () {
-  gulp.src(sculpin)
+gulp.task('sculpin', function () {
+  gulp.src(paths.sculpin)
     // Run the command line commands to watch sculpin
     .pipe(exec('sculpin generate --watch --server'));
 });
@@ -73,7 +70,7 @@ gulp.task('watch', function() {
   return gulp
     // Watch the scss folder for change
     // and run `compile-sass` task when something happens
-    .watch(scss, ['sass'])
+    .watch(paths.scss, ['sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
@@ -82,8 +79,10 @@ gulp.task('watch', function() {
 });
 
 // Set Develop task
-gulp.task('develop', ['compile-sass', 'sculpin-watch', 'watch']);
+gulp.task('develop', ['sass', 'sculpin', 'watch']);
 
+// Set a test task
+gulp.task('test', ['lint']);
 
 
 //  Set default task

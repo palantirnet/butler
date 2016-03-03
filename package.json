@@ -26,10 +26,10 @@
     "gulp-sass": "^2.2.0",
     "install": "^0.5.4",
     "npm": "^3.7.5",
-    "postcss-bem-linter": "^2.3.3",
     "postcss-reporter": "^1.3.3",
     "postcss-scss": "^0.1.6",
     "stylelint": "^4.4.0",
+    "stylelint-selector-bem-pattern": "^0.2.1",
     "zen-grids": "^2.0.1"
   }
 }
