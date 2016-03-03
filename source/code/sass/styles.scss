@@ -29,3 +29,10 @@
 
 /* print rules */
 @import "print";
+
+/** @define component **/
+// This component will fail
+// keeping for testing purposes
+.Best-Class-Ever {
+  background:red;
+}

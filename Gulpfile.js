@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var exec = require('gulp-exec');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
-var semanticnaming = require('postcss-bem-linter');
 var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
@@ -31,7 +30,6 @@ gulp.task('lint', function() {
   return gulp.src(paths.scss)
     .pipe(postcss([
       stylelint(stylelintConfig),
-      semanticnaming('bem'),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
 });

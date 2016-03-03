@@ -3,6 +3,15 @@
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
+    "selector-bem-pattern": {
+      "componentName": "[a-z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "declaration-colon-space-after": "always",
@@ -23,15 +32,7 @@
     "selector-list-comma-newline-after": "always",
     "selector-no-id": true,
     "string-quotes": "double",
-    "value-no-vendor-prefix": true,
-    "selector-bem-pattern": {
-      "componentName": "[A-Z]+",
-      "componentSelectors": {
-        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
-        "combined": "^\\.combined-{componentName}-[a-z]+$"
-      },
-      "utilitySelectors": "^\\.util-[a-z]+$"
-    }
+    "value-no-vendor-prefix": true
   }
 }
 
