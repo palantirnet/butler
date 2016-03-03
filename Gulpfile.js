@@ -30,8 +30,8 @@ var stylelintConfig = {
   configFile: 'config/linters/stylelint.config.json'
 };
 
-// Lint the Sass styles
-gulp.task('style-lint', function() {
+// Just run linters
+gulp.task('lint', function() {
   return gulp.src(scss)
     .pipe(postcss([
       stylelint(stylelintConfig),
@@ -40,7 +40,7 @@ gulp.task('style-lint', function() {
 });
 
 // Compile Sass
-gulp.task('compile-sass', function() {
+gulp.task('sass', function() {
   // Set what postcss plugins need to be run
   var processors = [
     autoprefixer(browserSupport),
@@ -49,6 +49,10 @@ gulp.task('compile-sass', function() {
   // Run on all file paths defined in var scsss
   return gulp.src(scss)
     // Run Sass on those files
+    .pipe(postcss([
+      stylelint(stylelintConfig),
+      reporter({ clearMessages: true })
+    ], {syntax: syntax_scss}))
     .pipe(sass().on('error',sass.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
@@ -69,7 +73,7 @@ gulp.task('watch', function() {
   return gulp
     // Watch the scss folder for change
     // and run `compile-sass` task when something happens
-    .watch(scss, ['compile-sass'])
+    .watch(scss, ['sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
