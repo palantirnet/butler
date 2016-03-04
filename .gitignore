@@ -2,6 +2,7 @@ Rakefile
 .DS_Store
 .sass-cache/
 _site/
-output_dev/
-output_prod/
+STYLEGUIDE_TEMPLATE/output_dev/
+STYLEGUIDE_TEMPLATE/output_prod/
 node_modules/
+.idea/
