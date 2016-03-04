@@ -3,9 +3,16 @@ The beginnings of a Sculpin based style guide creation tool.
 
 ## Dependencies
 1. NodeJS 
+1. [Sculpin](https://sculpin.io/getstarted/)
 
 ## Getting Started
-1.  From inside the project root, run `npm install`
+1.  From inside the Butler root, run `npm install -g gulp`
+    
+    This will install Gulp globally. 
+    
+    _some commands may require being run as `sudo`_
+
+1.  run `npm install`
 		
     This will install all of the npm dependencies for Butler.
 
@@ -18,16 +25,14 @@ The beginnings of a Sculpin based style guide creation tool.
 
 *  `gulp test`
 
-    This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [LINTERS.md](/docs/LINTERS.md).
+    This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [linters documentation](/docs/LINTERS.md).
 
 ## Making Changes to Butler
-Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project. If you would like to add additional functionality please do so to the butler package and create a PR. 
+Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
 
-If you are adding additional functionality you will have to also update the `npm-shrinkwrap.json` by running `update <package_name>`. You _must_ specify the exact package that needs to be updated and then re-run `npm shrinkwrap --dev` to update the `npm-shrinkwrap.json`.
-
-_To check which files have become outdated run `npm outdated`_
-
-For more information on contributing to this project check the [CONTRIBUTING.md](/docs/CONTRIBUTING.md).
+For more information on contributing to this project check the [contributing documentation](/docs/CONTRIBUTING.md).
 
 ## Troubleshooting
-For now, if you have comments/questions/concerns about working with this please talk to Lauren.
+For immediate concerns, if you have comments/questions/concerns about working with this please talk to Lauren.
+
+To file bug or feature requests, please use the GitHub issue queue for this repository. You can see more about our Issue Guidelines in the [contributing documentation](/docs/CONTRIBUTING.md).

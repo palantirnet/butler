@@ -1,6 +1,12 @@
 # Contributing
 
+If you would like to add additional functionality please do so, and create a PR. 
+
 Any and all are encouraged to contribute! There are three primary ways to do so: creating issues, submitting pull requests (PRs), and reviewing issues and PRs.
+
+If you are adding additional functionality you will have to also update the `npm-shrinkwrap.json` by running `update <package_name>`. You _must_ specify the exact package that needs to be updated and then re-run `npm shrinkwrap --dev` to update the `npm-shrinkwrap.json`.
+    
+_To check which files have become outdated run `npm outdated`_
 
 ## Review Process
 
@@ -58,3 +64,5 @@ Commits should be atomic: the commit should be an indivisible and irreducible ch
     the rest as the body. The blank line separating the summary from
     the body is critical (unless you omit the body entirely); tools
     like rebase can get confused if you run the two together.
+    
+    
