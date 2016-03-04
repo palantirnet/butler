@@ -11,13 +11,12 @@ options.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
 options.stylelint = { configFile: paths.stylelint };
 
 // Deploy message
-options.message = { 'Updated with Butler - [timestamp]' };
+// options.message = { "Updated with Butler - [timestamp]" };
 
 // Deploy options
 // point to the correct repo & include deploy message
 options.deploy = {
-  remoteUrl: paths.repo,
-  message: options.message
+  remoteUrl: paths.repo
 };
 
 module.exports = options;
