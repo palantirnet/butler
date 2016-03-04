@@ -27,6 +27,10 @@ The beginnings of a Sculpin based style guide creation tool.
 
     This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [linters documentation](/docs/LINTERS.md).
 
+*   `gulp deploy`
+
+    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
+
 ## Making Changes to Butler
 Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
 
