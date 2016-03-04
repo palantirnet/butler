@@ -10,18 +10,14 @@ var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
 
-// Fetch paths from config
-var paths = require('./config/paths.js');
-
-// Fetch options from config
-var options = require('./config/options.js');
-
+// Fetch config
+var defaults = require('./config/butler.defaults.js');
 
 // Just run linters
 gulp.task('lint', function() {
-  return gulp.src(paths.scss)
+  return gulp.src(defaults.scss)
     .pipe(postcss([
-      stylelint(options.stylelint),
+      stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
 });
@@ -30,27 +26,27 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
   // Set what postcss plugins need to be run
   var processors = [
-    autoprefixer(options.autoprefixer),
+    autoprefixer(defaults.autoprefixer),
     cssnano
   ];
-  // Run on all file paths defined in var scsss
-  return gulp.src(paths.scss)
+  // Run on all file defaults defined in var scsss
+  return gulp.src(defaults.scss)
     // Run Sass on those files
     .pipe(postcss([
-      stylelint(stylelintConfig),
+      stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
     .pipe(sass().on('error',sass.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest(defaults.css));
 });
 
 
 // Sculpin Development
 gulp.task('sculpin', function () {
-  gulp.src(paths.sculpin)
+  gulp.src(defaults.sculpin)
     // Run the command line commands to watch sculpin
     .pipe(exec('sculpin generate --watch --server'));
 });
@@ -58,9 +54,9 @@ gulp.task('sculpin', function () {
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
-    // Watch the scss folder for change
-    // and run `compile-sass` task when something happens
-    .watch(paths.scss, ['sass'])
+  // Watch the scss folder for change
+  // and run `compile-sass` task when something happens
+    .watch(defaults.scss, ['sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
@@ -76,8 +72,8 @@ gulp.task('test', ['lint']);
 
 // Set a deploy task
 gulp.task('deploy', function() {
-  return gulp.src(paths.output)
-    .pipe(deploy(options.deploy));
+  return gulp.src(defaults.output)
+    .pipe(deploy(defaults.deploy));
 });
 
 

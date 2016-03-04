@@ -5,7 +5,12 @@ The beginnings of a Sculpin based style guide creation tool.
 1. NodeJS 
 1. [Sculpin](https://sculpin.io/getstarted/)
 
-## Getting Started
+## Add Butler to a project
+1.   If the project does not already have npm dependencies run `npm init` to create a `package.json` file
+
+1.   Add Butler as a dependency by running `npm install --save git://github.com/palantirnet/butler.git#remove-ruby`
+
+## Getting Started with Butler
 1.  From inside the Butler root, run `npm install -g gulp`
     
     This will install Gulp globally. 
