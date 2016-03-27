@@ -1,0 +1,21 @@
+sculpin:
+  permalink: pretty
+  ignore:
+    # Sass code doesn't need to be sent to the live server.
+    - "code/sass/"
+    - "test-results"
+sculpin_content_types:
+    styleguides:
+        type: path
+        path: styleguide
+        singular_name: styleguide
+        permalink: styleguide/:title/
+        taxonomies:
+          - colors
+sculpin_twig:
+  # Sculpin defaults to "_views" as the folder for templates. "code" is used
+  # as a parent directory to separate templates/css/js etc from the "content".
+  # In a more complex site, the "code" and "content" folders might even be
+  # separate git submodules.
+  source_view_paths:
+    - "code/_views"

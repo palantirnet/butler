@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Layout rules for one third / two thirds (33/66) content
+ */
+
+.l-33-66--1 {
+  @include zen-new-row();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(4,1);
+  }
+}
+
+.l-33-66--2 {
+  @include zen-new-row();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-new-row(none);
+    @include zen-grid-item(8,5);
+  }
+}

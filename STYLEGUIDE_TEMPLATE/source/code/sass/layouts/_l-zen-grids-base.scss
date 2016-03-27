@@ -1,0 +1,66 @@
+/**
+ * @file
+ * Define zen grids base settings here.
+ * @see http://zengrids.com
+ */
+
+// We are going to create a 980px wide, 12 column grid with 48px gutters between
+// columns (applied as 24px of left/right padding on each column).
+$zen-columns: 12;
+$zen-gutters: $base-line-height * 2;
+
+// If you need IE6/7 support for box-sizing: border-box (default), see _base.scss
+//$zen-box-sizing: content-box;
+
+
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: true;
+// $zen-auto-include-flow-item-base: false;
+
+/*
+ * Center the page.
+ */
+
+.container {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 260px; /* enforces a min-width in FF. */
+  @include breakpoint($bp1) { width: 90%; }
+  @include breakpoint($bp2) { max-width: 1400px; }
+}
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+// See the note about $zen-auto-include-item-base above.
+
+.container,
+.grid-item {
+  @include zen-grid-item-base();
+}
+
+/*
+ * Containers for grid items and flow items.
+ */
+
+.container {
+  @include zen-grid-container();
+}
+
+// Dynamically alters the outside padding on zengrid containers
+.container {
+  padding-left: 0;
+  padding-right: 0; 
+// For example:
+//  @include breakpoint($bp1){
+//    padding-left: ($zen-gutter-width / 4);
+//    padding-right: ($zen-gutter-width / 4);
+//  }
+//  @include breakpoint($bp2){
+//    padding-left: ($zen-gutter-width / 2);
+//    padding-right: ($zen-gutter-width / 2);
+//  }
+}

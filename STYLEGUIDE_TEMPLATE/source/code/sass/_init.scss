@@ -1,0 +1,186 @@
+//
+// Initialization partial
+//
+// To make it easier to use all variables and mixins in any Sass file in this
+// theme, each .scss file has a @import "init" declaration. And this _init.scss
+// file is in charge of importing all the other partials needed for the theme.
+//
+// This initialization partial is organized in this way:
+// - First we set any shared Sass variables.
+// - Next we import Compass plug-ins (Sass mixin libraries).
+// - Last we define our custom mixins for this theme.
+//
+
+
+// =============================================================================
+// Variables
+// =============================================================================
+
+//
+// Legacy IE support
+//
+// These variables are used by many mixins to add additional CSS to support
+// specific versions of IE or specific vendor prefixes.
+//
+// IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
+// - Drop support for IE 6/7. :-) Set $legacy-support-for-ie6
+//   and $legacy-support-for-ie7 to false.
+// - (Preferred) Install the box-sizing polyfill and set the variable below to
+//   the absolute path URL to the boxsizing.htc file.
+//   @see https://github.com/Schepp/box-sizing-polyfill
+//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
+// - Use the same CSS unit for grid and gutter width in resonsive-sidebars.scss
+//   (use px for both or use % for both) and set the box-sizing variable to content-box.
+//
+// Zen does not require special handling for IE8 or later. But Compass uses that
+// variable for a couple edge cases. We include it for completeness sake. See
+// the documentation at http://compass-style.org/reference/compass/support/
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
+
+//
+// Font faces, stacks and sizes.
+//
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size: 15px; // The font size set on the root html element.
+$base-line-height: 12px; // This line-height determines the basic unit of vertical rhythm.
+
+// Modular Scale
+// Major Third: 16px @ 1:1.25
+$xl-heading: 2.44 * $base-font-size;
+$lg-heading: 1.95 * $base-font-size;
+$md-heading: 1.56 * $base-font-size;
+$sm-heading: 1.25 * $base-font-size;
+$text: 1 * $base-font-size;
+$label: .8 * $base-font-size;
+$crumb: .6 * $base-font-size;
+
+$h1-font-size: $lg-heading;
+$h2-font-size: $md-heading;
+$h3-font-size: $sm-heading;
+$h4-font-size: $text;
+$h5-font-size: $label;
+$h6-font-size: $label;
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+//
+// A user's web browser will look at the comma-separated list and will
+// attempt to use each font in turn until it finds one that is available
+// on the user's computer. The final "generic" font (sans-serif, serif or
+// monospace) hints at what type of font to use if the web browser doesn't
+// find any of the fonts in the list.
+
+// First, let's create some font stacks.
+$times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia: Georgia, "Times New Roman", "DejaVu Serif", serif;
+$verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2510/02/12/fixed-monospace-sizing/
+$courier: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $helvetica; // The font family set on the html element.
+$font-monospace: $courier;
+
+// Sass color variables, etc.
+$black: #222222;
+$gray-dark: #444444;
+$gray-medium: #888888;
+$gray-light: #F0F0F0;
+$off-white: #fbfbfb;
+$white: #ffffff;
+$white-60: rgba($white, .6);
+$white-30: rgba($white, .3);
+
+// Use above sass variables to define defaults in normalize.scss
+/* body */
+$text-color: $gray-dark;
+$background-color: $white;
+/* Link (a:) */
+$link-color: $gray-medium;
+$link-hover: $gray-light;
+/* Blockquote*/
+$blockquote-color: $gray-medium;
+/* Figcaption */
+$figcaption-color: $gray-medium;
+/* forms */
+$form-text: $gray-medium;
+$input-border-color: $gray-light;
+$input-border-hover: $gray-dark;
+$input-not: $gray-medium;
+$input-not-background: $gray-light;
+$input-not-border: $gray-medium;
+$input-not-hover: $gray-dark;
+$input-focus-outline: $gray-dark;
+$input-disabled-background: $gray-light;
+$input-disabled-text: $gray-medium;
+$input-disabled-not-background: $gray-light;
+$input-disabled-not-text: $gray-medium;
+$input-readonly-text: $gray-medium;
+$input-readonly-background: $gray-light;
+$input-readonly-border: $gray-medium;
+$input-invalid-text: #b94a48;
+$input-invalid-border: #ee5f5b;
+$input-invalid-border-focus: #e9322d;
+$input-check-outline: #e9322d;
+$select-background: $white;
+$select-border: $gray-light;
+$select-border-hover: $gray-medium;
+$placeholder-text: $gray-light;
+/* Buttons */
+$button-background: $gray-medium;
+$button-text: $white;
+$button-hover-background: $gray-dark;
+$button-hover-text: $white;
+$button-focus-outline: $gray-dark;
+$button-reset-text: $gray-medium;
+$button-reset-text-hover: $gray-dark;
+///////////////////////////////////////////////////////////
+
+// Breakpoint Variables
+$bp1: 600px;
+$bp2: 900px;
+$bp3: 1100px;
+
+// Vertical spacing unit
+$slug: rhythm(8);
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: rhythm(1);
+
+// Hover state effects
+$timing: .5s;
+$easing: ease-out;
+
+
+
+
+// =============================================================================
+// Partials to be shared with all .scss files.
+// =============================================================================
+
+// Add the Zen Grids responsive layout mixins.
+@import "../../../../node_modules/zen-grids/sass/zen-grids";
+@import "../../../../node_modules/zen-grids/sass/zen-grids/functions";
+@import "../../../../node_modules/zen-grids/sass/zen-grids/background";
+@import "../../../../node_modules/zen-grids/sass/zen-grids/flow";
+// Add the Breakpoint mixin.
+@import "../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+// Now we add our custom helper mixins.
+@import "mixins";
