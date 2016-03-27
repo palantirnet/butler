@@ -1,5 +1,5 @@
 # Butler
-The beginnings of a Sculpin based style guide creation tool. 
+The beginnings of a Sculpin-based style guide creation tool. 
 
 ## Dependencies
 1. NodeJS 
@@ -11,28 +11,24 @@ The beginnings of a Sculpin based style guide creation tool.
 1.   Add Butler as a dependency by running `npm install --save git://github.com/palantirnet/butler.git#remove-ruby`
 
 ## Getting Started with Butler
-1.  From inside the Butler root, run `npm install -g gulp`
+1.  From inside the Butler root, run `npm install`
     
-    This will install Gulp globally. 
+    This will install all of the npm dependencies for Butler.
     
     _some commands may require being run as `sudo`_
 
-1.  run `npm install`
-		
-    This will install all of the npm dependencies for Butler.
-
-1.  Run `gulp` or `gulp develop` and begin developing normally
+1.  Run `npm run butler` and begin developing normally
 
 ## What does this Butler do
-*  `gulp develop`/`gulp` 
+*  `npm run butler` 
     
     This is the default task. This will watch your sass/sculpin files for changes and compile/build accordingly. It will also flag any sass linting errors before compiling. It will output CSS that has been been minified and optimized. 
 
-*  `gulp test`
+*  `npm run linting`
 
     This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [linters documentation](/docs/LINTERS.md).
 
-*   `gulp deploy`
+*   `npm run deploy`
 
     This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
 
