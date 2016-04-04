@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/palantirnet/butler/issues"
   },
+  "bin": {
+    "butler": ".bin/butler"
+  },
   "homepage": "https://github.com/palantirnet/butler#readme",
   "dependencies": {
     "autoprefixer": "^6.3.3",
