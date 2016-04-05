@@ -1,5 +1,5 @@
 {
-  "name": "butler",
+  "name": "@palantirnet/butler",
   "version": "2.0.0",
   "description": "This is a stater-kit for Palantir.net style guide",
   "main": "Gulpfile.js",
@@ -16,9 +16,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/palantirnet/butler/issues"
-  },
-  "bin": {
-    "butler": "./bin/butler"
   },
   "homepage": "https://github.com/palantirnet/butler#readme",
   "dependencies": {
