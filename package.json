@@ -1,5 +1,5 @@
 {
-  "name": "@palantirnet/butler",
+  "name": "butler",
   "version": "2.0.0",
   "description": "This is a stater-kit for Palantir.net style guide",
   "main": "Gulpfile.js",
