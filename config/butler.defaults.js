@@ -10,8 +10,6 @@ defaults.css = '../../styleguide/source/code/css/';
 defaults.sculpin = '../../styleguide/';
 // location of the compiled output
 defaults.output = '../../styleguide/output_dev';
-// location of the remote repository
-defaults.repo = 'https://github.com/palantirnet/butler.git';
 
 // Autoprefixer defaults
 // Support 2 most recent browser versions and anything with more than 5% support
