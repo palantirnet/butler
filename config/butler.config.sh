@@ -4,6 +4,3 @@ echo -e "Please provide the repository link for this project. Eg: https://github
 read project_repo
 echo "defaults.repo = \"$project_repo\";" >> butler.defaults.js
 module.exports = butler.defaults.js;
-
-esac
-
