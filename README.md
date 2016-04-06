@@ -10,12 +10,6 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 1.   Add Butler as a dependency by running `npm install --save palantirnet/butler`
 
-1.  From inside the Butler root, run `npm install`
-    
-    This will install all of the npm dependencies for Butler.
-    
-    _some commands may require being run as `sudo`_
-
 1.  Duplicate `STYLEGUIDE_TEMPLATE` rename and add it to the project's root directory
 
 1.  Run `npm run butler` and begin developing normally
