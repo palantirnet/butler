@@ -12,6 +12,16 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 1.  Duplicate `STYLEGUIDE_TEMPLATE` rename and add it to the project's root directory
 
+1.  Add the following code to your project's `package.json`
+
+````
+"scripts": {
+	"butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop",
+	"linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",
+	"deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"
+},
+````
+
 1.  Run `npm run butler` and begin developing normally
 
 ## What does this Butler do
