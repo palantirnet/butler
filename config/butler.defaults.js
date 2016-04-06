@@ -3,13 +3,13 @@
 var defaults = {};
 
 // location of the .scss files
-defaults.scss = ['STYLEGUIDE_TEMPLATE/source/code/sass/*.scss', 'STYLEGUIDE_TEMPLATE/source/code/sass/**/*.scss'];
+defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'];
 // location of the compiled CSS
-defaults.css = 'STYLEGUIDE_TEMPLATE/source/code/css/';
+defaults.css = '../../styleguide/source/code/css/';
 // location of the sculpin project root
-defaults.sculpin = 'STYLEGUIDE_TEMPLATE//';
+defaults.sculpin = '../../styleguide/';
 // location of the compiled output
-defaults.output = 'STYLEGUIDE_TEMPLATE/output_dev';
+defaults.output = '../../styleguide/output_dev';
 // location of the remote repository
 defaults.repo = 'https://github.com/palantirnet/butler.git';
 
