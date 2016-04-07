@@ -3,7 +3,14 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 ## Dependencies
 1. NodeJS 
+   1. __Recommended method__: To intall NodeJS using Homebrew run 'brew install node' 
+   2. To install NodeJS without Homebrew, visit https://nodejs.org/en/download/ and select the correct file download. Follow the instructions here.
 1. [Sculpin](https://sculpin.io/getstarted/)
+    1. To install Sculpin on your machine, run the following commands from:
+    2. 'curl -O https://download.sculpin.io/sculpin.phar'
+    3. 'chmod +x sculpin.phar'
+    4. 'mv sculpin.phar sculpin'
+    5. 'mv sculpin ~/bin/'
 
 ## Add Butler to a project
 1.   If the project does not already have npm dependencies run `npm init` to create a `package.json` file
