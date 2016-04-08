@@ -175,12 +175,12 @@ $easing: ease-out;
 // =============================================================================
 
 // Add the Zen Grids responsive layout mixins.
-@import "../../../../node_modules/zen-grids/sass/zen-grids";
-@import "../../../../node_modules/zen-grids/sass/zen-grids/functions";
-@import "../../../../node_modules/zen-grids/sass/zen-grids/background";
-@import "../../../../node_modules/zen-grids/sass/zen-grids/flow";
+@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids";
+@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/functions";
+@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/background";
+@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/flow";
 // Add the Breakpoint mixin.
-@import "../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../../../../node_modules/butler/node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 // Now we add our custom helper mixins.
 @import "mixins";
