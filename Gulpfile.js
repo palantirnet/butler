@@ -13,6 +13,12 @@ var deploy = require('gulp-gh-pages');
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
 
+// Add local config on top; this file should not define an empty defaults var.
+try {
+  var defaults = require('../../conf/butler.defaults.js');
+}
+catch (e) {}
+
 // Just run linters
 gulp.task('lint', function() {
   return gulp.src(defaults.scss)
