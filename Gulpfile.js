@@ -48,7 +48,7 @@ gulp.task('sass', function() {
 gulp.task('sculpin', function () {
   gulp.src(defaults.sculpin)
     // Run the command line commands to watch sculpin
-    .pipe(exec('sculpin generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
 });
 
 // Watch for Changes
