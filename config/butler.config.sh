@@ -1,15 +1,23 @@
 #!/bin/bash
 
-echo "// Project-specific Butler configuration." > ../../conf/butler.defaults.js
-echo "" >> ../../conf/butler.defaults.js
+config = "../../conf/butler.defaults.js"
+json = "../../package.json"
 
-if [ -r ../../package.json ]
+echo "// Project-specific Butler configuration." > $config
+echo "" >> $config
+
+if [ -r $json ]
 then
-  sed -i '6i\"scripts": {"butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop","linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",	"deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"},' ../../package.json
+  sed -i '6i\"scripts": {"butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop","linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",	"deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"},' $json
 fi
 
-echo "Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
-read project_repo
-echo "defaults.repo = \"$project_repo\";" >> ../../conf/butler.defaults.js
+if [ -r $config ]
+then
+	echo "Thanks for using Butler! You're ready to start developing!"
+else
+	echo "Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
+	read project_repo
+	echo "defaults.repo = \"$project_repo\";" >> $config
 
-echo "Save your project wide settings by committing your new package.json and conf/butler.defaults.js. Thanks for using Butler!"
+	echo "Save your project wide settings by committing your new package.json and conf/butler.defaults.js. Thanks for using Butler!"
+fi
