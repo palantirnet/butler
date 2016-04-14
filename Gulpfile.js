@@ -13,6 +13,12 @@ var deploy = require('gulp-gh-pages');
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
 
+// Add local config on top; this file should not define an empty defaults var.
+try {
+  var defaults = require('../../conf/butler.defaults.js');
+}
+catch (e) {}
+
 // Just run linters
 gulp.task('lint', function() {
   console.log('Running linters...');
@@ -52,7 +58,7 @@ gulp.task('sculpin', function () {
   console.log('Building sculpin...');
   gulp.src(defaults.sculpin)
     // Run the command line commands to watch sculpin
-    .pipe(exec('sculpin generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
 });
 
 // Build Sculpin Production Artifact

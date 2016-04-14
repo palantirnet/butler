@@ -13,6 +13,9 @@ defaults.output_dev = '../../styleguide/output_dev';
 // production files to be deployed
 defaults.output_prod = '../../styleguide/output_prod/**/*';
 
+// location of sculpin.phar
+defaults.sculpin_run = '../../vendor/bin/sculpin';
+
 // Autoprefixer defaults
 // Support 2 most recent browser versions and anything with more than 5% support
 defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
