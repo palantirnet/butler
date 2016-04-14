@@ -15,15 +15,18 @@ var defaults = require('./config/butler.defaults.js');
 
 // Just run linters
 gulp.task('lint', function() {
+  console.log('Running linters...');
   return gulp.src(defaults.scss)
     .pipe(postcss([
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
+    .on('end', function(){ console.log('Linting complete'); })
 });
 
 // Compile Sass
 gulp.task('sass', function() {
+  console.log('Running Sass and PostCSS...');
   // Set what postcss plugins need to be run
   var processors = [
     autoprefixer(defaults.autoprefixer),
@@ -46,9 +49,19 @@ gulp.task('sass', function() {
 
 // Sculpin Development
 gulp.task('sculpin', function () {
+  console.log('Building sculpin...');
   gulp.src(defaults.sculpin)
     // Run the command line commands to watch sculpin
     .pipe(exec('sculpin generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+});
+
+// Build Sculpin Production Artifact
+gulp.task('sculpin-prod', function () {
+  console.log('Building production artifact...');
+  gulp.src(defaults.sculpin)
+    // Run the command line commands to build sculpin production artifact
+    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin + '"'))
+    .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
 // Watch for Changes
@@ -71,9 +84,11 @@ gulp.task('develop', ['sass', 'sculpin', 'watch']);
 gulp.task('test', ['lint']);
 
 // Set a deploy task
-gulp.task('deploy', function() {
-  return gulp.src(defaults.output)
-    .pipe(deploy(defaults.deploy));
+gulp.task('deploy', ['sculpin-prod'], function() {
+  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+  return gulp.src(defaults.output_prod)
+    .pipe(deploy(defaults.deploy))
+    .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
 });
 
 
