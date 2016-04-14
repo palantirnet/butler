@@ -3,7 +3,12 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 ## Dependencies
 1. NodeJS 
+   1. To intall NodeJS using Homebrew run `brew install node` 
 1. [Sculpin](https://sculpin.io/getstarted/)
+    1. `curl -O https://download.sculpin.io/sculpin.phar`
+    2. `chmod +x sculpin.phar`
+    3. `mv sculpin.phar sculpin` or if you are using vagrant run `sudo -H mv sculpin.phar /bin/sculpin` and skip step 4
+    4. `mv sculpin ~/bin/` 
 
 ## Add Butler to a project
 1.   If the project does not already have npm dependencies run `npm init` to create a `package.json` file
@@ -39,7 +44,7 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 *   `npm run deploy`
 
-    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
+    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". *Note: When you are deploying, Butler will ask you for your github credentials multiple times. Enter your own github credentials as prompted.*
 
 ## Making Changes to Butler
 Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
