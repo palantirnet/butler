@@ -2,7 +2,7 @@
 
 var defaults = {};
 
-// location of the .scss files
+// .scss files
 defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'];
 // location of the compiled CSS
 defaults.css = '../../styleguide/source/code/css/';
@@ -10,6 +10,8 @@ defaults.css = '../../styleguide/source/code/css/';
 defaults.sculpin = '../../styleguide/';
 // location of the compiled output
 defaults.output = '../../styleguide/output_dev';
+// production files to be deployed
+defaults.output = '../../styleguide/output_prod/**/*';
 
 // Autoprefixer defaults
 // Support 2 most recent browser versions and anything with more than 5% support
