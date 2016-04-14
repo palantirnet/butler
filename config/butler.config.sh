@@ -10,7 +10,7 @@ echo "" >> $config
 
 if [ -r $json ]
 then
-	sed -i "s/$match/$match\n$scripts/" $json
+	jq '. + "scripts": { "butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop", "linting": "gulp --gulpfile node_modules/butler/gulpfile.js test", "deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"},' <<< $json
 fi
 
 if [ -r $config ]
