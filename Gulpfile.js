@@ -86,7 +86,7 @@ gulp.task('test', ['lint']);
 // Set a deploy task
 gulp.task('deploy', ['sculpin-prod'], function() {
   console.log('Beginning deploy to gh-pages for' + defaults.repo);
-  return gulp.src(defaults.output)
+  return gulp.src(defaults.output_prod)
     .pipe(deploy(defaults.deploy))
     .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
 });
