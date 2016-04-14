@@ -15,7 +15,9 @@ A tool to automate front-end development tasks and streamline prototyping.
 1.   Add Butler as a dependency by running `npm install --save palantirnet/butler`
      
      When Butler is installing it will ask for the GitHub repository for your project. Please provide the HTTPS link for the project repository.
+     
      Example: `https://github.com/palantirnet/[project].git`
+     
      Butler will use this information to know where to deploy the styleguide to.
      
      During this step Butler will create a `butler.defaults.js` file in your project's `conf` directory. This will set the project defaults for Butler.
@@ -49,9 +51,13 @@ A tool to automate front-end development tasks and streamline prototyping.
 
 *   `npm run deploy`
 
-    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
+    This is a task to deploy the static styleguide to GitHub pages. 
     
-    *Note: When you are deploying, Butler will ask you for your GitHub credentials atleast once, possibly multiple times. Enter your own github credentials as prompted.*
+    Butler will build a Sculpin production artifact to `styleguide/output_prod` and deploy the production artifact to `gh-pages` branch of the repo defined in the `conf/butler.defaults.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]".
+    
+    You may want to create a `sculpin_site_prod.yml` to define the site URL once deployed. You can find out more information about environment aware configuration for Sculpin [here](https://sculpin.io/documentation/configuration/). 
+    
+    *Note: When you are deploying, Butler will ask you for your GitHub credentials at least once, possibly multiple times. Enter your own GitHub credentials as prompted.*
 
 ## Making Changes to Butler
 Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.

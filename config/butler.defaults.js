@@ -30,7 +30,8 @@ defaults.stylelint = { configFile: 'config/linters/stylelint.config.json' };
 // Deploy defaults
 // point to the correct repo & include deploy message
 defaults.deploy = {
-  remoteUrl: defaults.repo
+  remoteUrl: defaults.repo,
+  message: 'Updated with Butler - [timestamp]'
 };
 
 module.exports = defaults;
