@@ -44,7 +44,7 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 *   `npm run deploy`
 
-    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
+    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". *Note: When you are deploying, Butler will ask you for your github credentials multiple times. Enter your own github credentials as prompted.*
 
 ## Making Changes to Butler
 Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
