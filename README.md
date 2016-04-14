@@ -1,19 +1,24 @@
 # Butler
-The beginnings of a Sculpin-based style guide creation tool. 
+A tool to automate front-end development tasks and streamline prototyping.  
 
 ## Dependencies
 1. NodeJS 
    1. To intall NodeJS using Homebrew run `brew install node` 
 1. [Sculpin](https://sculpin.io/getstarted/)
-    1. `curl -O https://download.sculpin.io/sculpin.phar`
-    2. `chmod +x sculpin.phar`
-    3. `mv sculpin.phar sculpin` or if you are using vagrant run `sudo -H mv sculpin.phar /bin/sculpin` and skip step 4
-    4. `mv sculpin ~/bin/` 
+    
+     By default Butler expects your project to include Sculpin as a Composer dependency. 
+     You can change this by updating the `defaults.sculpin_run` setting. If you're using a global Sculpin install the `defaults.sculpin_run` variable should be set to `sculpin`.
 
 ## Add Butler to a project
 1.   If the project does not already have npm dependencies run `npm init` to create a `package.json` file
 
 1.   Add Butler as a dependency by running `npm install --save palantirnet/butler`
+     
+     When Butler is installing it will ask for the GitHub repository for your project. Please provide the HTTPS link for the project repository.
+     Example: `https://github.com/palantirnet/[project].git`
+     Butler will use this information to know where to deploy the styleguide to.
+     
+     During this step Butler will create a `butler.defaults.js` file in your project's `conf` directory. This will set the project defaults for Butler.
 
 1.  Duplicate `STYLEGUIDE_TEMPLATE`, rename it `styleguide`, and add it to the project's root directory
 
@@ -29,9 +34,9 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 1.  Run `npm run butler` and begin developing normally
 
-1.  Navigate to `localhost:8000` or `[project].local:8000` in your browser to see the styleguide
+1.  Navigate to `http://localhost:8000/` or `http://[project].local:8000/` in your browser to see the styleguide
 
-1.  Add `node_modules` to your project's `.gitignore` file and commit your project's new `package.json`
+1.  Add `node_modules` to your project's `.gitignore` file and commit your project's new `package.json` and `conf/butler.defaults.js`
 
 ## What does this Butler do
 *  `npm run butler` 
@@ -44,7 +49,9 @@ The beginnings of a Sculpin-based style guide creation tool.
 
 *   `npm run deploy`
 
-    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". *Note: When you are deploying, Butler will ask you for your github credentials multiple times. Enter your own github credentials as prompted.*
+    This is a task to deploy the static styleguide to GitHub pages. It will deploy to `gh-pages` branch of the repo defined in the `config/paths.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]". 
+    
+    *Note: When you are deploying, Butler will ask you for your GitHub credentials atleast once, possibly multiple times. Enter your own github credentials as prompted.*
 
 ## Making Changes to Butler
 Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
