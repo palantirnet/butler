@@ -5,7 +5,7 @@ echo "" >> ../../conf/butler.defaults.js
 
 if [ -r ../../package.json ]
 then
-  sed i '6i\"scripts": {"butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop","linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",	"deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"},' textpath >> ../../package.json
+  sed i '6i\"scripts": {"butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop","linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",	"deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"},' ../../package.json
 fi
 
 echo "Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
