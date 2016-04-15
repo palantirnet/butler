@@ -25,9 +25,10 @@ A tool to automate front-end development tasks and streamline prototyping.
 
   ````
   "scripts": {
-    "butler": "gulp --gulpfile node_modules/butler/gulpfile.js develop",
-    "linting": "gulp --gulpfile node_modules/butler/gulpfile.js test",
-    "deploy": "gulp --gulpfile node_modules/butler/gulpfile.js deploy"
+    "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+    "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+    "linting": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+    "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
   },
   ````
 1. Add the `node_modules` directory to your project's .gitignore
@@ -46,6 +47,10 @@ A tool to automate front-end development tasks and streamline prototyping.
 * `npm run butler`
 
   This is the default task. This will watch your sass/sculpin files for changes and compile/build accordingly. It will also flag any sass linting errors before compiling. It will output CSS that has been been minified and optimized.
+
+* `npm run butler -- sass`
+
+  Just compile the sass. You can also use this syntax to run any task from the Gulpfile.
 
 * `npm run linting`
 
