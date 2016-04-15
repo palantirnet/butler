@@ -63,7 +63,9 @@ A tool to automate front-end development tasks and streamline prototyping.
 
 ## Making Changes to Butler
 
-Please feel free to change/extend/break this Gulpfile to fit the specific needs of the project.
+You can modify Butler defaults on a per project basis by editing the `conf/butler.defaults.js` within your projects.
+
+If you would like to see additional functionality added to Butler please either create a PR or a GitHub issue, outlining the needs and requirements.
 
 For more information on contributing to this project check the [contributing documentation](/docs/CONTRIBUTING.md).
 
