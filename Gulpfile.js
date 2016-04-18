@@ -15,9 +15,16 @@ var defaults = require('./config/butler.defaults.js');
 
 // Add local config on top; this file should not define an empty defaults var.
 try {
-  var defaults = require('../../conf/butler.defaults.js');
+  var overrides = require('../../conf/butler.defaults.js');
+  //defaults = extend(defaults, overrides);
 }
 catch (e) {}
+
+// Helper function to merge to js objects.
+function extend(obj, src) {
+  Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+  return obj;
+}
 
 // Just run linters
 gulp.task('lint', function() {
