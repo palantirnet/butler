@@ -16,7 +16,7 @@ var defaults = require('./config/butler.defaults.js');
 // Add local config on top; this file should not define an empty defaults var.
 try {
   var overrides = require('../../conf/butler.defaults.js');
-  //defaults = extend(defaults, overrides);
+  defaults = extend(defaults, overrides);
 }
 catch (e) {}
 
