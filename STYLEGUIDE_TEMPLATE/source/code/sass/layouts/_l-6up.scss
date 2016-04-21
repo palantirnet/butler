@@ -3,55 +3,154 @@
  * Layout rules for 6-up content
  */
 
+.l-6up {
+  @include zen-grid-item-base();
+  @include zen-flow-item-width(12, 12, $omega-gutter: false);
+  float: left;
+
+  &:nth-of-type(2n+1) {
+
+    // act like a 2up at bp1
+    @include breakpoint($bp0 $bp1) {
+      @include zen-flow-item-width(6, 12, $omega-gutter: true);
+    }
+  }
+
+  &:nth-of-type(2n+2) {
+
+    // act like a 2up at bp1
+    @include breakpoint($bp0 $bp1) {
+      @include zen-flow-item-width(6, 12, $omega-gutter: false);
+    }
+  }
+
+  &:nth-of-type(3n+1) {
+
+    // act like a 3up at bp2
+    @include breakpoint($bp1 $bp2) {
+      @include zen-flow-item-width(4, 12, $omega-gutter: true);
+    }
+
+  }
+
+  &:nth-of-type(3n+2) {
+
+    // act like a 3up at bp2
+    @include breakpoint($bp1 $bp2) {
+      @include zen-flow-item-width(4, 12, $omega-gutter: false);
+    }
+  }
+
+  &:nth-of-type(3n+3) {
+
+    // act like a 3up at bp2
+    @include breakpoint($bp1 $bp2) {
+      @include zen-flow-item-width(4, 12, $omega-gutter: false, $alpha-gutter: true);
+    }
+  }
+
+  &:nth-of-type(4n+1) {
+    // act like a 4up at bp3
+    @include breakpoint($bp2 $bp3) {
+      @include zen-flow-item-width(3, 12, $omega-gutter: true);
+    }
+  }
+
+  &:nth-of-type(4n+2) {
+    // act like a 4up at bp3
+    @include breakpoint($bp2 $bp3) {
+      @include zen-flow-item-width(3, 12, $omega-gutter: false);
+    }
+  }
+
+  &:nth-of-type(4n+3),
+  &:nth-of-type(4n+4) {
+    // act like a 4up at bp3
+    @include breakpoint($bp2 $bp3) {
+      @include zen-flow-item-width(3, 12, $omega-gutter: false, $alpha-gutter: true);
+    }
+  }
+
+  &:nth-of-type(6n+1) {
+    // act like a 4up at bp3
+    @include breakpoint($bp3) {
+      @include zen-flow-item-width(2, 12, $omega-gutter: true);
+    }
+  }
+
+  &:nth-of-type(6n+2) {
+    // act like a 4up at bp3
+    @include breakpoint($bp3) {
+      @include zen-flow-item-width(2, 12, $omega-gutter: false);
+    }
+  }
+
+  &:nth-of-type(6n+3),
+  &:nth-of-type(6n+4),
+  &:nth-of-type(6n+5),
+  &:nth-of-type(6n+6) {
+    // act like a 4up at bp3
+    @include breakpoint($bp3) {
+      @include zen-flow-item-width(2, 12, $omega-gutter: false, $alpha-gutter: true);
+    }
+  }
+}
+
 .l-6up--1 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
-    @include zen-grid-item(2,1);
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
+    @include zen-grid-item(2, 1);
   }
 }
 
 .l-6up--2 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(2,3);
+    @include zen-grid-item(2, 3);
   }
 }
 
 .l-6up--3 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(2,5);
+    @include zen-grid-item(2, 5);
   }
 }
 
 .l-6up--4 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(2,7);
+    @include zen-grid-item(2, 7);
   }
 }
 
 .l-6up--5 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(2,9);
+    @include zen-grid-item(2, 9);
   }
 }
 
 .l-6up--6 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(2,11);
+    @include zen-grid-item(2, 11);
   }
 }

@@ -5,17 +5,21 @@
 
 .l-33-66--1 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
-    @include zen-grid-item(4,1);
+  @include zen-flow-item-width(12, 12, $omega-gutter: false);
+
+  @include breakpoint($bp1) {
+    @include zen-flow-item-width(4, 12, $omega-gutter: true);
+    @include zen-float(left);
   }
 }
 
 .l-33-66--2 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-flow-item-width(12, 12, $omega-gutter: false);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(8,5);
+    @include zen-flow-item-width(8, 12, $omega-gutter: false);
+    @include zen-float(left);
   }
 }
