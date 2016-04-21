@@ -24,6 +24,10 @@ defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
 // point to the configuration file
 defaults.stylelint = { configFile: 'config/linters/stylelint.config.json' };
 
+// Scss-ling defaults
+// point to the configuration file
+defaults.scss_lint = { configFile: 'config/linters/scss-lint.yaml' };
+
 // Deploy message
 // defaults.message = { 'Updated with Butler - [timestamp]' };
 
