@@ -7,7 +7,9 @@ defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/s
 // location of the compiled CSS
 defaults.css = '../../styleguide/source/code/css/';
 // location of the sculpin project root
-defaults.sculpin = '../../styleguide/';
+defaults.sculpin_dir = '../../styleguide/';
+// location of the sculpin files
+defaults.sculpin_files = ['../../styleguide/source/*.html', '../../styleguide/source/**/*.html'];
 // location of the compiled output
 defaults.output_dev = '../../styleguide/output_dev';
 // production files to be deployed
@@ -22,7 +24,7 @@ defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
 
 // Stylelint defaults
 // point to the configuration file
-defaults.stylelint = { configFile: 'config/linters/scss-lint.yaml' };
+defaults.stylelint = { configFile: 'config/linters/.stylelintrc' };
 
 // Deploy message
 // defaults.message = { 'Updated with Butler - [timestamp]' };

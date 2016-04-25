@@ -1,0 +1,10 @@
+{
+	"extends": "stylelint-config-standard",
+  "ignoreFiles": [
+  		'../../styleguide/source/code/sass/styles.scss',
+  		'../../styleguide/source/code/sass/_init.scss'
+  		],
+  "rules": {
+			"declaration-block-properties-order": ["position", "top", "right", "bottom", "left", "display", "float", "clear", "transform", "visibility", "opacity", "z-index", "width", "min-width", "max-width", "height", "min-height", "max-height", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left", "outline", "border", "border-top", "border-right", "border-bottom", "border-left", "border-width", "border-top-width", "border-right-width", "border-bottom-width", "border-left-width", "border-style", "border-top-style", "border-right-style", "border-bottom-style", "border-left-style", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius", "border-color", "border-top-color", "border-right-color", "border-bottom-color", "border-left-color", "box-shadow", "background", "background-color", "background-image", "background-repeat", "background-position", "background-size", "columns", "column-gap", "column-fill", "column-rule", "column-span", "column-count", "column-width", "overflow", "list-style", "caption-side", "table-layout", "border-collapse", "border-spacing", "empty-cells", "vertical-align", "color", "text-align", "text-indent", "text-transform", "text-decoration", "text-rendering", "text-shadow", "text-overflow", "line-height", "white-space", "letter-spacing", "white-space", "font", "font-family", "font-size", "font-weight", "font-smoothing", "font-style", "content", "cursor", "quotes", "transition", "animation", "animation-name", "animation-duration", "animation-timing-function", "animation-delay", "animation-iteration-count", "animation-direction", "animation-fill-mode", "animation-play-state"]
+  }
+}
