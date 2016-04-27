@@ -14,9 +14,9 @@ As a major part of the Palantir Tool Chain, this repository should be continuall
 
 1. Modifications to the default tool chain should be reviewed during Sprint Retrospectives.
 1. If those modifications are found valuable to the Palantir tool chain as a whole, they should be brought up as a topic at bi-weekly DEFEND meetings.
-1. Such meetings will be used as an open forum for debate and/or voting on the issue.
+1. Such meetings will be used as an open forum for debate and/or vote on the issue.
 1. Should the issue be approved by DEFEND, one would create an PR against this repository (following the above stated standards) to incorporate the work into the base toolchain.
-1. PRs are eligible to be merged once when there is consensus and approval from a Senior Designer and Senior Front End Developer in the case of changes to HTML/CSS/JS, and in the case of changes to Butler, it requires approval from Lauren and Ryan.
+1. PRs are eligible to be merged once when there is consensus and approval from a Senior Designer and Senior Front-End Developer.
 
 Issue, PR and Commit Guidelines below generally followed those outlined in the [documentation repo](https://github.com/palantirnet/development_documentation/blob/master/CONTRIBUTING.md)
 
