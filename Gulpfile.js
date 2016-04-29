@@ -9,6 +9,7 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
+var a11y = require('gulp-a11y');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -26,7 +27,7 @@ function extend(obj, src) {
   return obj;
 }
 
-// Just run linters
+// Just run Sass linter
 gulp.task('lint', function() {
   console.log('Running linters...');
   return gulp.src(defaults.scss)
@@ -37,10 +38,19 @@ gulp.task('lint', function() {
     .on('end', function(){ console.log('Linting complete'); })
 });
 
+// Run an accessibility audit
+gulp.task('audit', function () {
+  console.log('Auditing for accessibility...');
+  return gulp.src(defaults.html_files)
+    .pipe(a11y())
+    .pipe(a11y.reporter());
+});
+
 // Compile Sass
 gulp.task('sass', function() {
   console.log('Running Sass and PostCSS...');
   // Set what postcss plugins need to be run
+  // runs autoprefixer and compresses CSS after compiling
   var processors = [
     autoprefixer(defaults.autoprefixer),
     cssnano
@@ -49,6 +59,7 @@ gulp.task('sass', function() {
   return gulp.src(defaults.scss)
     // Run Sass on those files
     .pipe(postcss([
+      // lint before we compile
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
