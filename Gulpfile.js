@@ -45,14 +45,10 @@ gulp.task('audit', function() {
   // run accessibility testing on all html files
   return gulp.src(defaults.html_files)
     .pipe(a11y({
-      force: true
+      force: true,
+      accessibilityLevel: 'WCAG2AA'
     }))
     .on('error', console.log)
-    // create a report as a txt document
-    .pipe(a11y.report({ reportType: 'txt' }))
-    .pipe(rename({ extname: '.txt' }))
-    // save the report to a reports dir within the styleguide
-    .pipe(gulp.dest(defaults.reports))
     .on('end', function(){ console.log('Accessibility audit complete'); });
 });
 
