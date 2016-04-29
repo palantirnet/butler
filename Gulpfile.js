@@ -10,6 +10,7 @@ var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
 var a11y = require('gulp-accessibility');
+var rename = require('gulp-rename');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -48,10 +49,8 @@ gulp.task('audit', function() {
     }))
     .on('error', console.log)
     // create a report as a txt document
-    .pipe(a11y.report({reportType: 'txt'}))
-    .pipe(rename({
-      extname: '.txt'
-    }))
+    .pipe(a11y.report({ reportType: 'txt' }))
+    .pipe(rename({ extname: '.txt' }))
     // save the report to a reports dir within the styleguide
     .pipe(gulp.dest(defaults.reports))
     .on('end', function(){ console.log('Accessibility audit complete'); });
@@ -85,7 +84,7 @@ gulp.task('sass', function() {
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.html_files)
+  gulp.src(defaults.template_files)
     // Run the command line commands to watch sculpin
     .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
@@ -93,7 +92,7 @@ gulp.task('sculpin', function () {
 // Build Sculpin Production Artifact
 gulp.task('sculpin-prod', function () {
   console.log('Building production artifact...');
-  gulp.src(defaults.html_files)
+  gulp.src(defaults.template_files)
     // Run the command line commands to build sculpin production artifact
     .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin_dir + '"'))
     .on('end', function(){ console.log('Your production artifact has been built'); });
@@ -116,7 +115,7 @@ gulp.task('watch', function() {
 gulp.task('develop', ['sass', 'sculpin', 'watch']);
 
 // Set a test task
-gulp.task('test', ['lint']);
+gulp.task('test', ['lint', 'audit']);
 
 // Set a deploy task
 gulp.task('deploy', ['sculpin-prod'], function() {

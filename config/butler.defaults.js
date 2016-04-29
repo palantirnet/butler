@@ -8,10 +8,12 @@ defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/s
 defaults.css = '../../styleguide/source/code/css/';
 // location of the sculpin project root
 defaults.sculpin_dir = '../../styleguide/';
-// location of the html files
-defaults.html_files = ['../../styleguide/source/*.html', '../../styleguide/source/**/*.html'];
+// location of the template files
+defaults.template_files = ['../../styleguide/source/*.html', '../../styleguide/source/**/*.html'];
 // location of the compiled output
 defaults.output_dev = '../../styleguide/output_dev';
+// location of the compiled html files
+defaults.html_files = ['../../styleguide/output_dev/*.html', '../../styleguide/output_dev/**/*.html'];
 // production files to be deployed
 defaults.output_prod = '../../styleguide/output_prod/**/*';
 // location of testing reports
