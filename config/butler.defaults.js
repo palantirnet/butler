@@ -14,6 +14,8 @@ defaults.html_files = ['../../styleguide/source/*.html', '../../styleguide/sourc
 defaults.output_dev = '../../styleguide/output_dev';
 // production files to be deployed
 defaults.output_prod = '../../styleguide/output_prod/**/*';
+// location of testing reports
+defaults.reports = '../../styleguide/reports';
 
 // location of sculpin.phar
 defaults.sculpin_run = '../../vendor/bin/sculpin';
@@ -25,9 +27,6 @@ defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
 // Stylelint defaults
 // point to the configuration file
 defaults.stylelint = { configFile: 'config/linters/stylelint.config.json' };
-
-// Deploy message
-// defaults.message = { 'Updated with Butler - [timestamp]' };
 
 // Deploy defaults
 // point to the correct repo & include deploy message

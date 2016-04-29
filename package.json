@@ -24,7 +24,7 @@
     "breakpoint-sass": "^2.7.0",
     "cssnano": "^3.5.2",
     "gulp": "^3.9.1",
-    "gulp-a11y": "^0.1.1",
+    "gulp-accessibility": "^2.0.1",
     "gulp-exec": "^2.1.2",
     "gulp-gh-pages": "^0.5.4",
     "gulp-postcss": "^6.1.0",

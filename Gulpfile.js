@@ -9,7 +9,7 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
-var a11y = require('gulp-a11y');
+var a11y = require('gulp-accessibility');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -39,11 +39,22 @@ gulp.task('lint', function() {
 });
 
 // Run an accessibility audit
-gulp.task('audit', function () {
+gulp.task('audit', function() {
   console.log('Auditing for accessibility...');
+  // run accessibility testing on all html files
   return gulp.src(defaults.html_files)
-    .pipe(a11y())
-    .pipe(a11y.reporter());
+    .pipe(a11y({
+      force: true
+    }))
+    .on('error', console.log)
+    // create a report as a txt document
+    .pipe(a11y.report({reportType: 'txt'}))
+    .pipe(rename({
+      extname: '.txt'
+    }))
+    // save the report to a reports dir within the styleguide
+    .pipe(gulp.dest(defaults.reports))
+    .on('end', function(){ console.log('Accessibility audit complete'); });
 });
 
 // Compile Sass
@@ -74,17 +85,17 @@ gulp.task('sass', function() {
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.sculpin)
+  gulp.src(defaults.html_files)
     // Run the command line commands to watch sculpin
-    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
 
 // Build Sculpin Production Artifact
 gulp.task('sculpin-prod', function () {
   console.log('Building production artifact...');
-  gulp.src(defaults.sculpin)
+  gulp.src(defaults.html_files)
     // Run the command line commands to build sculpin production artifact
-    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin + '"'))
+    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin_dir + '"'))
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
