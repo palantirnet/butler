@@ -9,8 +9,7 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
-var a11y = require('gulp-accessibility');
-var rename = require('gulp-rename');
+var pa11y = require('gulp-pa11y');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -40,16 +39,12 @@ gulp.task('lint', function() {
 });
 
 // Run an accessibility audit
-gulp.task('audit', function() {
-  console.log('Auditing for accessibility...');
-  // run accessibility testing on all html files
-  return gulp.src(defaults.html_files)
-    .pipe(a11y({
-      force: true,
-      accessibilityLevel: 'WCAG2AA'
-    }))
-    .on('error', console.log)
-    .on('end', function(){ console.log('Accessibility audit complete'); });
+gulp.task('pa11y', function () {
+  console.log('Running pa11y....');
+  .pipe(pa11y({
+    url: 'http://localhost:8000/',
+    standard: 'WCAG2AA'
+  }))
 });
 
 // Compile Sass
