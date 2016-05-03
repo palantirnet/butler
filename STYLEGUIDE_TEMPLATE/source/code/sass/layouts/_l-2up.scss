@@ -11,22 +11,27 @@
 // =============================================================================
 
 .l-2up {
-  float: left;
   @include zen-grid-item-base();
   @include zen-flow-item-width(12, 12, $omega-gutter: false);
-  @include breakpoint($bp2){
+  float: left;
+
+  @include breakpoint($bp2) {
     @include zen-flow-item-width(6, 12, $omega-gutter: true);
   }
 }
+
 // make every 2nd list item wrap
 .l-2up:nth-of-type(2n) {
-  @include breakpoint($bp2){
+
+  @include breakpoint($bp2) {
     @include zen-flow-item-width(6, 12, $omega-gutter: false);
   }
 }
+
 // clears a new row from the tallest element in the row above
 .l-2up:nth-of-type(2n+1) {
-  @include breakpoint($bp2){
+
+  @include breakpoint($bp2) {
     @include zen-new-row();
   }
 }
@@ -37,16 +42,19 @@
 
 .l-2up--1 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
-    @include zen-grid-item(6,1);
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
+    @include zen-grid-item(6, 1);
   }
 }
+
 .l-2up--2 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(6,7);
+    @include zen-grid-item(6, 7);
   }
 }

@@ -42,38 +42,38 @@ gulp.task('sass', function() {
   console.log('Running Sass and PostCSS...');
   // Set what postcss plugins need to be run
   var processors = [
-    autoprefixer(defaults.autoprefixer),
+    autoprefixer('last 2 versions', '> 5%'),
     cssnano
   ];
-  // Run on all file defaults defined in var scsss
-  return gulp.src(defaults.scss)
+  // Run on all file defaults defined in var scss
+  return gulp.src(['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'])
     // Run Sass on those files
     .pipe(postcss([
-      stylelint(defaults.stylelint),
+      stylelint({configFile: 'config/linters/.stylelintrc'}),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
     .pipe(sass().on('error',sass.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
-    .pipe(gulp.dest(defaults.css));
+    .pipe(gulp.dest('../../styleguide/source/code/css/'));
 });
 
 
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.sculpin)
+  gulp.src([])
     // Run the command line commands to watch sculpin
-    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
 
 // Build Sculpin Production Artifact
 gulp.task('sculpin-prod', function () {
   console.log('Building production artifact...');
-  gulp.src(defaults.sculpin)
+  gulp.src(defaults.sculpin_files)
     // Run the command line commands to build sculpin production artifact
-    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin + '"'))
+    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin_dir + '"'))
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 

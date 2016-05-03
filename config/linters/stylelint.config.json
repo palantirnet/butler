@@ -22,7 +22,7 @@
     "media-feature-colon-space-before": "never",
     "media-feature-name-no-vendor-prefix": true,
     "max-empty-lines": 5,
-    "number-leading-zero": "never",
+    "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "property-no-vendor-prefix": true,
     "rule-no-duplicate-properties": true,
@@ -32,7 +32,8 @@
     "selector-list-comma-newline-after": "always",
     "selector-no-id": true,
     "string-quotes": "double",
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "at-rule-name-case": "lower"
   }
 }
 
