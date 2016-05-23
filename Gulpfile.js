@@ -64,7 +64,8 @@ gulp.task('sass', function() {
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
   gulp.src(defaults.sculpin)
-    // Run the command line commands to watch sculpin
+    // Kill process running on :8000. Run the command line commands to watch sculpin
+    .pipe(exec('lsof -ti TCP:8000 | xargs  kill'))
     .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
 });
 
