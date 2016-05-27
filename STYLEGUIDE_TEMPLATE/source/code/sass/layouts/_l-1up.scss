@@ -4,6 +4,7 @@
  */
 
 .l-1up {
+  @include zen-grid-item-base();
   @include zen-new-row();
-  @include zen-grid-item(12,1);
+  @include zen-grid-item(12, 1);
 }

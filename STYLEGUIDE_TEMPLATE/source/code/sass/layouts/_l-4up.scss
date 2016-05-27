@@ -10,35 +10,42 @@
 // $omega-gutter: "true"  = will not wrap an item
 // =============================================================================
 
-.l-4up {
-  float: left;
+.l-4up,
+%l-4up {
   @include zen-grid-item-base();
   @include zen-flow-item-width(12, 12, $omega-gutter: false);
-  @include breakpoint($bp1){
+  float: left;
+
+  @include breakpoint($bp1) {
     @include zen-flow-item-width(6, 12, $omega-gutter: true);
   }
-  @include breakpoint($bp3){
+
+  @include breakpoint($bp3) {
     @include zen-flow-item-width(3, 12, $omega-gutter: true);
   }
 }
 // make every 2nd list item wrap
 .l-4up:nth-of-type(2n) {
-  @include breakpoint($bp1){
+
+  @include breakpoint($bp1) {
     @include zen-flow-item-width(6, 12, $omega-gutter: false);
   }
-  @include breakpoint($bp3){
+
+  @include breakpoint($bp3) {
     @include zen-flow-item-width(3, 12, $omega-gutter: true);
   }
 }
 // make every 4th list item wrap
 .l-4up:nth-of-type(4n) {
-  @include breakpoint($bp3){
+
+  @include breakpoint($bp3) {
     @include zen-flow-item-width(3, 12, $omega-gutter: false);
   }
 }
 // clears a new row from the tallest element in the row above
 .l-4up:nth-of-type(4n+1) {
-  @include breakpoint($bp3){
+
+  @include breakpoint($bp3) {
     @include zen-new-row();
   }
 }
@@ -49,32 +56,39 @@
 
 .l-4up--1 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
-    @include zen-grid-item(3,1);
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
+    @include zen-grid-item(3, 1);
   }
 }
+
 .l-4up--2 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(3,4);
+    @include zen-grid-item(3, 4);
   }
 }
+
 .l-4up--3 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(3,7);
+    @include zen-grid-item(3, 7);
   }
 }
+
 .l-4up--4 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(3,10);
+    @include zen-grid-item(3, 10);
   }
 }
