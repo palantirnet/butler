@@ -2,8 +2,8 @@
 
 var defaults = {};
 
-// .scss files
-defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'];
+// .less files
+defaults.less = ['../../styleguide/source/code/sass/*.less', '../../styleguide/source/code/sass/**/*.less'];
 // location of the compiled CSS
 defaults.css = '../../styleguide/source/code/css/';
 // location of the sculpin project root

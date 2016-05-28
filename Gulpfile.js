@@ -3,10 +3,10 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var gulp = require('gulp');
 var exec = require('gulp-exec');
-var sass = require('gulp-sass');
+var less = require('gulp-less');
 var postcss = require('gulp-postcss');
 var reporter = require('postcss-reporter');
-var syntax_scss = require('postcss-scss');
+var syntax_less = require('postcss-less');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
 
@@ -29,17 +29,17 @@ function extend(obj, src) {
 // Just run linters
 gulp.task('lint', function() {
   console.log('Running linters...');
-  return gulp.src(defaults.scss)
+  return gulp.src(defaults.less)
     .pipe(postcss([
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
-    ], {syntax: syntax_scss}))
+    ], {syntax: syntax_less}))
     .on('end', function(){ console.log('Linting complete'); })
 });
 
 // Compile Sass
-gulp.task('sass', function() {
-  console.log('Running Sass and PostCSS...');
+gulp.task('less', function() {
+  console.log('Running Less and PostCSS...');
   // Set what postcss plugins need to be run
   var processors = [
     autoprefixer(defaults.autoprefixer),
@@ -52,7 +52,7 @@ gulp.task('sass', function() {
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
-    .pipe(sass().on('error',sass.logError))
+    .pipe(less().on('error',less.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
@@ -92,7 +92,7 @@ gulp.task('watch', function() {
 });
 
 // Set Develop task
-gulp.task('develop', ['sass', 'sculpin', 'watch']);
+gulp.task('develop', ['less', 'sculpin', 'watch']);
 
 // Set a test task
 gulp.task('test', ['lint']);
