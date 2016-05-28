@@ -45,13 +45,13 @@ gulp.task('less', function() {
     autoprefixer(defaults.autoprefixer),
     cssnano
   ];
-  // Run on all file defaults defined in var scsss
-  return gulp.src(defaults.scss)
+  // Run on all file defaults defined in var less
+  return gulp.src(defaults.less)
     // Run Sass on those files
     .pipe(postcss([
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
-    ], {syntax: syntax_scss}))
+    ], {syntax: syntax_less}))
     .pipe(less().on('error',less.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
@@ -81,9 +81,9 @@ gulp.task('sculpin-prod', function () {
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
-  // Watch the scss folder for change
+  // Watch the less folder for change
   // and run `compile-sass` task when something happens
-    .watch(defaults.scss, ['sass'])
+    .watch(defaults.less, ['sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
