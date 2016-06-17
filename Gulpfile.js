@@ -9,6 +9,7 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
+var phantomcss = require('gulp-phantomcss');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -59,6 +60,20 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(defaults.css));
 });
 
+// Run visual regression tests on local version
+gulp.task('phantomcss:local', function (){
+  gulp.src(defaults.viztests_local)
+    .pipe(phantomcss({
+      screenshotRoot: 'screenshots',
+      comparisonResultRoot: 'results'
+    }));
+});
+
+// Run visual regression tests on local version
+gulp.task('phantomcss:ghpages', function (){
+  gulp.src(defaults.viztests_pages)
+    .pipe(phantomcss());
+});
 
 // Sculpin Development
 gulp.task('sculpin', function () {

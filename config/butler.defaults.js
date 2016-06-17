@@ -22,7 +22,13 @@ defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };
 
 // Stylelint defaults
 // point to the configuration file
-defaults.stylelint = { configFile: 'config/linters/stylelint.config.json' };
+defaults.stylelint = { configFile: 'config/tests/stylelint.config.json' };
+
+// Casper tests for PhantomCSS visual regression testing
+// run tests on local style guide
+defaults.viztests_local = 'config/tests/csstests-local.js';
+// run tests on ghpages style guide
+defaults.viztests_local = 'config/tests/csstests-pages.js';
 
 // Deploy message
 // defaults.message = { 'Updated with Butler - [timestamp]' };
