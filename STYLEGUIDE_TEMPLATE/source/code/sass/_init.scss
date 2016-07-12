@@ -49,8 +49,8 @@ $legacy-support-for-ie8: true;
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
-$base-font-size: 15px; // The font size set on the root html element.
-$base-line-height: 18px; // This line-height determines the basic unit of vertical rhythm.
+$base-font-size: 16px; // The font size set on the root html element.
+$base-line-height: 15px; // This line-height determines the basic unit of vertical rhythm.
 
 // Modular Scale
 // Major Third: 16px @ 1:1.25
@@ -162,7 +162,7 @@ $bp3: 1100px;
 $slug: rhythm(8);
 
 // The amount lists, blockquotes and comments are indented.
-$indent-amount: rhythm(1);
+$indent-amount: 1em;
 
 // Hover state effects
 $timing: .5s;

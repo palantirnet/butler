@@ -8,6 +8,9 @@
 /* Import Sass mixins, variables, Compass modules, etc. */
 @import "init";
 
+/* Set the vertical rhythm */
+@import "vertical-rhythm/vertical_rhythm";
+
 /* HTML element (SMACSS base) rules */
 @import "normalize";
 
