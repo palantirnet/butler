@@ -50,7 +50,7 @@ $legacy-support-for-ie8: true;
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
 $base-font-size: 15px; // The font size set on the root html element.
-$base-line-height: 12px; // This line-height determines the basic unit of vertical rhythm.
+$base-line-height: 18px; // This line-height determines the basic unit of vertical rhythm.
 
 // Modular Scale
 // Major Third: 16px @ 1:1.25
@@ -113,7 +113,7 @@ $text-color: $gray-dark;
 $background-color: $white;
 /* Link (a:) */
 $link-color: $gray-medium;
-$link-hover: $gray-light;
+$link-hover: $gray-dark;
 /* Blockquote*/
 $blockquote-color: $gray-medium;
 /* Figcaption */
@@ -153,6 +153,7 @@ $button-reset-text-hover: $gray-dark;
 ///////////////////////////////////////////////////////////
 
 // Breakpoint Variables
+$bp0: 350px;
 $bp1: 600px;
 $bp2: 900px;
 $bp3: 1100px;

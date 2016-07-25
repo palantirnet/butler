@@ -3,19 +3,44 @@
  * Layout rules for two thirds / one third (66/33) content
  */
 
+.l-66-33 {
+  @include zen-grid-item-base();
+  @include zen-flow-item-width(12, 12, $omega-gutter: false);
+  @include zen-float();
+  
+  &:nth-of-type(2n+1) {
+
+    @include breakpoint($bp1) {
+      @include zen-flow-item-width(8, 12, $omega-gutter: false, $alpha-gutter: false);
+    }
+  }
+
+  // clears a new row from the tallest element in the row above
+  &:nth-of-type(2n+2) {
+
+    @include breakpoint($bp1) {
+      @include zen-flow-item-width(4, 12, $omega-gutter: false, $alpha-gutter: true);
+    }
+  }
+}
+
 .l-66-33--1 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
-    @include zen-grid-item(8,1);
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
+    @include zen-grid-item(8, 1);
+    @include zen-float(left);
   }
 }
 
 .l-66-33--2 {
   @include zen-new-row();
-  @include zen-grid-item(12,1);
-  @include breakpoint($bp1){
+  @include zen-grid-item(12, 1);
+
+  @include breakpoint($bp1) {
     @include zen-new-row(none);
-    @include zen-grid-item(4,9);
+    @include zen-grid-item(4, 9);
+    @include zen-float(left);
   }
 }

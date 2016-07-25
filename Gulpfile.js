@@ -80,9 +80,9 @@ gulp.task('sass', function() {
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.template_files)
-    // Run the command line commands to watch sculpin
-    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
+  gulp.src(defaults.sculpin)
+    // Kill process running on :8000. Run the command line commands to watch sculpin
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
 });
 
 // Build Sculpin Production Artifact
