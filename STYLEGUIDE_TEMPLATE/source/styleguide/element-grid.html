@@ -5,17 +5,11 @@ section: element
 title: Grid System
 description: Add Description.
 ---
-<style>
-  .demo {
-    background-color: #F0F0F0;
-    padding: 25px;
-  }
-</style>
-<div class="container">
 
+<div class="container">
   <header class="l-1up">
-    <h1>Default 12 Column grid layout classes</h1>
-    <p>Re-use or modify to suit the needs of your project’s content.</p>
+    <h1>12 Column "Isolation" grid layout classes</h1>
+    <p>Perfect for single row layouts</p>
   </header>
 
   <div class="l-1up">
@@ -84,5 +78,91 @@ description: Add Description.
   <div class="l-66-33--2">
     <p class="demo">l-66-33--2</p>
   </div>
+</div>
 
+<div class="container">
+  <header class="l-1up">
+    <h1>12 Column "Float" grid layout classes</h1>
+    <p>Perfect for multi-row layouts</p>
+  </header>
+
+  <div class="l-1up">
+    <p class="demo">l-1up</p>
+  </div>
+
+  <div>
+    <div class="l-2up">
+      <p class="demo">l-2up</p>
+    </div>
+    <div class="l-2up">
+      <p class="demo">l-2up</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="l-3up">
+      <p class="demo">l-3up</p>
+    </div>
+    <div class="l-3up">
+      <p class="demo">l-3up</p>
+    </div>
+    <div class="l-3up">
+      <p class="demo">l-3up</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="l-4up">
+      <p class="demo">l-4up</p>
+    </div>
+    <div class="l-4up">
+      <p class="demo">l-4up</p>
+    </div>
+    <div class="l-4up">
+      <p class="demo">l-4up</p>
+    </div>
+    <div class="l-4up">
+      <p class="demo">l-4up</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+    <div class="l-6up">
+      <p class="demo">l-6up</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <header class="l-1up">
+    <h1>Nested grid example</h1>
+    <p>If need be you can nest items inside each other</p>
+  </header>
+
+  <div class="l-66-33--1">
+    <div class="nest-wrap">
+        <p class="nest-item">l-6up</p>
+        <p class="nest-item">l-6up</p>
+        <p class="nest-item">l-3up (last)</p>
+    </div>
+  </div>
+
+  <div class="l-66-33--2">
+    <p class="demo">l-3up--2</p>
+  </div>
 </div>

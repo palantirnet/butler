@@ -48,6 +48,7 @@
  * can otherwise occur with extends.
  */
 
+.clearfix,
 %clearfix {
   &:after {
     content: "";
