@@ -8,6 +8,9 @@
 /* Import Sass mixins, variables, Compass modules, etc. */
 @import "init";
 
+/* Set browser support */
+@import "support-for";
+
 /* Set the vertical rhythm */
 @import "vertical-rhythm/vertical_rhythm";
 
