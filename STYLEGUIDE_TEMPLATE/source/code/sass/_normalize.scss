@@ -290,7 +290,10 @@ sup {
  */
 
 img {
-  border-style: none;
+  // Responsive images
+  max-width: 100%;
+  // Remove border when inside `a` element in IE 8/9.
+  border: 0;
   @if support-for(ie, 7) {
     /* Improve image quality when scaled in IE 7. */
     -ms-interpolation-mode: bicubic;
