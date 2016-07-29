@@ -4,91 +4,62 @@
  */
 
 // =============================================================================
-// Ruleset for content going from 1-column at mobile,
-// to two-column, to 4-column as horizontal space allows
-// $omega-gutter: "false" = will wrap an item
-// $omega-gutter: "true"  = will not wrap an item
+// Basic 4-up Float layout
 // =============================================================================
 
-.l-4up,
-%l-4up {
-  @include zen-grid-item-base();
-  @include zen-flow-item-width(12, 12, $omega-gutter: false);
-  float: left;
+.l-4up {
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-flow-item-width(6, 12, $omega-gutter: true);
+    @include float-span(3);
   }
 
-  @include breakpoint($bp3) {
-    @include zen-flow-item-width(3, 12, $omega-gutter: true);
+  &:nth-of-type(4n+1) {
+    @include breakpoint($bp1) {
+      @include float-span(3, 'first');
+    }
+  }
+
+  &:nth-of-type(4n) {
+    @include breakpoint($bp1) {
+      @include float-span(3, 'last');
+    }
   }
 }
-// make every 2nd list item wrap
-.l-4up:nth-of-type(2n) {
 
-  @include breakpoint($bp1) {
-    @include zen-flow-item-width(6, 12, $omega-gutter: false);
-  }
-
-  @include breakpoint($bp3) {
-    @include zen-flow-item-width(3, 12, $omega-gutter: true);
-  }
-}
-// make every 4th list item wrap
-.l-4up:nth-of-type(4n) {
-
-  @include breakpoint($bp3) {
-    @include zen-flow-item-width(3, 12, $omega-gutter: false);
-  }
-}
-// clears a new row from the tallest element in the row above
-.l-4up:nth-of-type(4n+1) {
-
-  @include breakpoint($bp3) {
-    @include zen-new-row();
-  }
-}
 
 // =============================================================================
-// Basic 4-up layouts
+// Basic 4-up Isolation layout
 // =============================================================================
 
 .l-4up--1 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-grid-item(3, 1);
+    @include isolation-span(3, 1, 'both');
   }
 }
 
 .l-4up--2 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-new-row(none);
-    @include zen-grid-item(3, 4);
+    @include isolation-span(3, 4, 'none');
   }
 }
 
 .l-4up--3 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-new-row(none);
-    @include zen-grid-item(3, 7);
+    @include isolation-span(3, 7, 'none');
   }
 }
 
 .l-4up--4 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-new-row(none);
-    @include zen-grid-item(3, 10);
+    @include isolation-span(3, 10, 'none');
   }
 }
