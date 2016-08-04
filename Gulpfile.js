@@ -47,6 +47,10 @@ gulp.task('audit', function() {
     .pipe(a11y({
       force: true,
       accessibilityLevel: 'WCAG2AA'
+      reportLevels: { notice: false, warning: true, error: true },
+      ignore: [
+        'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'
+      ]
     }))
     .on('error', console.log)
     .on('end', function(){ console.log('Accessibility audit complete'); });
@@ -80,9 +84,9 @@ gulp.task('sass', function() {
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.sculpin)
+  gulp.src(defaults.template_files)
     // Kill process running on :8000. Run the command line commands to watch sculpin
-    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
 
 // Build Sculpin Production Artifact
