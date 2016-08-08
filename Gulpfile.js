@@ -46,8 +46,12 @@ gulp.task('audit', function() {
   return gulp.src(defaults.html_files)
     .pipe(a11y({
       force: true,
-      accessibilityLevel: 'WCAG2AA'
-      reportLevels: { notice: false, warning: true, error: true },
+      accessibilityLevel: 'WCAG2AA',
+      reportLevels: { 
+        notice: false, 
+        warning: true, 
+        error: true 
+      },
       ignore: [
         'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'
       ]
