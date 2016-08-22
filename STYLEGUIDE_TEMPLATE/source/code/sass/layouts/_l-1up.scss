@@ -3,8 +3,12 @@
  * Layout rules for full-width content
  */
 
+ // =============================================================================
+ // Basic 1-up layout
+ // =============================================================================
+
 .l-1up {
-  @include zen-grid-item-base();
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  // Uncomment to display grid overlay for 1-up
+  // @include background-grid($color: rgba(blue, .2));
+  @include isolation-span(12, 1, 'both');
 }

@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Define singularity gs base settings here.
+ * @see https://github.com/at-import/Singularity
+ */
+
+//////////////////////////////////////////
+// Singularity: Setup
+//////////////////////////////////////////
+
+// Debug mode: Set to true for background grid overlay.
+@include sgs-change('debug', true);
+
+// Set default grid for each breakpoint.
+@include add-grid(12);
+//
+// Set default gutter.
+@include add-gutter(1/2);
+
+
+
+//////////////////////////////////////////
+// Singularity: Centered container
+//////////////////////////////////////////
+
+.container {
+  // @include background-grid($color: rgba(blue, .2));
+  @extend %clearfix;
+  width: 100%;
+  min-width: 260px; /* enforces a min-width in FF. */
+  padding: 0 rhythm(1);
+  margin: 0 auto;
+
+  @include breakpoint($bp2) {
+    width: 90%;
+    padding: 0;
+  }
+
+  @include breakpoint($bp3) {
+    max-width: 1400px;
+  }
+}

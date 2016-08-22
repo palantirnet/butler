@@ -4,83 +4,54 @@
  */
 
 // =============================================================================
-// Ruleset for content going from 1-column at mobile,
-// to two-column, to 3-column as horizontal space allows
-// $omega-gutter: "false" = will wrap an item
-// $omega-gutter: "true"  = will not wrap an item
+// Basic 3-up Float layout
 // =============================================================================
 
 .l-3up {
-  @include zen-grid-item-base();
-  @include zen-grid-item(12, 1);
-  @include zen-new-row();
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include float-span(4);
+  }
 
   &:nth-of-type(3n+1) {
-
     @include breakpoint($bp1) {
-      @include zen-grid-item(6, 1);
-    }
-
-    @include breakpoint($bp3) {
-      @include zen-new-row();
-      @include zen-grid-item(4, 1);
+      @include float-span(4, 'first');
     }
   }
 
-  &:nth-of-type(3n+2) {
+  &:nth-of-type(3n) {
     @include breakpoint($bp1) {
-      @include zen-grid-item(6, 7);
-      @include zen-new-row(none);
-    }
-
-    @include breakpoint($bp3) {
-      @include zen-grid-item(4, 5);
-    }
-  }
-
-  &:nth-of-type(3n+3) {
-
-    @include breakpoint($bp1) {
-      @include zen-new-row();
-      @include zen-grid-item(6, 1);
-    }
-
-    @include breakpoint($bp3) {
-      @include zen-new-row(none);
-      @include zen-grid-item(4, 9);
+      @include float-span(4, 'last');
     }
   }
 }
 
+
 // =============================================================================
-// Basic 3-up layouts
+// Basic 3-up Isolation layout
 // =============================================================================
 
 .l-3up--1 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-grid-item(4, 1);
+    @include isolation-span(4, 1, 'both');
   }
 }
 
 .l-3up--2 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-new-row(none);
-    @include zen-grid-item(4, 5);
+    @include isolation-span(4, 5, 'none');
   }
 }
 
 .l-3up--3 {
-  @include zen-new-row();
-  @include zen-grid-item(12, 1);
+  @include isolation-span(12, 1, 'both');
 
   @include breakpoint($bp1) {
-    @include zen-new-row(none);
-    @include zen-grid-item(4, 9);
+    @include isolation-span(4, 9, 'none');
   }
 }

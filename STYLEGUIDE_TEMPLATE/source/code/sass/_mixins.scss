@@ -48,6 +48,7 @@
  * can otherwise occur with extends.
  */
 
+.clearfix,
 %clearfix {
   &:after {
     content: "";
@@ -72,7 +73,7 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+  @if support-legacy-browser(ie, '7') {
     clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
   }
   clip: rect(1px, 1px, 1px, 1px);
@@ -98,44 +99,9 @@
 }
 
 /* ==============================================================
-   Custom Vertical Rhythm Mixin
-
-   This mixin uses the new font size to determine font size and
-   line height based on the ratio determined from the base font
-   size. The line height mixin is optional, but available to allow
-   for minor adjustments.
-
-   1.12 and 1.24 is based on the percentages applied to the base html
-   in the normalize file.
+   CSS3 transition mixin
    ============================================================== */
 
-@mixin adjust-font-size-to($to-size, $line-height:1) {
-  font-size: $to-size;
-  line-height: (($to-size * $base-line-height)/$base-font-size) * $line-height;
-
-  @include breakpoint($bp2) {
-    font-size: $to-size * 1.12;
-    line-height: ((($to-size * $base-line-height)/$base-font-size) * $line-height) * 1.12;
-  }
-
-  @include breakpoint($bp3) {
-    font-size: $to-size * 1.24;
-    line-height: ((($to-size * $base-line-height)/$base-font-size) * $line-height) * 1.24;
-  }
-}
-
-/* ==============================================================
-   Vertical Rhythm Mixin
-
-   This mixin adds margin to the top or bottom of an element based
-   on the base font size (or an included font size adjustment), and
-   the base line height.
-   ============================================================== */
-
-@mixin leader($leader, $font-size:$base-font-size) {
-  margin-top: (($font-size)/$base-font-size) * ($leader * $base-line-height);
-}
-
-@mixin trailer($trailer, $font-size:$base-font-size) {
-  margin-bottom: (($font-size)/$base-font-size) * ($trailer * $base-line-height);
+@mixin trans($property: all, $timing: .3s, $easing: ease) {
+  transition: $property $timing $easing;
 }
