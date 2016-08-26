@@ -52,7 +52,13 @@ gulp.task('sass', function() {
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
-    .pipe(sass().on('error',sass.logError))
+    // Include paths to sass modules
+    .pipe(sass({
+      includePaths: [
+        'node_modules/singularitygs/stylesheets/',
+        'node_modules/breakpoint-sass/stylesheets/'
+      ]
+    }).on('error',sass.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir

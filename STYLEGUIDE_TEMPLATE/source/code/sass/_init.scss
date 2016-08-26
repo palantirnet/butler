@@ -154,9 +154,10 @@ $indent-amount: 1em;
 // =============================================================================
 
 // Add the Singularity Grids responsive layout mixins.
-@import "../../../../node_modules/butler/node_modules/singularitygs/stylesheets/singularitygs";
+@import "singularitygs";
+
 // Add the Breakpoint mixin.
-@import "../../../../node_modules/butler/node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "breakpoint";
 
 // Now we add our custom helper mixins.
 @import "mixins";
