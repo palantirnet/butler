@@ -8,11 +8,17 @@
 /* Import Sass mixins, variables, Compass modules, etc. */
 @import "init";
 
+/* Set browser support */
+@import "support-for";
+
+/* Set the vertical rhythm */
+@import "vertical-rhythm/vertical_rhythm";
+
 /* HTML element (SMACSS base) rules */
 @import "normalize";
 
 /* Layout rules */
-@import "layouts/l-zen-grids-base";
+@import "layouts/l-singularity";
 @import "layouts/l-1up";
 @import "layouts/l-66-33";
 @import "layouts/l-33-66";

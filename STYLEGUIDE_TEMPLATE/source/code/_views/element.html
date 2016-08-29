@@ -1,18 +1,18 @@
 {% extends "styleguide" %}
 {% block content_wrapper %}
-    <div class="container">
-      <header class="l-column">
-          <h5 class="styleguide-label">Living Styleguide</h5>
-          <h1><a href="{{ site.url }}">{{ site.title }} Styleguide</a></h1>
-      </header>
-    </div>
-  <div class="component-header">
-    <div class="container">
-      <main class="l-column">
-        <h2 class="styleguide-title--component">{{ page.title }}</h2>
-        <p> {{ page.description }}</p>
-      </main>
-    </div>
+<div class="container">
+  <header class="l-column">
+    <h5 class="styleguide-label">Living Styleguide</h5>
+    <h1><a href="{{ site.url }}/">{{ site.title }} Styleguide</a></h1>
+  </header>
+</div>
+<div class="component-header">
+  <div class="container">
+    <main class="l-column">
+      <h2 class="styleguide-title--component">{{ page.title }}</h2>
+      <p> {{ page.description }}</p>
+    </main>
   </div>
-  {% block content %}{% endblock %}
+</div>
+{% block content %}{% endblock %}
 {% endblock %}
