@@ -1,6 +1,8 @@
 {
   "name": "butler",
   "version": "2.0.0",
+  "from": "palantirnet/butler",
+  "resolved": "git://github.com/palantirnet/butler.git#06d3c2b9f436b3aafec355606d61c73ca00c9e20",
   "dependencies": {
     "autoprefixer": {
       "version": "6.3.7",
@@ -9703,11 +9705,6 @@
         }
       }
     },
-    "singularitygs": {
-      "version": "1.7.0",
-      "from": "singularitygs@>=1.7.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/singularitygs/-/singularitygs-1.7.0.tgz"
-    },
     "stylelint": {
       "version": "4.5.1",
       "from": "stylelint@>=4.4.0 <5.0.0",
@@ -10963,6 +10960,11 @@
           }
         }
       }
+    },
+    "zen-grids": {
+      "version": "2.0.3",
+      "from": "zen-grids@latest",
+      "resolved": "https://registry.npmjs.org/zen-grids/-/zen-grids-2.0.3.tgz"
     }
   }
 }

@@ -13,7 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/palantirnet/butler.git"
   },
-  "author": "Palantir.net",
+  "author": {
+    "name": "Palantir.net"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/palantirnet/butler/issues"
@@ -34,8 +36,8 @@
     "npm": "^3.7.5",
     "postcss-reporter": "^1.3.3",
     "postcss-scss": "^0.1.6",
-    "singularitygs": "^1.7.0",
     "stylelint": "^4.4.0",
-    "stylelint-selector-bem-pattern": "^0.2.1"
+    "stylelint-selector-bem-pattern": "^0.2.1",
+    "zen-grids": "^2.0.3"
   }
 }
