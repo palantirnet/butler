@@ -94,7 +94,7 @@ gulp.task('sculpin-prod', function () {
   console.log('Building production artifact...');
   gulp.src(defaults.template_files)
     // Run the command line commands to build sculpin production artifact
-    .pipe(exec(defaults.sculpin_run + ' generate --env=prod --project-dir="' + defaults.sculpin + '"'))
+    .pipe(exec(defaults.sculpin_run + ' generate --env=prod --project-dir="' + defaults.sculpin_dir + '"'))
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
