@@ -9,6 +9,8 @@ var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
+var a11y = require('gulp-accessibility');
+var rename = require('gulp-rename');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -26,7 +28,7 @@ function extend(obj, src) {
   return obj;
 }
 
-// Just run linters
+// Just run Sass linter
 gulp.task('lint', function() {
   console.log('Running linters...');
   return gulp.src(defaults.scss)
@@ -37,10 +39,28 @@ gulp.task('lint', function() {
     .on('end', function(){ console.log('Linting complete'); })
 });
 
+// Run an accessibility audit
+gulp.task('audit', function() {
+  console.log('Auditing for accessibility...');
+  // run accessibility testing on all html files
+  return gulp.src(defaults.html_files)
+    .pipe(a11y({
+      force: true,
+      accessibilityLevel: 'WCAG2AA',
+      reportLevels: { notice: false, warning: true, error: true },
+      ignore: [
+        'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'
+      ]
+    }))
+    .on('error', console.log)
+    .on('end', function(){ console.log('Accessibility audit complete'); });
+});
+
 // Compile Sass
 gulp.task('sass', function() {
   console.log('Running Sass and PostCSS...');
   // Set what postcss plugins need to be run
+  // runs autoprefixer and compresses CSS after compiling
   var processors = [
     autoprefixer(defaults.autoprefixer),
     cssnano
@@ -49,10 +69,17 @@ gulp.task('sass', function() {
   return gulp.src(defaults.scss)
     // Run Sass on those files
     .pipe(postcss([
+      // lint before we compile
       stylelint(defaults.stylelint),
       reporter({ clearMessages: true })
     ], {syntax: syntax_scss}))
-    .pipe(sass().on('error',sass.logError))
+    // Include paths to sass modules
+    .pipe(sass({
+      includePaths: [
+        'node_modules/singularitygs/stylesheets/',
+        'node_modules/breakpoint-sass/stylesheets/'
+      ]
+    }).on('error',sass.logError))
     // Run postcss plugin functions
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
@@ -63,17 +90,17 @@ gulp.task('sass', function() {
 // Sculpin Development
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
-  gulp.src(defaults.sculpin)
-    // Kill process running on :8000. Run the command line commands to watch sculpin
-    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin + '"'));
+  gulp.src(defaults.template_files)
+    // Run the command line commands to watch sculpin
+    .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
 
 // Build Sculpin Production Artifact
 gulp.task('sculpin-prod', function () {
   console.log('Building production artifact...');
-  gulp.src(defaults.sculpin)
+  gulp.src(defaults.template_files)
     // Run the command line commands to build sculpin production artifact
-    .pipe(exec('sculpin generate --env=prod --project-dir="' + defaults.sculpin + '"'))
+    .pipe(exec(defaults.sculpin_run + ' generate --env=prod --project-dir="' + defaults.sculpin_dir + '"'))
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
@@ -94,7 +121,7 @@ gulp.task('watch', function() {
 gulp.task('develop', ['sass', 'sculpin', 'watch']);
 
 // Set a test task
-gulp.task('test', ['lint']);
+gulp.task('test', ['lint', 'audit']);
 
 // Set a deploy task
 gulp.task('deploy', ['sculpin-prod'], function() {

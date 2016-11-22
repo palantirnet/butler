@@ -27,7 +27,7 @@ A tool to automate front-end development tasks and streamline prototyping.
   "scripts": {
     "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
     "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
-    "linting": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+    "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
     "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
   },
   ````
@@ -52,9 +52,11 @@ A tool to automate front-end development tasks and streamline prototyping.
 
   Just compile the sass. You can also use this syntax to run any task from the Gulpfile.
 
-* `npm run linting`
+* `npm run tests`
 
   This is the testing task it will run linters as their own tasks. To learn more about configuring and customizing the linters for Butler check the [linters documentation](/docs/LINTERS.md).
+
+  This task also checks for WCAG 2.0AA compliance using the [gulp-accessibility](https://github.com/yargalot/gulp-accessibility) plugin.
 
 * `npm run deploy`
 

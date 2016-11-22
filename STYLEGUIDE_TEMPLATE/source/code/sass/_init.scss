@@ -16,28 +16,11 @@
 // Variables
 // =============================================================================
 
-//
-// Legacy IE support
-//
-// These variables are used by many mixins to add additional CSS to support
-// specific versions of IE or specific vendor prefixes.
-//
-// IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
-// - Drop support for IE 6/7. :-) Set $legacy-support-for-ie6
-//   and $legacy-support-for-ie7 to false.
-// - (Preferred) Install the box-sizing polyfill and set the variable below to
-//   the absolute path URL to the boxsizing.htc file.
-//   @see https://github.com/Schepp/box-sizing-polyfill
-//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
-// - Use the same CSS unit for grid and gutter width in resonsive-sidebars.scss
-//   (use px for both or use % for both) and set the box-sizing variable to content-box.
-//
-// Zen does not require special handling for IE8 or later. But Compass uses that
-// variable for a couple edge cases. We include it for completeness sake. See
-// the documentation at http://compass-style.org/reference/compass/support/
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: true;
+// Support the same browsers as normalize.css v3.
+$support-for: (
+  ie:      9,
+  '*':     -4,
+);
 
 
 //
@@ -49,8 +32,8 @@ $legacy-support-for-ie8: true;
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
-$base-font-size: 15px; // The font size set on the root html element.
-$base-line-height: 18px; // This line-height determines the basic unit of vertical rhythm.
+$base-font-size: 16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
 
 // Modular Scale
 // Major Third: 16px @ 1:1.25
@@ -106,6 +89,7 @@ $off-white: #fbfbfb;
 $white: #ffffff;
 $white-60: rgba($white, .6);
 $white-30: rgba($white, .3);
+$yellow: #ff0;
 
 // Use above sass variables to define defaults in normalize.scss
 /* body */
@@ -162,26 +146,18 @@ $bp3: 1100px;
 $slug: rhythm(8);
 
 // The amount lists, blockquotes and comments are indented.
-$indent-amount: rhythm(1);
-
-// Hover state effects
-$timing: .5s;
-$easing: ease-out;
-
-
+$indent-amount: 1em;
 
 
 // =============================================================================
 // Partials to be shared with all .scss files.
 // =============================================================================
 
-// Add the Zen Grids responsive layout mixins.
-@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids";
-@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/functions";
-@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/background";
-@import "../../../../node_modules/butler/node_modules/zen-grids/sass/zen-grids/flow";
+// Add the Singularity Grids responsive layout mixins.
+@import "singularitygs";
+
 // Add the Breakpoint mixin.
-@import "../../../../node_modules/butler/node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "breakpoint";
 
 // Now we add our custom helper mixins.
 @import "mixins";
