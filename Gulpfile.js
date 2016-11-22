@@ -91,7 +91,7 @@ gulp.task('sass', function() {
 gulp.task('sculpin', function () {
   console.log('Building sculpin...');
   gulp.src(defaults.template_files)
-    // Kill process running on :8000. Run the command line commands to watch sculpin
+    // Run the command line commands to watch sculpin
     .pipe(exec(defaults.sculpin_run + ' generate --watch --server --project-dir="' + defaults.sculpin_dir + '"'));
 });
 
