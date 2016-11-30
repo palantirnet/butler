@@ -1,0 +1,20 @@
+---
+layout: element
+section: element
+
+title: Color Palette
+description: Add Description
+variable: $secondary
+hex: 002b50
+---
+<section class="container">
+  <div class="l-1up">
+    <h2>Primary Palette</h2>
+      <div class="styleguide-swatch" style="background-color: #{{ page.hex }}">
+        <code>
+          Variable: {{ page.variable }} <br />
+          Hex: # {{ page.hex }}
+        </code>
+      </div>
+  </div>
+</section>

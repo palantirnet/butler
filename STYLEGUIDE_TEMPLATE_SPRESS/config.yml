@@ -1,0 +1,6 @@
+# Site configuration
+
+title: 'STYLEGUIDE TEMPLATE'
+url: ''
+
+server_watch_ext: ['html', 'htm', 'xml', 'css', 'js', 'twig', 'md']

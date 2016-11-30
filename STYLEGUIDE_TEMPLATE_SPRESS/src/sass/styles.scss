@@ -1,0 +1,44 @@
+/**
+ * @file
+ * Centralize your imports here.
+ * Styles are organized using the SMACSS technique.
+ * @see http://smacss.com/book/
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+/* Set browser support */
+@import "support-for";
+
+/* Set the vertical rhythm */
+@import "vertical-rhythm/vertical_rhythm";
+
+/* HTML element (SMACSS base) rules */
+@import "normalize";
+
+/* Layout rules */
+@import "layouts/_l-1up";
+@import "layouts/_l-2up";
+@import "layouts/_l-3up";
+@import "layouts/_l-4up";
+@import "layouts/_l-6up";
+@import "layouts/_l-33-66";
+@import "layouts/_l-66-33";
+@import "layouts/_l-singularity";
+
+/* Component (SMACSS module) rules */
+/* @import "components/my-component"; */
+
+/* Styleguide Specific rules */
+@import "styleguide/styleguide";
+
+/* print rules */
+@import "print";
+
+/** @define component **/
+// This component will fail
+// keeping for testing purposes
+.Best-Class-Ever {
+  background:red;
+}

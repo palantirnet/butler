@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Layout rules for two thirds / one third (66/33) content
+ */
+
+// =============================================================================
+// Basic 66-33 Isolation layout
+// =============================================================================
+
+.l-66-33--1 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(8, 1, 'both');
+  }
+}
+
+.l-66-33--2 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(4, 9, 'none');
+  }
+}

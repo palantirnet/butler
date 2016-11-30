@@ -1,0 +1,40 @@
+---
+layout: default
+placeholder: This is the component.
+---
+
+{% block content_wrapper %}
+  <header class="styleguide-header">
+    <div class="container">
+      <div class="l-styleguide-column">
+        <h5 class="styleguide-label">Living Styleguide</h5>
+        <h1><a href="{{ site.url }}/">{{ site.title }}</a></h1>
+      </div>
+    </div>
+  </header>
+  <div class="component-header">
+    <div class="container">
+      <div class="l-styleguide-column">
+        <main>
+          <h2 class="styleguide-title--component">{{ page.title }}</h2>
+          <p> {{ page.description }}</p>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div class="styleguide-component">
+  {% if page.type == "rail" %}
+    <div class="container">
+      <div class="l-styleguide-rail">
+  {% elseif page.type == "main" %}
+    <div class="container">
+      <div class="l-styleguide-column">
+  {% elseif page.type == "full-width" %}
+    <div>
+      <div>
+  {% endif %}
+     {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

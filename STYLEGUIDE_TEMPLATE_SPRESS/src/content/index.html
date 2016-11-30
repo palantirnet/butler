@@ -1,0 +1,53 @@
+---
+layout: default
+title: Styleguide
+---
+
+{% block content %}
+
+<div class="container">
+  <main class="l-column">
+    <div class="styleguide-section">
+      <h3 class="styleguide-title">Static Comps</h3>
+        <p>Description of static comps go here</p>
+      <ul class="styleguide-list">
+      {% for styleguide in data.styleguides %}
+      {% if styleguide.section == "comps" %}
+        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="styleguide-section">
+      <h3 class="styleguide-title">Elements</h3>
+        <p>Elements are the foundation of the system. Simply using typography and color, well designed Elements can begin to express the site's personality.</p>
+      <ul class="styleguide-list">
+      {% for styleguide in data.styleguides %}
+      {% if styleguide.section == "element" %}
+        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="styleguide-section">
+      <h3 class="styleguide-title">Components</h3>
+      <p>Based on the needs of the content, Components are arranged into specific layouts to create Templates.</p>
+      <ul class="styleguide-list">
+      {% for styleguide in data.styleguides %}
+      {% if styleguide.section == "component" %}
+        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="styleguide-section">
+      <h3 class="styleguide-title">Templates</h3>
+      <p>Based on the needs of the content, Components are arranged into specific layouts to create Templates.</p>
+      <ul class="styleguide-list">
+        <li><a href="{{ site.url }}/home">Home Page</a></li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

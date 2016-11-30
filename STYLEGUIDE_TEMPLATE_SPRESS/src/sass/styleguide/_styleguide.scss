@@ -1,0 +1,124 @@
+/**
+ * @file
+ * Define the styles for the styleguide. This is not css for the site.
+ *
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.l-styleguide-column {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(8, 1, 'none');
+  }
+
+  @include breakpoint($bp2) {
+    @include isolation-span(7, 2, 'none');
+  }
+}
+
+.l-styleguide-rail {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(4, 1, 'none');
+  }
+
+  @include breakpoint($bp2) {
+    @include isolation-span(3, 2, 'none');
+  }
+}
+
+.styleguide-copyright {
+  @include adjust-font-size-to($label, 1.5);
+  color: $gray-medium;
+  padding: rhythm(2) 0;
+  margin-top: rhythm(2);
+  border-top: 1px solid $gray-light;
+}
+
+.styleguide-label {
+  color: $gray-dark;
+}
+
+.styleguide-section {
+  margin-top: rhythm(3);
+  border-top: 1px solid $gray-light;
+  padding-top: rhythm(2);
+}
+
+.styleguide-list {
+
+  h4 {
+    @include leader(0);
+    @include trailer(0.25);
+    font-weight: 400;
+  }
+}
+
+.styleguide-component {
+  background-color: $white;
+  padding: rhythm(2) 0;
+}
+
+.component-header {
+  background-color: $gray-light;
+  margin: rhythm(1) 0;
+  padding: rhythm(1) 0;
+}
+
+.color-title {
+  border-bottom: 1px solid $gray-light;
+  padding-bottom: rhythm(1);
+  margin: rhythm(2) 0;
+}
+
+.color-block {
+  width: 100%;
+  height: 50px;
+  margin-top: rhythm(1);
+}
+
+.color-label {
+  color: $gray-medium;
+}
+
+.styleguide-swatch {
+  width: 50%;
+  padding: 25px;
+}
+
+.styleguide-body {
+  margin-bottom: rhythm(2);
+}
+
+// Grid demo styles
+.demo {
+  background-color: $gray-light;
+  padding: rhythm(1);
+}
+
+// Set example nest wrap styles
+.nest-wrap {
+  @extend %clearfix;
+  background-color: $gray-light;
+  padding: 0;
+}
+
+// Set the column count for nested example
+@include layout(8) {
+  .nest-item {
+    @include isolation-span(8, 1, 'both');
+    background-color: darken($gray-light, 4%);
+    padding: rhythm(1);
+
+    @include breakpoint($bp1) {
+      @include float-span(2);
+      margin-bottom: 0;
+
+      &:last-child {
+        @include float-span(4, "last");
+      }
+    }
+  }
+}

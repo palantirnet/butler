@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Layout rules for 6-up content
+ */
+
+// =============================================================================
+// Basic 6-up Float layout
+// =============================================================================
+
+.l-6up {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include float-span(2);
+  }
+
+  &:nth-of-type(6n+1) {
+    @include breakpoint($bp1) {
+      @include float-span(2, 'first');
+    }
+  }
+
+  &:nth-of-type(6n) {
+    @include breakpoint($bp1) {
+      @include float-span(2, 'last');
+    }
+  }
+}
+
+
+// =============================================================================
+// Basic 6-up Isolation layout
+// =============================================================================
+
+.l-6up--1 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 1, 'both');
+  }
+}
+
+.l-6up--2 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 3, 'none');
+  }
+}
+
+.l-6up--3 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 5, 'none');
+  }
+}
+
+.l-6up--4 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 7, 'none');
+  }
+}
+
+.l-6up--5 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 9, 'none');
+  }
+}
+
+.l-6up--6 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(2, 11, 'none');
+  }
+}
