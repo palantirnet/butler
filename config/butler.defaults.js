@@ -20,6 +20,9 @@ defaults.output_prod = '../../styleguide/output_prod/**/*';
 // location of sculpin.phar
 defaults.sculpin_run = '../../vendor/bin/sculpin';
 
+defaults.spress_home = '../../';
+defaults.spress_bin = '../../vendor/bin/spress';
+
 // Autoprefixer defaults
 // Support 2 most recent browser versions and anything with more than 5% support
 defaults.autoprefixer = { browsers: ['last 2 versions', '> 5%'] };

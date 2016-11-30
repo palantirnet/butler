@@ -107,16 +107,16 @@ gulp.task('sculpin-prod', function () {
 // Spress Development
 gulp.task('spress', function () {
   console.log('Building spress...');
-  return gulp.src('../../')
+  return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
-    .pipe(exec('../../vendor/bin/spress site:build --source=../../ --watch --server'));
+    .pipe(exec(defaults.spress_bin + ' site:build --watch --server --source=' + defaults.spress_home));
 });
 
 // Spress Development
 gulp.task('spress-prod', function () {
   console.log('Building production artifact...');
-  return gulp.src('../../')
-    .pipe(exec('../../vendor/bin/spress site:build --source=../../ --env=prod'));
+  return gulp.src(defaults.spress_home)
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
 });
 
 // Watch for Changes
