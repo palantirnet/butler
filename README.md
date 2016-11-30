@@ -44,6 +44,7 @@ A tool to automate front-end development tasks and streamline prototyping.
 
 ## Add Butler to a project, with spress
 
+1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant.
 1. Create a `styleguide` directory in your project
 1. **You'll install the styleguide dependencies and run Butler from the `styleguide` directory.** Go there now: `cd styleguide`
 1. Run `npm init` to create your `package.json` file
