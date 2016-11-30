@@ -104,6 +104,21 @@ gulp.task('sculpin-prod', function () {
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
+// Spress Development
+gulp.task('spress', function () {
+  console.log('Building spress...');
+  return gulp.src('../../')
+    .pipe(exec('fuser 4000/tcp --kill || true'))
+    .pipe(exec('../../vendor/bin/spress site:build --source=../../ --watch --server'));
+});
+
+// Spress Development
+gulp.task('spress-prod', function () {
+  console.log('Building production artifact...');
+  return gulp.src('../../')
+    .pipe(exec('../../vendor/bin/spress site:build --source=../../ --env=prod'));
+});
+
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
