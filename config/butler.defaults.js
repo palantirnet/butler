@@ -2,6 +2,9 @@
 
 var defaults = {};
 
+// What we run by default.
+defaults.develop_tasks = ['sass', 'sculpin', 'watch'];
+
 // .scss files
 defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'];
 // location of the compiled CSS

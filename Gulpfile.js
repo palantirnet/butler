@@ -133,7 +133,7 @@ gulp.task('watch', function() {
 });
 
 // Set Develop task
-gulp.task('develop', ['sass', 'sculpin', 'watch']);
+gulp.task('develop', defaults.develop_tasks);
 
 // Set a test task
 gulp.task('test', ['lint', 'audit']);
