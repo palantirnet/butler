@@ -51,7 +51,7 @@ A tool to automate front-end development tasks and streamline prototyping.
 1. Add Butler as a dependency:
 
   ```
-npm install --save-exact palantirnet/butler#spress-task`
+npm install --save-exact palantirnet/butler#spress-task
 ```
   * Butler will prompt you for the git repository URL; respondez-vous
   * Butler will ask you whether you're using Spress; say 'y'
