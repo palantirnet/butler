@@ -74,7 +74,7 @@ cp -r node_modules/butler/STYLEGUIDE_TEMPLATE_SPRESS/.gitignore .
 1. Install spress: `composer install`
 1. Add your fresh styleguide code to your project: `git add .`
 1. When you're ready to start working on code, run `npm run butler`
-1. The styleguide can be found on port 4000: [http://myproject.local:4000](http://myproject.local:4000)
+1. The styleguide can be found on port 4000: [http://myproject.local:4000](http://myproject.local:4000) (or [http://localhost:4000](http://localhost:4000) if you're running Butler locally)
 
 ## What does this Butler do?
 
