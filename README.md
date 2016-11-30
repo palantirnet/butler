@@ -65,10 +65,11 @@ npm install --save-exact palantirnet/butler#spress-task
   "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
 },
 ```
-1. Copy the contents of Butler's `STYLEGUIDE_TEMPLATE_SPRESS` directory into your `styleguide` directory:
+1. Copy the contents of Butler's `STYLEGUIDE_TEMPLATE_SPRESS` directory into your `styleguide` directory with the following two commands:
 
   ```
 cp -r node_modules/butler/STYLEGUIDE_TEMPLATE_SPRESS/* .
+cp -r node_modules/butler/STYLEGUIDE_TEMPLATE_SPRESS/.gitignore .
 ```
 1. Install spress: `composer install`
 1. Add your fresh styleguide code to your project: `git add .`
