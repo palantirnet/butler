@@ -1,7 +1,10 @@
 #!/bin/bash
 
 if [ ! -e ../../conf/butler.defaults.js ]; then
+  echo "  Hi, it's Butler!"
+
   if [ ! -e ../../conf ]; then
+    echo "  I'm creating my config directory."
     mkdir ../../conf
   fi;
 
@@ -10,15 +13,14 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
   echo "" >> ../../conf/butler.defaults.js
 
   echo ""
-  echo "Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
+  echo "  Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
   read project_repo
   echo "overrides.repo = \"$project_repo\";" >> ../../conf/butler.defaults.js
 
   echo ""
-  echo "Are you using spress? (y/n)"
+  read -r -p "  Are you using Spress? [y/n] " using_spress
 
-  read -r -p "Are you using Spress? [y/n] " using_spress
-  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  if [[ $using_spress =~ ^([yY][eE][sS]|[yY])$ ]]; then
     cp -r STYLEGUIDE_TEMPLATE_SPRESS/* ../../
     cp STYLEGUIDE_TEMPLATE_SPRESS/.gitignore ../../
     composer install --working-dir=../../
@@ -37,4 +39,4 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
 fi;
 
 echo ""
-echo "Thanks for using Butler!"
+echo "  Thanks for using Butler!"
