@@ -22,7 +22,7 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
 
   if [[ $using_spress =~ ^([yY][eE][sS]|[yY])$ ]]; then
     cp -r STYLEGUIDE_TEMPLATE_SPRESS/* ../../
-    cp STYLEGUIDE_TEMPLATE_SPRESS/.gitignore ../../
+    cp STYLEGUIDE_TEMPLATE_SPRESS/gitignore ../../.gitignore
     composer install --working-dir=../../
 
     echo "overrides.develop_tasks = ['sass', 'spress', 'watch'];" >> ../../conf/butler.defaults.js
