@@ -44,7 +44,7 @@ A tool to automate front-end development tasks and streamline prototyping.
 
 ## Add Butler to a project, with spress
 
-1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant.
+1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant:
 
   ```
 vagrant up
