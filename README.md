@@ -88,10 +88,15 @@ npm install --save-exact palantirnet/butler#spress-task
   ```
 npm run butler
 ```
-1. The styleguide can be found on port 4000:
+1. Verify that the styleguide is running; it can be found on port 4000:
   * [http://myproject.local:4000](http://myproject.local:4000)
   * Or, if you're running Butler locally: [http://localhost:4000](http://localhost:4000)
-1. Add your fresh styleguide code to your project: `git add .`
+1. Finally, add your styleguide to your project:
+
+  ```
+git add .
+git commit -m "Initialize the styleguide."
+```
 
 ## What does this Butler do?
 

@@ -16,9 +16,9 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
 
   echo ""
   echo "Are you using spress? (y/n)"
-  read using_spress
 
-  if [[ "$using_spress" == "y" ]]; then
+  read -r -p "Are you using Spress? [y/n] " using_spress
+  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
     cp -r STYLEGUIDE_TEMPLATE_SPRESS/* ../../
     cp STYLEGUIDE_TEMPLATE_SPRESS/.gitignore ../../
     composer install --working-dir=../../
