@@ -1,14 +1,20 @@
 #!/bin/bash
 
 if [ ! -e ../../conf/butler.defaults.js ]; then
+  if [ ! -e ../../conf ]; then
+    mkdir ../../conf
+  fi
+
   echo "// Project-specific Butler configuration." > ../../conf/butler.defaults.js
   echo "var overrides = {};" >> ../../conf/butler.defaults.js
   echo "" >> ../../conf/butler.defaults.js
 
+  echo ""
   echo "Please provide the repository link for this project. Eg: https://github.com/palantirnet/butler.git"
   read project_repo
   echo "overrides.repo = \"$project_repo\";" >> ../../conf/butler.defaults.js
 
+  echo ""
   echo "Are you using spress? (y/n)"
   read using_spress
 
@@ -20,10 +26,11 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
     echo "overrides.output_dev = '../../build';" >> ../../conf/butler.defaults.js
     echo "overrides.html_files = ['../../build/*.html', '../../build/**/*.html'];" >> ../../conf/butler.defaults.js
     echo "overrides.output_prod = '../../build/**/*';" >> ../../conf/butler.defaults.js
-  fi;
+  fi
 
   echo "" >> ../../conf/butler.defaults.js
   echo "module.exports = overrides;" >> ../../conf/butler.defaults.js
-fi;
+fi
 
+echo ""
 echo "Thanks for using Butler!"
