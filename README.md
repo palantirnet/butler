@@ -66,6 +66,9 @@ A tool to automate front-end development tasks and streamline prototyping.
 
   *Note: When you are deploying, Butler will ask you for your GitHub credentials at least once, possibly multiple times. Enter your own GitHub credentials as prompted.*
 
+## Writing Javascript
+If you need to write some Javascript, follow the [instructions at `/docs/JS.md`](https://github.com/palantirnet/butler/blob/drupal-attach-behaviors/docs/JS.md) to properly set up your scripts. This will allow for Javascript to be shared between the styleguide and Drupal.
+
 ## Troubleshooting
 
 For immediate concerns, if you have comments/questions/concerns about working with this please talk to Lauren.
