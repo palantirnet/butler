@@ -19,6 +19,10 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
   read using_spress
 
   if [[ "$using_spress" == "y" ]]; then
+    cp -r STYLEGUIDE_TEMPLATE_SPRESS/* ../../
+    cp STYLEGUIDE_TEMPLATE_SPRESS/.gitignore ../../
+    composer install --working-dir=../../
+
     echo "overrides.develop_tasks = ['sass', 'spress', 'watch'];" >> ../../conf/butler.defaults.js
     echo "overrides.scss = ['../../src/sass/*.scss', '../../src/sass/**/*.scss'];" >> ../../conf/butler.defaults.js
     echo "overrides.css = '../../src/content/assets/css/';" >> ../../conf/butler.defaults.js

@@ -83,16 +83,15 @@ npm install --save-exact palantirnet/butler#spress-task
       "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
     },
 ```
-1. Copy the contents of Butler's `STYLEGUIDE_TEMPLATE_SPRESS` directory into your `styleguide` directory with the following two commands:
+1. Now make sure your Butler runs:
 
   ```
-cp -r node_modules/butler/STYLEGUIDE_TEMPLATE_SPRESS/* .
-cp -r node_modules/butler/STYLEGUIDE_TEMPLATE_SPRESS/.gitignore .
+npm run butler
 ```
-1. Install spress: `composer install`
+1. The styleguide can be found on port 4000:
+  * [http://myproject.local:4000](http://myproject.local:4000)
+  * Or, if you're running Butler locally: [http://localhost:4000](http://localhost:4000)
 1. Add your fresh styleguide code to your project: `git add .`
-1. When you're ready to start working on code, run `npm run butler`
-1. The styleguide can be found on port 4000: [http://myproject.local:4000](http://myproject.local:4000) (or [http://localhost:4000](http://localhost:4000) if you're running Butler locally)
 
 ## What does this Butler do?
 
