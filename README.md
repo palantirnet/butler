@@ -14,7 +14,7 @@ A tool to automate front-end development tasks and streamline prototyping.
 ## Add Butler to a project, with sculpin
 
 1. If the project does not already have npm dependencies, run `npm init` to create a `package.json` file
-1. Add Butler as a dependency: `npm install --save-exact palantirnet/butler`
+1. Add Butler as a dependency: `npm install --save --save-exact palantirnet/butler`
 
   When Butler is first installed, it will ask for the location of your project's GitHub repository. Please provide the HTTPS link for the project repository, e.g. `https://github.com/palantirnet/[project].git`; Butler will use this information to deploy the styleguide.
 
@@ -69,7 +69,7 @@ npm init
 1. Add Butler as a dependency:
 
   ```
-npm install --save-exact palantirnet/butler#spress-task
+npm install --save --save-exact palantirnet/butler#spress-task
 ```
   * Butler will prompt you for the git repository URL; respondez-vous
   * Butler will ask you whether you're using Spress; say `y`
