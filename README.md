@@ -24,12 +24,12 @@ A tool to automate front-end development tasks and streamline prototyping.
 1. Add the following code to your project's `package.json`:
 
   ````
-  "scripts": {
-    "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
-    "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
-    "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-    "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
-  },
+    "scripts": {
+      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+    },
   ````
 1. Add the `node_modules` directory to your project's .gitignore
 1. Commit Butler's changes to your project:
@@ -45,25 +45,43 @@ A tool to automate front-end development tasks and streamline prototyping.
 ## Add Butler to a project, with spress
 
 1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant.
-1. Create a `styleguide` directory in your project
-1. **You'll install the styleguide dependencies and run Butler from the `styleguide` directory.** Go there now: `cd styleguide`
-1. Run `npm init` to create your `package.json` file
+
+  ```
+vagrant up
+vagrant ssh
+cd /var/www/myproject.local
+```
+1. Create a `styleguide` directory in your project:
+
+  ```
+mkdir styleguide
+```
+1. **You'll install the styleguide dependencies and run Butler from the `styleguide` directory.** Go there now:
+
+  ```
+cd styleguide
+```
+1. Tell `npm` to create your `package.json` file:
+
+  ```
+npm init
+```
 1. Add Butler as a dependency:
 
   ```
 npm install --save-exact palantirnet/butler#spress-task
 ```
   * Butler will prompt you for the git repository URL; respondez-vous
-  * Butler will ask you whether you're using Spress; say 'y'
+  * Butler will ask you whether you're using Spress; say `y`
 1. Add Butler's scripts to your `package.json` file:
 
   ```json
-"scripts": {
-  "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
-  "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
-  "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-  "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
-},
+    "scripts": {
+      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+    },
 ```
 1. Copy the contents of Butler's `STYLEGUIDE_TEMPLATE_SPRESS` directory into your `styleguide` directory with the following two commands:
 
