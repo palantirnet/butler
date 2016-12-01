@@ -91,7 +91,7 @@ npm run butler
 1. Verify that the styleguide is running; it can be found on port 4000:
   * [http://myproject.local:4000](http://myproject.local:4000)
   * Or, if you're running Butler locally: [http://localhost:4000](http://localhost:4000)
-1. Finally, add your styleguide to your project:
+1. Finally, add the styleguide to your project:
 
   ```
 git add .
