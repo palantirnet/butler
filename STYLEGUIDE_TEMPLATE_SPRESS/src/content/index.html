@@ -9,12 +9,10 @@ title: Styleguide
   <main class="l-column">
     <div class="styleguide-section">
       <h3 class="styleguide-title">Static Comps</h3>
-        <p>Description of static comps go here</p>
+        <p>These high-fidelity mockups guide the creation of the elements, components, and templates.</p>
       <ul class="styleguide-list">
-      {% for styleguide in data.styleguides %}
-      {% if styleguide.section == "comps" %}
-        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
-      {% endif %}
+      {% for comp in site.comps %}
+        <li><a href="{{ site.url }}{{ comp.url }}">{{ comp.title }}</a></li>
       {% endfor %}
       </ul>
     </div>
@@ -22,10 +20,8 @@ title: Styleguide
       <h3 class="styleguide-title">Elements</h3>
         <p>Elements are the foundation of the system. Simply using typography and color, well designed Elements can begin to express the site's personality.</p>
       <ul class="styleguide-list">
-      {% for styleguide in data.styleguides %}
-      {% if styleguide.section == "element" %}
-        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
-      {% endif %}
+      {% for element in site.elements %}
+        <li><a href="{{ site.url }}{{ element.url }}">{{ element.title }}</a></li>
       {% endfor %}
       </ul>
     </div>
@@ -33,10 +29,8 @@ title: Styleguide
       <h3 class="styleguide-title">Components</h3>
       <p>Based on the needs of the content, Components are arranged into specific layouts to create Templates.</p>
       <ul class="styleguide-list">
-      {% for styleguide in data.styleguides %}
-      {% if styleguide.section == "component" %}
-        <li><a href="{{ site.url }}{{ styleguide.url }}">{{ styleguide.title }}</a></li>
-      {% endif %}
+      {% for component in site.components %}
+        <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
       {% endfor %}
       </ul>
     </div>

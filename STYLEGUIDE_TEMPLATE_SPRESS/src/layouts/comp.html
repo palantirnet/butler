@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page.title }}{% endblock %} | {{ site.title }}</title>
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{{ site.url }}/assets/images/global/palantir-favicon.png?v=2" type="image/x-icon" />
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-  </head>
-  <body>
-    {% block content %}
-      {{ page.content }}
-    {% endblock %}
-  </body>
-</html>
+---
+layout: "default"
+placeholder: "This is the comp."
+---
