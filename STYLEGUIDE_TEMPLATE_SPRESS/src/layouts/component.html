@@ -1,6 +1,5 @@
 ---
 layout: "default"
-placeholder: "This is the component."
 ---
 
 {% set container_attrs = '' %}
@@ -9,24 +8,20 @@ placeholder: "This is the component."
 {% endif %}
 
 {% block content_wrapper %}
-  <div class="container">
-    <header class="l-column">
-      <h5 class="styleguide-label">Living Styleguide</h5>
-      <h1 class="styleguide-logo"><a href="{{ site.url }}/">[ logo ]</a></h1>
-    </header>
-  </div>
-  <div class="component-header">
-    <div class="container">
-      <main class="l-column">
-        <h2 class="styleguide-title--component">{{ page.title }}</h2>
-        <p>{{ page.description }}</p>
-      </main>
+  {% include 'styleguide/styleguide-description.html' %}  
+    <div class="styleguide-component">
+      {% if page.type == "rail" %}
+        <div class="container">
+          <div class="l-styleguide-rail">
+      {% elseif page.type == "main" %}
+        <div class="container">
+          <div class="l-styleguide-column">
+      {% elseif page.type == "full-width" %}
+        <div>
+          <div>
+      {% endif %}
+      {% block content %}{{page.content}}{% endblock %}
+          </div>
+        </div>
     </div>
-  </div>
-  <div class="styleguide-component">
-    container
-    <div{{ container_attrs }}>
-      {% block content %}component{{ placeholder }}{% endblock %}
-    </div>
-  </div>
 {% endblock %}

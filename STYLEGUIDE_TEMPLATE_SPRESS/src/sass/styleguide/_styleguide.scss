@@ -13,7 +13,7 @@
   }
 
   @include breakpoint($bp2) {
-    @include isolation-span(7, 2, 'none');
+    @include isolation-span(7, 1, 'none');
   }
 }
 
@@ -27,6 +27,11 @@
   @include breakpoint($bp2) {
     @include isolation-span(3, 2, 'none');
   }
+}
+
+// Update this class as needed to differentiate styleguide header from the header component
+.styleguide-header {
+  background-color: $white;
 }
 
 .styleguide-copyright {
@@ -48,12 +53,7 @@
 }
 
 .styleguide-list {
-
-  h4 {
-    @include leader(0);
-    @include trailer(0.25);
-    font-weight: 400;
-  }
+  list-style-type: disc;
 }
 
 .styleguide-component {
@@ -61,26 +61,10 @@
   padding: rhythm(2) 0;
 }
 
-.component-header {
+.styleguide-description {
   background-color: $gray-light;
   margin: rhythm(1) 0;
   padding: rhythm(1) 0;
-}
-
-.color-title {
-  border-bottom: 1px solid $gray-light;
-  padding-bottom: rhythm(1);
-  margin: rhythm(2) 0;
-}
-
-.color-block {
-  width: 100%;
-  height: 50px;
-  margin-top: rhythm(1);
-}
-
-.color-label {
-  color: $gray-medium;
 }
 
 .styleguide-swatch {
