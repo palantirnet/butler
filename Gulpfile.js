@@ -105,16 +105,20 @@ gulp.task('sculpin-prod', function () {
 });
 
 // Spress Development
-gulp.task('spress', function () {
-  console.log('Building spress...');
-  return gulp.src(defaults.spress_home)
-    .pipe(exec('fuser 4000/tcp --kill || true'))
-    .pipe(exec(defaults.spress_bin + ' site:build --watch --server --source=' + defaults.spress_home));
+gulp.task('spress-watch', function() {
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*'], ['spress-build']);
+  watcher.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
+  });
 });
 
-// Spress Development
-gulp.task('spress-prod', function () {
-  console.log('Building production artifact...');
+gulp.task('spress-serve', function () {
+  return gulp.src(defaults.spress_home)
+    .pipe(exec('fuser 4000/tcp --kill || true'))
+    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
+});
+
+gulp.task('spress-build', function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
 });
