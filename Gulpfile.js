@@ -67,12 +67,6 @@ gulp.task('sass', function() {
   ];
   // Run on all file defaults defined in var scsss
   return gulp.src(defaults.scss)
-    // Run Sass on those files
-    .pipe(postcss([
-      // lint before we compile
-      stylelint(defaults.stylelint),
-      reporter({ clearMessages: true })
-    ], {syntax: syntax_scss}))
     // Include paths to sass modules
     .pipe(sass({
       includePaths: [
