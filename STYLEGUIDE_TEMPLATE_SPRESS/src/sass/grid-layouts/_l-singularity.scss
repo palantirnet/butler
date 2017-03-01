@@ -11,7 +11,7 @@
 // Debug mode: Set to true for background grid overlay.
 @include sgs-change('debug', true);
 
-// If you want/need to use fixed with gutters, you must add 
+// If you want/need to use fixed width gutters, you must add 
 // split and fixed gutter styles so that singularity uses the 
 // right maths.
 // @include add-gutter-style('split' 'fixed');
