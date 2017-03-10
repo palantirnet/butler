@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Layout rules for 3-up content
+ */
+
+// =============================================================================
+// Basic 3-up Float layout
+// =============================================================================
+
+.l-3up {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include float-span(4);
+  }
+
+  &:nth-of-type(3n+1) {
+    @include breakpoint($bp1) {
+      @include float-span(4, 'first');
+    }
+  }
+
+  &:nth-of-type(3n) {
+    @include breakpoint($bp1) {
+      @include float-span(4, 'last');
+    }
+  }
+}
+
+
+// =============================================================================
+// Basic 3-up Isolation layout
+// =============================================================================
+
+.l-3up--1 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(4, 1, 'both');
+  }
+}
+
+.l-3up--2 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(4, 5, 'none');
+  }
+}
+
+.l-3up--3 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(4, 9, 'none');
+  }
+}

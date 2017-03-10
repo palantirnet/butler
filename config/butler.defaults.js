@@ -2,6 +2,9 @@
 
 var defaults = {};
 
+// What we run by default.
+defaults.develop_tasks = ['sass', 'sculpin', 'watch'];
+
 // .scss files
 defaults.scss = ['../../styleguide/source/code/sass/*.scss', '../../styleguide/source/code/sass/**/*.scss'];
 // location of the compiled CSS
@@ -19,6 +22,9 @@ defaults.output_prod = '../../styleguide/output_prod/**/*';
 
 // location of sculpin.phar
 defaults.sculpin_run = '../../vendor/bin/sculpin';
+
+defaults.spress_home = '../../';
+defaults.spress_bin = '../../vendor/bin/spress';
 
 // Autoprefixer defaults
 // Support 2 most recent browser versions and anything with more than 5% support

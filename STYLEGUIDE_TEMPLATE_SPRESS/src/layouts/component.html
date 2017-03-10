@@ -1,0 +1,27 @@
+---
+layout: "default"
+---
+
+{% set container_attrs = '' %}
+{% if page.category == 'sidebar' %}
+  {% set container_attrs = ' class="container"' %}
+{% endif %}
+
+{% block content_wrapper %}
+  {% include 'styleguide/styleguide-description.html' %}  
+    <div class="styleguide-component">
+      {% if page.type == "rail" %}
+        <div class="container">
+          <div class="l-styleguide-rail">
+      {% elseif page.type == "main" %}
+        <div class="container">
+          <div class="l-styleguide-column">
+      {% elseif page.type == "full-width" %}
+        <div>
+          <div>
+      {% endif %}
+      {% block content %}{{page.content}}{% endblock %}
+          </div>
+        </div>
+    </div>
+{% endblock %}

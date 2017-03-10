@@ -67,12 +67,6 @@ gulp.task('sass', function() {
   ];
   // Run on all file defaults defined in var scsss
   return gulp.src(defaults.scss)
-    // Run Sass on those files
-    .pipe(postcss([
-      // lint before we compile
-      stylelint(defaults.stylelint),
-      reporter({ clearMessages: true })
-    ], {syntax: syntax_scss}))
     // Include paths to sass modules
     .pipe(sass({
       includePaths: [
@@ -104,6 +98,25 @@ gulp.task('sculpin-prod', function () {
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
+// Spress Development
+gulp.task('spress-watch', function() {
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/content/assets/css/*'], ['spress-build']);
+  watcher.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
+  });
+});
+
+gulp.task('spress-serve', function () {
+  return gulp.src(defaults.spress_home)
+    .pipe(exec('fuser 4000/tcp --kill || true'))
+    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
+});
+
+gulp.task('spress-build', function () {
+  return gulp.src(defaults.spress_home)
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+});
+
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
@@ -118,7 +131,7 @@ gulp.task('watch', function() {
 });
 
 // Set Develop task
-gulp.task('develop', ['sass', 'sculpin', 'watch']);
+gulp.task('develop', defaults.develop_tasks);
 
 // Set a test task
 gulp.task('test', ['lint', 'audit']);

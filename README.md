@@ -11,10 +11,10 @@ A tool to automate front-end development tasks and streamline prototyping.
   1. Butler expects Sculpin to be included in your project using `composer`. Make sure you've run `composer install` in your project before running Butler.
   1. If you would like to use globally-installed Sculpin instead: first, follow [Sculpin's installation guide](https://sculpin.io/getstarted/); then configure Butler to use it by setting `defaults.sculpin_run = 'sculpin';` in your project's `conf/butler.defaults.js` file.
 
-## Add Butler to a project
+## Add Butler to a project, with sculpin
 
 1. If the project does not already have npm dependencies, run `npm init` to create a `package.json` file
-1. Add Butler as a dependency: `npm install --save palantirnet/butler`
+1. Add Butler as a dependency: `npm install --save --save-exact palantirnet/butler`
 
   When Butler is first installed, it will ask for the location of your project's GitHub repository. Please provide the HTTPS link for the project repository, e.g. `https://github.com/palantirnet/[project].git`; Butler will use this information to deploy the styleguide.
 
@@ -24,12 +24,12 @@ A tool to automate front-end development tasks and streamline prototyping.
 1. Add the following code to your project's `package.json`:
 
   ````
-  "scripts": {
-    "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
-    "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
-    "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-    "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
-  },
+    "scripts": {
+      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+    },
   ````
 1. Add the `node_modules` directory to your project's .gitignore
 1. Commit Butler's changes to your project:
@@ -41,6 +41,62 @@ A tool to automate front-end development tasks and streamline prototyping.
 1. The styleguide can be found on port 8000:
   * `http://[project].local:8000` if you're running Butler on a Vagrant
   * [http://localhost:8000](http://localhost:8000) if you're developing locally
+
+## Add Butler to a project, with spress
+
+1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant:
+
+  ```
+vagrant up
+vagrant ssh
+cd /var/www/myproject.local
+```
+1. Create a `styleguide` directory in your project:
+
+  ```
+mkdir styleguide
+```
+1. **You'll install the styleguide dependencies and run Butler from the `styleguide` directory.** Go there now:
+
+  ```
+cd styleguide
+```
+1. Tell `npm` to create your `package.json` file:
+
+  ```
+npm init
+```
+1. Add Butler as a dependency:
+
+  ```
+npm install --save --save-exact palantirnet/butler#spress-task
+```
+  * Butler will prompt you for the git repository URL; respondez-vous
+  * Butler will ask you whether you're using Spress; say `y`
+1. Add Butler's scripts to your `package.json` file:
+
+  ```json
+    "scripts": {
+      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+    },
+```
+1. Now make sure your Butler runs:
+
+  ```
+npm run butler
+```
+1. Verify that the styleguide is running; it can be found on port 4000:
+  * [http://myproject.local:4000](http://myproject.local:4000)
+  * Or, if you're running Butler locally: [http://localhost:4000](http://localhost:4000)
+1. Finally, add the styleguide to your project:
+
+  ```
+git add .
+git commit -m "Initialize the styleguide."
+```
 
 ## What does this Butler do?
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title }}{% endblock %} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css">
+    <link rel="shortcut icon" href="{{ site.url }}/assets/favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="styleguide-header">
+        <h5 class="styleguide-label">Living Styleguide</h5>
+        <h1>{{ site.title }}</h1>
+      </header>
+    </div>
+
+    {% block content_wrapper %}
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+    {% endblock %}
+
+    <div class="container">
+      <div class="l-column">
+        <p class="styleguide-copyright">Copyright (c) 2016 Palantir.net</p>
+      </div>
+    </div>
+
+    {{ include("scripts.html") }}
+  </body>
+</html>

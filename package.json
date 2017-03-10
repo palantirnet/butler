@@ -7,7 +7,7 @@
     "butler": "gulp develop",
     "linting": "gulp test",
     "deploy": "gulp deploy",
-    "postinstall": "sh config/butler.config.sh"
+    "postinstall": "./config/butler.config.sh"
   },
   "repository": {
     "type": "git",
