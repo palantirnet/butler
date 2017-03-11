@@ -100,7 +100,7 @@ gulp.task('sculpin-prod', function () {
 
 // Spress Development
 gulp.task('spress-watch', function() {
-  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/content/assets/css/*'], ['spress-build']);
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*'], ['spress-build']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
   });
@@ -117,12 +117,17 @@ gulp.task('spress-build', function () {
     .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
 });
 
+gulp.task('spress-build-after-sass', ['sass'], function () {
+  return gulp.src(defaults.spress_home)
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+});
+
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
   // Watch the scss folder for change
   // and run `compile-sass` task when something happens
-    .watch(defaults.scss, ['sass'])
+    .watch(defaults.scss, ['sass', 'spress-build-after-sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
