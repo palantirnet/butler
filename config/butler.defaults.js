@@ -19,6 +19,8 @@ defaults.output_dev = '../../styleguide/output_dev';
 defaults.html_files = ['../../styleguide/output_dev/*.html', '../../styleguide/output_dev/**/*.html'];
 // production files to be deployed
 defaults.output_prod = '../../styleguide/output_prod/**/*';
+// location of spress files
+defaults.spress_output = '../../styleguide/build/**/*';
 
 // location of sculpin.phar
 defaults.sculpin_run = '../../vendor/bin/sculpin';

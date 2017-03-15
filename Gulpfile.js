@@ -130,6 +130,22 @@ gulp.task('spress-build-after-sass', ['sass'], function () {
     .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
 });
 
+//Build Spress Production Artifact
+gulp.task('spress-prod', function () {
+  console.log('Building production artifact...');
+  console.log('WARNING: this will overwrite the existing build');
+  return gulp.src(defaults.spress_home)
+    .pipe(exec(defaults.spress_bin + ' site:build --env=prod --source=' + defaults.spress_home));
+});
+
+// Set a deploy task for spress
+gulp.task('spress-deploy', ['spress-prod'], function() {
+  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+  return gulp.src(defaults.spress_output)
+    .pipe(deploy(defaults.deploy))
+    .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
+});
+
 // Watch for Changes
 gulp.task('watch', function() {
   return gulp
