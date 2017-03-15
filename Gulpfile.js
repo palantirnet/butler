@@ -98,6 +98,14 @@ gulp.task('sculpin-prod', function () {
     .on('end', function(){ console.log('Your production artifact has been built'); });
 });
 
+// Set a deploy task for sculpin
+gulp.task('sculpin-deploy', ['sculpin-prod'], function() {
+  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+  return gulp.src(defaults.output_prod)
+    .pipe(deploy(defaults.deploy))
+    .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
+});
+
 // Spress Development
 gulp.task('spress-watch', function() {
   var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*'], ['spress-build']);
@@ -140,14 +148,6 @@ gulp.task('develop', defaults.develop_tasks);
 
 // Set a test task
 gulp.task('test', ['lint', 'audit']);
-
-// Set a deploy task
-gulp.task('deploy', ['sculpin-prod'], function() {
-  console.log('Beginning deploy to gh-pages for' + defaults.repo);
-  return gulp.src(defaults.output_prod)
-    .pipe(deploy(defaults.deploy))
-    .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
-});
 
 
 //  Set default task
