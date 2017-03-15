@@ -28,7 +28,7 @@ A tool to automate front-end development tasks and streamline prototyping.
       "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
       "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
       "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js sculpin-deploy"
     },
   ````
 1. Add the `node_modules` directory to your project's .gitignore
@@ -42,7 +42,7 @@ A tool to automate front-end development tasks and streamline prototyping.
   * `http://[project].local:8000` if you're running Butler on a Vagrant
   * [http://localhost:8000](http://localhost:8000) if you're developing locally
 
-## Add Butler to a project, with spress
+## Add Butler to a project, with Spress
 
 1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant:
 
@@ -75,14 +75,14 @@ npm install --save --save-exact palantirnet/butler#spress-task
   * Butler will ask you whether you're using Spress; say `y`
 1. Add Butler's scripts to your `package.json` file:
 
-  ```json
+  ````
     "scripts": {
       "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
       "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
       "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js deploy"
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js spress-deploy"
     },
-```
+`````
 1. Now make sure your Butler runs:
 
   ```
@@ -118,9 +118,9 @@ git commit -m "Initialize the styleguide."
 
   This is a task to deploy the static styleguide to GitHub pages.
 
-  Butler will build a Sculpin production artifact to `styleguide/output_prod` and deploy the production artifact to `gh-pages` branch of the repo defined in the `conf/butler.defaults.js`. Each commit for this process will default to the message: "Updated with Butler - [timestamp]".
+  Butler will build a Sculpin production artifact to and deploy the production artifact to `gh-pages` branch of the repo defined in the `conf/butler.defaults.js`. 
 
-  You may want to create a `sculpin_site_prod.yml` to define the site URL once deployed. You can find out more information about environment aware configuration for Sculpin [here](https://sculpin.io/documentation/configuration/).
+  You may want to create a `sculpin_site_prod.yml` or a `config_prod.yml` (for Spress) to define the site URL once deployed. You can find out more information about environment aware configuration for Sculpin [here](https://sculpin.io/documentation/configuration/) and the configuration for Spress [here](http://spress.yosymfony.com/docs/configuration/).
 
   *Note: When you are deploying, Butler will ask you for your GitHub credentials at least once, possibly multiple times. Enter your own GitHub credentials as prompted.*
 
