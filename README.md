@@ -69,7 +69,7 @@ npm init
 1. Add Butler as a dependency:
 
   ```
-npm install --save --save-exact palantirnet/butler#spress-task
+npm install --save --save-exact palantirnet/butler
 ```
   * Butler will prompt you for the git repository URL; respondez-vous
   * Butler will ask you whether you're using Spress; say `y`
