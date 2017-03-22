@@ -141,7 +141,7 @@ gulp.task('spress-prod', function () {
 // Set a deploy task for spress
 gulp.task('spress-deploy', ['spress-prod'], function() {
   console.log('Beginning deploy to gh-pages for' + defaults.repo);
-  return gulp.src(defaults.spress_output)
+  return gulp.src(defaults.output_prod)
     .pipe(deploy(defaults.deploy))
     .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
 });
