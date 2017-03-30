@@ -131,7 +131,7 @@ gulp.task('spress-build-after-sass', ['sass'], function () {
 });
 
 //Build Spress Production Artifact
-gulp.task('spress-prod', function () {
+gulp.task('spress-prod', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
   return gulp.src(defaults.spress_home)
@@ -139,7 +139,7 @@ gulp.task('spress-prod', function () {
 });
 
 // Set a deploy task for spress
-gulp.task('spress-deploy', ['spress-prod'], function() {
+gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
   console.log('Beginning deploy to gh-pages for' + defaults.repo);
   return gulp.src(defaults.output_prod)
     .pipe(deploy(defaults.deploy))
