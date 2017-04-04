@@ -120,7 +120,17 @@ git commit -m "Initialize the styleguide."
 
   Butler will build a Sculpin production artifact to and deploy the production artifact to `gh-pages` branch of the repo defined in the `conf/butler.defaults.js`. 
 
-  You may want to create a `sculpin_site_prod.yml` or a `config_prod.yml` (for Spress) to define the site URL once deployed. You can find out more information about environment aware configuration for Sculpin [here](https://sculpin.io/documentation/configuration/) and the configuration for Spress [here](http://spress.yosymfony.com/docs/configuration/).
+  For Spress, you will need to create a a `config_prod.yml` to define the GitHub Pages site URL so that you can deploy to GitHub Pages. The `config_prod.yml` should go in the styleguide folder. Copy and paste this code into the `config_prod.yml` file:
+
+```
+# Site configuration
+
+url: 'https://palantirnet.github.io/[myproject]'
+``` 
+
+  For Sculpin, create a `sculpin_site_prod.yml`.
+
+  You can find out more information about environment aware configuration for Sculpin [here](https://sculpin.io/documentation/configuration/) and the configuration for Spress [here](http://spress.yosymfony.com/docs/configuration/).
 
   *Note: When you are deploying, Butler will ask you for your GitHub credentials at least once, possibly multiple times. Enter your own GitHub credentials as prompted.*
 
