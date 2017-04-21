@@ -1,0 +1,66 @@
+/**
+ * buttons.scss
+ * Define default button styles.
+ *
+ * @copyright Copyright (c) 2017 Palantir.net
+ */
+
+%button,
+.button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+
+  @include breakpoint($bp1) {
+    display: inline-block;
+    width: auto;
+  }
+
+  &:link,
+  &:visited {
+    // link styles go here
+  }
+
+  &:active,
+  &:hover {
+    // active and hover styles go here
+  }
+
+  &:focus {
+    // focus styles go here
+  }
+}
+
+%button--full,
+.button--full {
+  @extend %button;
+
+  @include breakpoint($bp1) {
+    display: block;
+    width: 100%;
+  }
+}
+
+%button--secondary,
+.button--secondary {
+  @extend %button;
+
+  &:link,
+  &:visited {
+    // link styles go here
+  }
+
+  &:active,
+  &:hover {
+    // active and hover styles go here
+  }
+
+  &:focus {
+    // focus styles go here
+  }
+}
+
+.button--secondary-full {
+  @extend %button--full;
+  @extend %button--secondary;
+}
