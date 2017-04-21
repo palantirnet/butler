@@ -25,3 +25,9 @@ collections:
     title: "High Fidelity Comps"
     sort_by: title
     sort_type: 'ascending'
+
+  templates:
+    output: true
+    title: "Templates"
+    sort_by: title
+    sort_type: 'ascending'
