@@ -19,9 +19,16 @@ description: Add Description
 
   <label for="select-choice">Select Dropdown Choice:</label>
   <select name="select-choice" id="select-choice">
-    <option value="Choice 1">Choice 1</option>
-    <option value="Choice 2">Choice 2</option>
-    <option value="Choice 3">Choice 3</option>
+    <optgroup label="optgroup1">
+      <option value="Choice 1">Choice 1.1</option>
+      <option value="Choice 2">Choice 1.2</option>
+      <option value="Choice 3">Choice 1.3</option>
+    </optgroup>
+    <optgroup label="optgroup2">
+      <option value="Choice 1">Choice 2.1</option>
+      <option value="Choice 2">Choice 2.2</option>
+      <option value="Choice 3">Choice 2.3</option>
+    </optgroup>
   </select>
 
   <label for="textarea">Textarea:</label>
@@ -45,6 +52,8 @@ description: Add Description
     <option value="November">
     <option value="December">
   </datalist>
+
+
 
   <input class="button" type="submit" value="Submit">
 </form>
