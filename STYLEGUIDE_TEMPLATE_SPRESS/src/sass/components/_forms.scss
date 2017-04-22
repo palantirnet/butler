@@ -1,0 +1,66 @@
+/**
+ * forms.scss
+ * Define default form styles.
+ *
+ * @copyright Copyright (c) 2017 Palantir.net
+ */
+
+form {
+  // form styles go here
+}
+
+fieldset {
+  // fieldset styles go here
+}
+
+legend {
+  // legend styles go here
+}
+
+label {
+  // label styles go here
+}
+
+input {
+  // input styles go here
+
+  &:disabled {
+    // disabled input styles go here
+  }
+
+  &:required {
+    // required input styles go here
+  }
+
+  &:read-only {
+    // readonly input styles go here
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    // hover, focus, and active styles go here
+  }
+}
+
+// use these styles as a starting point to customize the select element
+select {
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
+  // appearance: none;
+  // -moz-appearance: none;
+  // -webkit-appearance: none;
+  // width: 100%;
+  // outline: none;
+  // border-radius: 0;
+  // background-image: url('...');
+  // background-repeat: no-repeat;
+  // background-position: 94% 50%;
+  // background-size: 16px 9px;
+}
+
+textarea {
+  // textarea styles go here
+}
