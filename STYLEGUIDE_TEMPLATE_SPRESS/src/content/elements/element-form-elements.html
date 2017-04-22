@@ -8,8 +8,32 @@ description: Add Description
 <form id="myForm" action="#" method="post">
   <label for="name">Text Input:</label>
   <input type="text" name="name" id="name" value="">
-  <label for="name">Password Input:</label>
-  <input type="password" name="name" id="name" value="">
+  
+  <label for="password">Password Input:</label>
+  <input type="password" name="password" id="password" value="">
+  
+  <label for="email">Email Input:</label>
+  <input type="email" name="email" id="email" value="">
+  
+  <label for="month">Month Input with Datalist</label>
+  <input type="month" list="month">
+  <datalist id="month">
+    <option value="January">
+    <option value="February">
+    <option value="March">
+    <option value="April">
+    <option value="May">
+    <option value="June">
+    <option value="July">
+    <option value="August">
+    <option value="September">
+    <option value="October">
+    <option value="November">
+    <option value="December">
+  </datalist>
+
+  <label for="search">Search Input:</label>
+  <input type="search" name="search" id="search" value="">
 
   <fieldset>
     <legend>Radio Button Choice</legend>
@@ -38,24 +62,6 @@ description: Add Description
 
   <label for="checkbox">Checkbox:</label>
   <input type="checkbox" name="checkbox">
-
-  <input list="month">
-  <datalist id="month">
-    <option value="January">
-    <option value="February">
-    <option value="March">
-    <option value="April">
-    <option value="May">
-    <option value="June">
-    <option value="July">
-    <option value="August">
-    <option value="September">
-    <option value="October">
-    <option value="November">
-    <option value="December">
-  </datalist>
-
-
 
   <input class="button" type="submit" value="Submit">
 </form>
