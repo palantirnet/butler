@@ -4,8 +4,8 @@ A tool to automate front-end development tasks and streamline prototyping.
 
 ## Dependencies
 
-* **NodeJS**
-  1. If you are running Butler on your local machine, you can install using Homebrew: `brew install node`
+* **NodeJS 4.x**
+  1. If you are running Butler on your local machine, you can install using Homebrew: `brew install homebrew/versions/node4-lts`
   1. If you are running Butler on a Vagrant, our default VM comes with node installed.
 * **Sculpin**
   1. Butler expects Sculpin to be included in your project using `composer`. Make sure you've run `composer install` in your project before running Butler.
