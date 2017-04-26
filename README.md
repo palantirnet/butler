@@ -10,38 +10,7 @@ A tool to automate front-end development tasks and streamline prototyping.
 * **Sculpin**
   1. Butler expects Sculpin to be included in your project using `composer`. Make sure you've run `composer install` in your project before running Butler.
   1. If you would like to use globally-installed Sculpin instead: first, follow [Sculpin's installation guide](https://sculpin.io/getstarted/); then configure Butler to use it by setting `defaults.sculpin_run = 'sculpin';` in your project's `conf/butler.defaults.js` file.
-
-## Add Butler to a project, with sculpin
-
-1. If the project does not already have npm dependencies, run `npm init` to create a `package.json` file
-1. Add Butler as a dependency: `npm install --save --save-exact palantirnet/butler`
-
-  When Butler is first installed, it will ask for the location of your project's GitHub repository. Please provide the HTTPS link for the project repository, e.g. `https://github.com/palantirnet/[project].git`; Butler will use this information to deploy the styleguide.
-
-  Butler will store this information in a project-specific configuration file at `conf/butler.defaults.js`.
-
-1. Copy the `STYLEGUIDE_TEMPLATE` to your project's root directory and rename it `styleguide`. This name is required.
-1. Add the following code to your project's `package.json`:
-
-  ````
-    "scripts": {
-      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
-      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
-      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
-      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js sculpin-deploy"
-    },
-  ````
-1. Add the `node_modules` directory to your project's .gitignore
-1. Commit Butler's changes to your project:
-  * `.gitignore`
-  * `conf/butler.defaults.js`
-  * `package.json`
-  * `styleguide/`
-1. When you're ready to start working on code, run `npm run butler`
-1. The styleguide can be found on port 8000:
-  * `http://[project].local:8000` if you're running Butler on a Vagrant
-  * [http://localhost:8000](http://localhost:8000) if you're developing locally
-
+  
 ## Add Butler to a project, with Spress
 
 1. Log in to your vagrant environment and navigate to your project. You should always run `npm` commands from within your Vagrant:
@@ -98,6 +67,54 @@ git add .
 git commit -m "Initialize the styleguide."
 ```
 
+1. Add the GitHub Pages URL for deployment
+    Update the `config_github.yml` to define the GitHub Pages site URL so that you can deploy to GitHub Pages.
+
+```
+# Site configuration
+
+url: 'https://palantirnet.github.io/[myproject]'
+```
+ 
+1. Deploy to GitHub Pages
+    After running deploy, you should see the `gh-pages` branch has been updated. And you should be able to access the Living Styleguide at `https://palantirnet.github.io/[myproject]`
+
+````
+npm run deploy
+````
+
+
+## Add Butler to a project, with sculpin
+
+1. If the project does not already have npm dependencies, run `npm init` to create a `package.json` file
+1. Add Butler as a dependency: `npm install --save --save-exact palantirnet/butler`
+
+  When Butler is first installed, it will ask for the location of your project's GitHub repository. Please provide the HTTPS link for the project repository, e.g. `https://github.com/palantirnet/[project].git`; Butler will use this information to deploy the styleguide.
+
+  Butler will store this information in a project-specific configuration file at `conf/butler.defaults.js`.
+
+1. Copy the `STYLEGUIDE_TEMPLATE` to your project's root directory and rename it `styleguide`. This name is required.
+1. Add the following code to your project's `package.json`:
+
+  ````
+    "scripts": {
+      "butler": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js",
+      "develop": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js develop",
+      "tests": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js test",
+      "deploy": "node_modules/butler/node_modules/.bin/gulp --gulpfile node_modules/butler/Gulpfile.js sculpin-deploy"
+    },
+  ````
+1. Add the `node_modules` directory to your project's .gitignore
+1. Commit Butler's changes to your project:
+  * `.gitignore`
+  * `conf/butler.defaults.js`
+  * `package.json`
+  * `styleguide/`
+1. When you're ready to start working on code, run `npm run butler`
+1. The styleguide can be found on port 8000:
+  * `http://[project].local:8000` if you're running Butler on a Vagrant
+  * [http://localhost:8000](http://localhost:8000) if you're developing locally
+
 ## What does this Butler do?
 
 * `npm run butler`
@@ -120,7 +137,7 @@ git commit -m "Initialize the styleguide."
 
   Butler will build a Sculpin production artifact to and deploy the production artifact to `gh-pages` branch of the repo defined in the `conf/butler.defaults.js`. 
 
-  For Spress, you will need to create a a `config_prod.yml` to define the GitHub Pages site URL so that you can deploy to GitHub Pages. The `config_prod.yml` should go in the styleguide folder. Copy and paste this code into the `config_prod.yml` file:
+  For Spress, you will need to update the `config_github.yml` to define the GitHub Pages site URL so that you can deploy to GitHub Pages.
 
 ```
 # Site configuration
