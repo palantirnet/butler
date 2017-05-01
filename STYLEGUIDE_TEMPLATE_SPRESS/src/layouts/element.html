@@ -5,10 +5,6 @@ layout: "default"
 {% block content_wrapper %}
   {% include 'styleguide/styleguide-description.html' %}  
     <div class="styleguide-component">
-      <div class="container">
-        <div class="l-1up">
-          {% block content %}{{page.content}}{% endblock %}
-        </div>
-      </div>
+      {% block content %}{{page.content}}{% endblock %}
     </div>
 {% endblock %}
