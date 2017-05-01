@@ -5,75 +5,79 @@ section: element
 title: Form Elements
 description: Add Description
 ---
-<form id="myForm" action="#" method="post">
-  <fieldset>
-    <legend>Common Input Types</legend>
-    <label for="name">Text Input:</label>
-    <input type="text" name="name" id="name" value="">
 
-    <label for="name">Disabled Text Input:</label>
-    <input type="text" name="name" id="name" value="" disabled>
+<div class="container">
+  <div class="l-1up">
+    <form id="myForm" action="#" method="post">
+      <fieldset>
+        <legend>Common Input Types</legend>
+        <label for="name">Text Input:</label>
+        <input type="text" name="name" id="name" value="">
 
-    <label for="name">Required Text Input:</label>
-    <input type="text" name="name" id="name" value="" required>
+        <label for="name">Disabled Text Input:</label>
+        <input type="text" name="name" id="name" value="" disabled>
 
-    <label for="name">Readonly Text Input:</label>
-    <input type="text" name="name" id="name" value="" readonly>
+        <label for="name">Required Text Input:</label>
+        <input type="text" name="name" id="name" value="" required>
 
-    <label for="name">Text Input with Autofocus:</label>
-    <input type="text" name="name" id="name" value="" autofocus>
-    
-    <label for="password">Password Input:</label>
-    <input type="password" name="password" id="password" value="">
-    
-    <label for="month">Month Input with Datalist</label>
-    <input type="month" list="month">
-    <datalist id="month">
-      <option value="January">
-      <option value="February">
-      <option value="March">
-      <option value="April">
-      <option value="May">
-      <option value="June">
-      <option value="July">
-      <option value="August">
-      <option value="September">
-      <option value="October">
-      <option value="November">
-      <option value="December">
-    </datalist>
+        <label for="name">Readonly Text Input:</label>
+        <input type="text" name="name" id="name" value="" readonly>
 
-    <label for="search">Search Input:</label>
-    <input type="search" name="search" id="search" value="">
-  </fieldset>
+        <label for="name">Text Input with Autofocus:</label>
+        <input type="text" name="name" id="name" value="" autofocus>
+        
+        <label for="password">Password Input:</label>
+        <input type="password" name="password" id="password" value="">
+        
+        <label for="month">Month Input</label>
+        <input type="month" name="name" id="name" value="">
 
-  <fieldset>
-    <legend>Radio Button Choice</legend>
-    <label for="radio-choice-1">Choice 1</label>
-     <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" checked>
-    <label for="radio-choice-2">Choice 2</label>
-    <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2">   
-  </fieldset>
+        <label for="cats">Input with Datalist</label>
+        <input list="cats" name="cat">
+        <datalist id="cats">
+          <option value="Tabby"></option>
+          <option value="Calico"></option>
+          <option value="Manx"></option>
+          <option value="Siamese"></option>
+          <option value="Persian"></option>
+          <option value="LOL"></option>
+          <option value="American Shorthair"></option>
+          <option value="Maine Coon"></option>
+        </datalist>
 
-  <label for="select-choice">Select Dropdown Choice:</label>
-  <select name="select-choice" id="select-choice">
-    <optgroup label="optgroup1">
-      <option value="Choice 1">Choice 1.1</option>
-      <option value="Choice 2">Choice 1.2</option>
-      <option value="Choice 3">Choice 1.3</option>
-    </optgroup>
-    <optgroup label="optgroup2">
-      <option value="Choice 1">Choice 2.1</option>
-      <option value="Choice 2">Choice 2.2</option>
-      <option value="Choice 3">Choice 2.3</option>
-    </optgroup>
-  </select>
+        <label for="search">Search Input:</label>
+        <input type="search" name="search" id="search" value="">
+      </fieldset>
 
-  <label for="textarea">Textarea:</label>
-  <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+      <fieldset>
+        <legend>Radio Button Choice</legend>
+        <label for="radio-choice-1">Choice 1</label>
+         <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" checked>
+        <label for="radio-choice-2">Choice 2</label>
+        <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2">   
+      </fieldset>
 
-  <label for="checkbox">Checkbox:</label>
-  <input type="checkbox" name="checkbox">
+      <label for="select-choice">Select Dropdown Choice:</label>
+      <select name="select-choice" id="select-choice">
+        <optgroup label="optgroup1">
+          <option value="Choice 1">Choice 1.1</option>
+          <option value="Choice 2">Choice 1.2</option>
+          <option value="Choice 3">Choice 1.3</option>
+        </optgroup>
+        <optgroup label="optgroup2">
+          <option value="Choice 1">Choice 2.1</option>
+          <option value="Choice 2">Choice 2.2</option>
+          <option value="Choice 3">Choice 2.3</option>
+        </optgroup>
+      </select>
 
-  <input class="button" type="submit" value="Submit">
-</form>
+      <label for="textarea">Textarea:</label>
+      <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+
+      <label for="checkbox">Checkbox:</label>
+      <input type="checkbox" name="checkbox">
+
+      <input class="button" type="submit" value="Submit">
+    </form>
+  </div>
+</div>
