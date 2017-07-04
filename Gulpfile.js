@@ -114,7 +114,7 @@ gulp.task('spress-watch', function() {
   });
 });
 
-gulp.task('spress-serve', function () {
+gulp.task('spress-serve', ['sass'], function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
     .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
