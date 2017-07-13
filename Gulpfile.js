@@ -135,7 +135,7 @@ gulp.task('spress-prod', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --env=prod --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home));
 });
 
 // Set a deploy task for spress
