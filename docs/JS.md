@@ -28,7 +28,7 @@ By default, a `scripts.js` file has been added to the `js/` folder. It is loaded
 
 #### Creating a new, custom Javascript file ####
 1. Create a new Javascript file in the `/source/code/js` directory.
-2. Copy and paste the [Javascript file template](https://github.com/palantirnet/butler/blob/drupal-attach-behaviors/docs/JS_TEMPLATE.js) into your new file. (The template is located at /docs/JS_TEMPLATE.js)
+2. Copy and paste the [Javascript file template](./JS_TEMPLATE.js) into your new file. (The template is located at /docs/JS_TEMPLATE.js)
 3. Update the potions in curly brackets: the file description comment, the name of the behavior and the contents of the script you're writing. You many name your behavior anything you like; it just needs to be unique.
 4. Include the Javascript file in the `<head>` of your HTML file **after** the `drupal-attach-behaviors.js` script.
 5. If you need to create additional scripts, just repeat this process.
