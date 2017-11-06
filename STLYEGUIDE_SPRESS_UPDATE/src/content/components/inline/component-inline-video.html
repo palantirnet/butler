@@ -1,0 +1,60 @@
+---
+layout: component
+section: component
+theme: default
+
+title: Inline Video
+description: 'The inline video component is used to add inline video to the WYSIWYG. It includes an embedded video (YouTube or Vimeo) and an optional caption.'
+
+
+drupal_theme_paths:
+
+changelog:
+  -
+    date: ''
+    log: ''
+
+dev_notes:
+
+---
+
+{% block content_wrapper %}
+  {% block content %}
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    {% include 'inline-video.twig' with { 'video_url' : 'https://www.youtube.com/embed/M93NNRGTsFY' } %}
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    {% include 'inline-video.twig' with { 'video_url' : 'https://www.youtube.com/embed/7cmvHgNZ20E', 'caption' : 'Learn about complex valve operations and mitral valve re-operations in this special interview with Dr. Anelechi Anyanwu, cardiac surgeon at The Mount Sinai Medical Center.' } %}
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    
+    
+  {% endblock %}
+{% endblock %}
+

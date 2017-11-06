@@ -1,0 +1,26 @@
+---
+layout: styleguide-default
+title: Styleguide
+---
+
+{% block content %}
+
+<div class="container sg-intro">
+  <div class="l-styleguide-column">
+
+    <header class='sg-header'>
+      <h1 class="sg-logo">
+        {{ site.title }}
+      </h1>
+    </header>
+
+    <main>
+      <h2>Living Styleguide</h2>
+      <p>This website acts as a living reference for the styles that exist on the live website for {{ site.title }}. The two sites share some design elements and components and deviate when necessary.</p>
+
+      <p>The styleguide is broken up into three sections. 'Design Elements' which are the very basic building blocks for the website; 'Components' which combine design elements into working pieces of code that serves a defined purpose; and 'Page Templates' which combine the elements and components into page templates that are used to display the content at destination URLs.</p>
+    </main>
+  </div>
+</div>
+
+{% endblock %}

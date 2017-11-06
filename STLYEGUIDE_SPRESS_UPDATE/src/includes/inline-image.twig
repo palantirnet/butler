@@ -1,0 +1,14 @@
+{#
+  name: inline image
+  usage: The inline image adds images into the WYSIWYG component. It includes an image with alt text and an optional caption. It has four variants, full-width (default), left, right, and portrait.
+#}
+
+<figure class="inline-image {{alignment}} js-scroll-animation">
+  <img src="{{site.url}}/assets/imgs/{{image}}" alt="{{alt}}" />
+  {% if caption %}
+  <figcaption class="inline-caption">
+    {{ caption }}
+  </figcaption>
+  {% endif %}
+</figure>
+

@@ -1,0 +1,127 @@
+//
+// Initialization partial
+//
+// To make it easier to use all variables and mixins in any Sass file in this
+// theme, each .scss file has a @import "init" declaration. And this _init.scss
+// file is in charge of importing all the other partials needed for the theme.
+//
+// This initialization partial is organized in this way:
+// - First we set any shared Sass variables.
+// - Next we import Compass plug-ins (Sass mixin libraries).
+// - Last we define our custom mixins for this theme.
+//
+
+
+// =============================================================================
+// Variables
+// =============================================================================
+
+// Support the same browsers as normalize.css v3.
+$support-for: (
+  ie:      9,
+  '*':     -4,
+);
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size: 16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+// Modular Scale
+// Major Third: 16px @ 1:1.25
+$xxl-heading: 2.44 * $base-font-size;
+$xl-heading: 2 * $base-font-size;
+$lg-heading: 1.85 * $base-font-size;
+$md-heading: 1.5 * $base-font-size;
+$sm-heading: 1.25 * $base-font-size;
+$xs-heading: 1.15 * $base-font-size;
+$text: 1 * $base-font-size;
+$sm-text: .9 * $base-font-size;
+$label: .8 * $base-font-size;
+$xs-text: .7 * $base-font-size;
+$crumb: .6 * $base-font-size;
+
+$h1-font-size: $xl-heading;
+$h2-font-size: $lg-heading;
+$h3-font-size: $md-heading;
+$h4-font-size: $sm-heading;
+$h5-font-size: $text;
+$h6-font-size: $label;
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+//
+// A user's web browser will look at the comma-separated list and will
+// attempt to use each font in turn until it finds one that is available
+// on the user's computer. The final "generic" font (sans-serif, serif or
+// monospace) hints at what type of font to use if the web browser doesn't
+// find any of the fonts in the list.
+
+// First, let's create some font stacks.
+$times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia: Georgia, "Times New Roman", "DejaVu Serif", serif;
+$verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2510/02/12/fixed-monospace-sizing/
+$courier: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $helvetica; // The font family set on the html element.
+$font-monospace: $courier;
+
+// Sass color variables, etc.
+$black: #222222;
+$gray-dark: #4c4c4b;
+$gray-medium: #999898;
+$gray-light: #d8d8d8;
+$off-white: #f2f2f2;
+$white: #ffffff;
+$white-60: rgba($white, .6);
+$white-30: rgba($white, .3);
+$yellow: #ff0;
+
+// Use above sass variables to define defaults in normalize.scss
+/* body */
+$text-color: $black;
+$background-color: $white;
+/* Link (a:) */
+$link-color: $gray-dark;
+$link-hover: $secondary;
+
+///////////////////////////////////////////////////////////
+
+// Breakpoint Variables
+$bp0: 400px;
+$bp1: 600px;
+$bp2: 900px;
+$bp3: 1100px;
+$bp4: 1400px;
+
+// Vertical spacing unit
+$slug: rhythm(8);
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 1em;
+
+
+// =============================================================================
+// Partials to be shared with all .scss files.
+// =============================================================================
+
+// Add the Singularity Grids responsive layout mixins.
+@import "../../node_modules/butler/node_modules/singularitygs/stylesheets/singularitygs";
+// Add the Breakpoint mixin.
+@import "../../node_modules/butler/node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+// Now we add our custom helper mixins.
+@import "mixins";

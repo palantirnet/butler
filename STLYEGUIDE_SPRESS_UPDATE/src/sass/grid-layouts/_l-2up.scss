@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Layout rules for 2-up content
+ */
+
+// =============================================================================
+// Basic 2-up Float layout
+// =============================================================================
+
+.l-2up {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include float-span(6);
+  }
+
+  &:nth-of-type(2n+1) {
+    @include breakpoint($bp1) {
+      @include float-span(6, 'first');
+    }
+  }
+
+  &:nth-of-type(2n) {
+    @include breakpoint($bp1) {
+      @include float-span(6, 'last');
+    }
+  }
+}
+
+
+// =============================================================================
+// Basic 2-up Isolation layout
+// =============================================================================
+
+.l-2up--1 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(6, 1, 'both');
+  }
+}
+
+.l-2up--2 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(6, 7, 'none');
+  }
+}

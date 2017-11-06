@@ -1,0 +1,14 @@
+---
+layout: "styleguide-default"
+---
+
+{% block content_wrapper %}
+  {% include 'styleguide/styleguide-heading.html' %}  
+
+  {% block content %}
+    {% block pageContent %}
+      {{ page.content }}
+    {% endblock %}
+  {% endblock %}
+
+{% endblock %}
