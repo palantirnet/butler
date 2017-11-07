@@ -18,23 +18,84 @@ title: Components
           <span>{% include 'styleguide/svg/arrow.svg' %}</span>
         </a>
         <ul class="sg-secondary-nav">
-          {% set categoryList = [] %}
-          {% for category in site.categories %}
           <li>
             <span class="sg-secondary-nav__section">
-              {{ categoryName }}
+              Global Components
               <span>{% include 'styleguide/svg/arrow.svg' %}</span>
             </span>
             <ul class="sg-secondary-subnav">
-            {% for categoryName, categoryUrl in item.terms_url.categories %}
-              {% if categoryName not in categoryList | keys %}
-                {% set categoryList = categoryList | merge({ (categoryName) : categoryUrl }) %}
+            {% for component in site.components %}
+              {% if component.type == 'global' %}
               <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
               {% endif %}
             {% endfor %}
             </ul>
           </li>
-          {% endfor %}
+          <li>
+            <span class="sg-secondary-nav__section">
+              Hero Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'hero' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              inline Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'inline' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              Rail Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'rail' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              Teaser Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'teaser' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              General Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'general' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>

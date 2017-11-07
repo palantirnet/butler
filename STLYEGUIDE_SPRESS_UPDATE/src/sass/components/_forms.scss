@@ -74,9 +74,8 @@ input[type="datetime"],
 input[type="datetime-local"] {
   width: 100%;
   outline: 0;
-  border: 0;
-  border-bottom: 3px solid transparent;
-  background-color: $off-white;
+  border: 1px solid $gray-light;
+  background-color: transparent;
   box-sizing: border-box;
   color: $black;
   padding: 8px;
@@ -84,7 +83,7 @@ input[type="datetime-local"] {
   &:active, 
   &:hover,
   &:focus {
-    border-color: $primary;
+    border-color: $gray-dark;
     transition: border-color .5s ease;
   }
 }
@@ -112,7 +111,7 @@ select {
   &:active, 
   &:hover,
   &:focus {
-    border-color: $primary;
+    border-color: $gray-dark;
     transition: border-color .5s ease;
   }
 }
@@ -150,7 +149,7 @@ textarea {
   &:active, 
   &:hover,
   &:focus {
-    border-color: $primary;
+    border-color: $gray-dark;
     transition: border-color .5s ease;
   }
 }

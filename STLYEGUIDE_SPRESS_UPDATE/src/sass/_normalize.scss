@@ -205,7 +205,6 @@ h1 {
   // Set 1 unit of vertical rhythm on the top and bottom margins.
   @include leader(1.25, $h1-font-size);
   @include trailer(.5, $h1-font-size);
-  font-family: $sans;
 }
 
 h2 {
@@ -213,7 +212,6 @@ h2 {
   @include adjust-font-size-to($h2-font-size, 1.35);
   @include leader(1.25, $h2-font-size);
   @include trailer(.5, $h2-font-size);
-  font-family: $sans;
 }
 
 h3 {
@@ -221,21 +219,18 @@ h3 {
   @include adjust-font-size-to($h3-font-size, 1.15);
   @include leader(1, $h3-font-size);
   @include trailer(.5, $h3-font-size);
-  font-family: $sans;
 }
 
 h4 {
   @include adjust-font-size-to($h4-font-size, 1.05);
   @include leader(1, $h4-font-size);
   @include trailer(.5, $h4-font-size);
-  font-family: $sans;
 }
 
 h5 {
   @include adjust-font-size-to($h5-font-size, .85);
   @include leader(.75, $h5-font-size);
   @include trailer(.25, $h5-font-size);
-  font-family: $sans;
 }
 
 h6 {
@@ -243,7 +238,6 @@ h6 {
   @include adjust-font-size-to($h6-font-size, .65);
   @include leader(.75, $h6-font-size);
   @include trailer(.25, $h6-font-size);
-  font-family: $sans;
 }
 
 

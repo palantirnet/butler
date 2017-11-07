@@ -77,7 +77,6 @@
   padding: 7px 0;
   border-bottom: 1px solid $gray-light;
   font-weight: 700;
-  font-family: $sans;
 
   &:last-child {
     border-bottom: 0;
@@ -119,7 +118,7 @@
 
 // Update this class as needed to differentiate styleguide header from the header component
 .sg-heading {
-  background-color: $primary-dark;
+  background-color: $gray-dark;
   padding: 10px 0;
   margin-bottom: 25px;
 }
@@ -154,7 +153,6 @@
   background-color: $off-white;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: $sans;
 
   &:link,
   &:visited {
@@ -204,7 +202,6 @@
   padding: 10px 20px 10px 10px;
   position: relative;
   cursor: pointer;
-  font-family: $sans;
 
   svg {
     position: absolute;

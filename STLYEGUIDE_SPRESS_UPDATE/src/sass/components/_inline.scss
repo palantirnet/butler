@@ -12,27 +12,14 @@
 
 .inline-caption {
   @include adjust-font-size-to($label, .75);
-  font-style: italic;
   margin-top: rhythm(.25);
-  padding-bottom: rhythm(.5);
-  border-bottom: 1px solid $gray-light;
 }
 
 .inline-image {
   @extend %inline;
-  opacity: 0;
 
   img {
     width: 100%;
-  }
-
-  // modernizer fallback
-  .no-cssanimations & {
-    opacity: 1;
-  }
-
-  &.js-scroll-animation.in-view {
-    animation: fadein 1.25s ease-out .25s forwards;
   }
 }
 
@@ -61,30 +48,12 @@
 }
 
 .inline-blockquote {
-  @include adjust-font-size-to($sm-heading, 1.25);
-  background-color: $off-white;
-  background: linear-gradient(-45deg, rgba($off-white, .2), rgba($off-white, .8));
   margin: rhythm(1) 0;
   padding: rhythm(1);
-  font-family: $decorative;
-  opacity: 0;
-
-  // modernizer fallback
-  .no-cssanimations & {
-    opacity: 1;
-  }
-
-  &.js-scroll-animation.in-view {
-    animation: fadein 1.25s ease-out .25s forwards;
-  }
 }
 
 
 .inline--left {
-
-  &.js-scroll-animation.in-view {
-    animation: fadein-left 1.25s ease-out .25s forwards;
-  }
 
   @include breakpoint($bp1) {
     width: 50%;
@@ -94,10 +63,6 @@
 }
 
 .inline--right {
-
-  &.js-scroll-animation.in-view {
-    animation: fadein-right 1.25s ease-out .25s forwards;
-  }
 
   @include breakpoint($bp1) {
     width: 50%;
@@ -110,10 +75,6 @@
   width: 50%;
   float: left;
   margin: rhythm(.25) rhythm(1) rhythm(.5) 0;
-
-  &.js-scroll-animation.in-view {
-    animation: fadein-left 1.25s ease-out .25s forwards;
-  }
 
   @include breakpoint($bp1) {
     width: 30%;
