@@ -48,7 +48,6 @@ gulp.task('audit', function() {
       force: true,
       accessibilityLevel: 'WCAG2AA',
       reportLevels: { notice: false, warning: true, error: true },
-      hideElements: '.header__left, .header__right, .region-navigation, .region-footer',
       ignore: [
         'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'
       ]
