@@ -50,7 +50,8 @@ gulp.task('audit', function() {
       reportLevels: { notice: false, warning: true, error: true },
       ignore: [
         'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'
-      ]
+      ],
+      hideElements: '.header__left, .header__right, .region-navigation, .region-footer'
     }))
     .on('error', console.log)
     .on('end', function(){ console.log('Accessibility audit complete'); });
