@@ -29,6 +29,8 @@
 
 /* Component (SMACSS module) rules */
 /* @import "components/my-component"; */
+@import "components/_buttons.scss";
+@import "components/_forms.scss";
 
 /* Styleguide Specific rules */
 @import "styleguide/styleguide";

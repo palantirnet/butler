@@ -3,14 +3,54 @@ layout: element
 section: element
 
 title: Color Palette
-description: Add Description
-variable: $secondary
-hex: 002b50
+description: Add Description.
+primary_colors:
+  - name: '$variablename'
+    hex: '000000'
+  - name: '$variablename'
+    hex: '000000'
+  - name: '$variablename'
+    hex: '000000'
+
+secondary_colors:
+  - name: '$variablename'
+    hex: '000000'
+  - name: '$variablename'
+    hex: '000000'
+  - name: '$variablename'
+    hex: '000000'
 ---
-<h2>Primary Palette</h2>
-<div class="styleguide-swatch" style="background-color: #{{ page.hex }}">
-  <code>
-    Variable: {{ page.variable }} <br />
-    Hex: # {{ page.hex }}
-  </code>
+
+<div class='container'>
+  <div class="l-1up">
+    <h2>Primary Palette</h2>
+  </div>
 </div>
+<div class='container'>
+  {% for primary_color in page.primary_colors %}
+  <div class="l-3up">
+    <div class="styleguide-swatch" style="background-color: #{{ primary_color.hex }}"></div>
+    <code>
+      Variable: {{ primary_color.name }} <br />
+      Hex: # {{ primary_color.hex }}
+    </code>
+  </div>
+  {% endfor %}
+</div>
+<div class='container'>
+  <div class="l-1up">
+    <h2>Secondary Palette</h2>
+  </div>
+</div>
+<div class='container'>
+  {% for secondary_color in page.secondary_colors %}
+  <div class="l-3up">
+    <div class="styleguide-swatch" style="background-color: #{{ secondary_color.hex }}"></div>
+    <code>
+      Variable: {{ secondary_color.name }} <br />
+      Hex: # {{ secondary_color.hex }}
+    </code>
+  </div>
+  {% endfor %}
+</div>
+
