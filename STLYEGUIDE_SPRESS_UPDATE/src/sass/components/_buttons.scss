@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Define the Button styles.
+ *
+ * @copyright Copyright (c) 2017 Palantir.net
+ */
+
+%button,
+.button,
+button,
+input[type='submit'],
+input[type='button'] {
+  @include adjust-font-size-to($label);
+  display: inline-block;
+  background-color: $gray-dark;
+  color: $white;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 16px;
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $gray-medium;
+    transition: background-color .5s ease;
+    text-decoration: none;
+  }
+}
+
+input[type='reset'],
+.button--reset,
+.button--gray,
+.button--gray[type="submit"],
+.button--gray[type="button"] {
+  @extend %button;
+  background-color: $gray-dark;
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $gray-medium;
+  }
+}
+
+
+

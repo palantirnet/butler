@@ -1,0 +1,107 @@
+/**
+ * @file
+ * Define your custom Sass mixins and extends here.
+ * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+ */
+
+/* ==========================================================================
+   Typography grooming extends
+   ========================================================================== */
+
+/* Tight tracking */
+%track-in {
+  letter-spacing: -.0125em;
+}
+
+/* Open tracking */
+%track-out {
+  letter-spacing: .1em;
+}
+
+/* Style larger text with a tighter tracking, change weight, etc.  */
+%display-type {
+  @extend %track-in;
+  font-weight: 700;
+}
+
+/* Style all caps with a slightly open tracking. */
+%allcaps {
+  @extend %track-out;
+  text-transform: uppercase;
+}
+
+/* Unstyle a list */
+%list--simple {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   Clearfix extend
+   ========================================================================== */
+
+/**
+ * Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+ * do not get compiled uless they are called - removing the nesting issues that
+ * can otherwise occur with extends.
+ */
+
+.clearfix,
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+/* ==============================================================
+   Visually hidden extend
+   ============================================================== */
+
+/**
+ * Element-invisible as defined by snook.ca
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.element-invisible,
+%element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if support-legacy-browser(ie, '7') {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}
+
+/* ==============================================================
+   CSS3 transition mixin
+   ============================================================== */
+
+@mixin trans($property: all, $timing: .3s, $easing: ease) {
+  transition: $property $timing $easing;
+}

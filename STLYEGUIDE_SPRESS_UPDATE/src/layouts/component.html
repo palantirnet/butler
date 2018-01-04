@@ -1,0 +1,149 @@
+---
+layout: styleguide-landing
+title: Components
+---
+
+{% block content %}
+
+<div class="container">
+  <main>
+    <div class="l-1up">
+      <h2>Components</h2>
+      <p>Components are grouped Elements that create a distinct section of an interface. They can be reordered and reused throughout the site.</p>
+    </div>
+    <div class="l-styleguide-rail">
+      <nav class='sg-secondary-nav-container'>
+        <a class="sg-secondary-nav-trigger" href="#">
+          Components menu
+          <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+        </a>
+        <ul class="sg-secondary-nav">
+          <li>
+            <span class="sg-secondary-nav__section">
+              Global Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'global' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              Hero Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'hero' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              inline Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'inline' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              Rail Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'rail' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              Teaser Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'teaser' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <span class="sg-secondary-nav__section">
+              General Components
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span>
+            <ul class="sg-secondary-subnav">
+            {% for component in site.components %}
+              {% if component.type == 'general' %}
+              <li><a href="{{ site.url }}{{ component.url }}">{{ component.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="l-styleguide-body">
+    {% if page.title %}
+      <div class="sg-component-header">
+        <h3>{{page.title}}</h3>
+        <p>{{page.description}}</p>
+      </div>
+    {% endif %}
+      <div class="sg-component">
+      {% block pageContent %}
+        {{ page.content }}
+      {% endblock %}
+      </div>
+      {% if page.drupal_theme_paths or page.dev_notes or page.changelog %}
+        <div class="sg-dev-drawer-trigger-wrapper">
+          <button class="sg-dev-drawer-trigger">Developer Notes</button>
+        </div>
+        <div class="sg-dev-drawer">
+          {% if page.dev_notes %}
+            <h6 class="sg-dev-drawer__label">Notes</h6>
+            {% for dev_note in page.dev_notes %}
+            <div class="sg-dev-drawer__text">
+              {{ dev_note }}
+            </div>
+            {% endfor %}
+          {% endif %}
+          {% if page.drupal_theme_paths %}
+            <h6 class="sg-dev-drawer__label">Drupal Theme Paths</h6>
+            <ul class="sg-dev-drawer__list">
+            {% for drupal_theme_path in page.drupal_theme_paths %}
+              <li>{{drupal_theme_path}}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+          {% if page.changelog %}
+            <h6 class="sg-dev-drawer__label">Changelog</h6>
+            {% for change_log_entry in page.changelog %}
+              <div class="sg-dev-drawer__text">
+              {{ change_log_entry.date }} - {{ change_log_entry.log }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </main>
+</div>
+
+{% endblock %}

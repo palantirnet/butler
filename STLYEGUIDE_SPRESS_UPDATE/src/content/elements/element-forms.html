@@ -1,0 +1,137 @@
+---
+layout: element
+section: element
+
+title: Form Elements
+description: Form elements show the basic styles for form items as they will appear on the site. This includes some basic layout options.
+
+---
+
+    <form id="myForm" action="#" method="post">
+
+      <div class="form-row">
+        <div class="input-wrapper">
+          <label for="name">Text Input:</label>
+          <input type="text" name="name" id="name" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <fieldset class="input-wrapper">
+          <legend>Select an option</legend>
+          {% include 'radio.twig' with { 'label' : 'radio 1'} %}
+          {% include 'radio.twig' with { 'label' : 'radio 2'} %}
+          {% include 'radio.twig' with { 'label' : 'radio 3'} %}
+          {% include 'radio.twig' with { 'label' : 'radio 4'} %}
+        </fieldset>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper">
+          <label for="select-choice">Select Dropdown Choice:</label>
+          <select name="select-choice" >
+            <option value="Choice 1">Choice 1</option>
+            <option value="Choice 2">Choice 2</option>
+            <option value="Choice 3">Choice 3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper">
+          <label for="textarea">Textarea:</label>
+          <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <fieldset class="input-wrapper">
+          <legend>Select options</legend>
+          {% include 'checkbox.twig' with { 'label' : 'Checkbox 1'} %}
+          {% include 'checkbox.twig' with { 'label' : 'Checkbox 2'} %}
+          {% include 'checkbox.twig' with { 'label' : 'Checkbox 3'} %}
+          {% include 'checkbox.twig' with { 'label' : 'Checkbox 4'} %}
+        </fieldset>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Email Input:</label>
+          <input type="email" name="email" id="email" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">URL Input:</label>
+          <input type="url" name="url" id="url" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Telephone Input:</label>
+          <input type="tel" name="tel" id="tel" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">Number Input:</label>
+          <input type="number" name="number" id="number" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Range Input:</label>
+          <input type="range" name="range" id="range" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">Date Input:</label>
+          <input type="date" name="date" id="date" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Month Input:</label>
+          <input type="month" name="month" id="month" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">Week Input:</label>
+          <input type="week" name="week" id="week" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Time Input:</label>
+          <input type="time" name="time" id="time" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">Datetime Input:</label>
+          <input type="datetime" name="datetime" id="datetime" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-wrapper--half">
+          <label for="name">Datetime Local Input:</label>
+          <input type="datetime-local" name="datetime-local" id="datetime-local" value="" tabindex="1">
+        </div>
+
+        <div class="input-wrapper--half">
+          <label for="name">Color Input:</label>
+          <input type="color" name="color" id="color" value="" tabindex="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="button--container"> 
+          <input type="submit" value="Submit" title="Submit" />
+          <input type="reset" value="Reset" title="Reset" />
+        </div>
+      </div>
+
+    </form>
+

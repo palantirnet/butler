@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Define print styles here.
+ */
+@media print {
+  body, .container {
+    width: 100%;
+    margin: 0;
+    float: none;
+    background: #fff url(none);
+  }
+
+  // Hide things you don't want to print
+  .header, .footer, .rail {
+    display: none; 
+  }
+
+  // adjust fonts
+  body {
+    font: 1em $georgia;
+    color: #000; 
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: $helvetica;
+    color: #000;
+  }
+
+  // Links
+  a:link, a:visited {
+    color: #00c;
+    font-weight: bold;
+    text-decoration: underline; 
+  }
+
+  a:link:after, a:visited:after {
+    content: " (" attr(href) ") ";
+  }
+}

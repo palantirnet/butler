@@ -1,0 +1,53 @@
+---
+layout: styleguide-landing
+title: Elements
+---
+
+{% block content %}
+
+<div class="container">
+  <main>
+    <div class="l-1up">
+      <h2>Elements</h2>
+      <p>Elements are the foundation of the system. Simply using typography and color, well designed Elements can begin to express the site's personality.</p>
+    </div> 
+    <div class="l-styleguide-rail">
+      <nav class='sg-secondary-nav-container'>
+        <a class="sg-secondary-nav-trigger" href="#">
+          Elements menu
+          <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+        </a>
+        <ul class="sg-secondary-nav">
+
+          <li>
+            <span class="sg-secondary-nav__section">
+              Elements 
+              <span>{% include 'styleguide/svg/arrow.svg' %}</span>
+            </span> 
+            <ul class="sg-secondary-subnav">
+            {% for element in site.elements %}
+              <li><a href="{{ site.url }}{{ element.url }}">{{ element.title }}</a></li>
+            {% endfor %}
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+    <div class="l-styleguide-body">
+    {% if page.title %}
+      <div class="sg-component-header">
+        <h3>{{page.title}}</h3>
+        <p>{{page.description}}</p>
+      </div>
+    {% endif %}
+      <div class="sg-component">
+      {% block pageContent %}
+        {{ page.content }}
+      {% endblock %}
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

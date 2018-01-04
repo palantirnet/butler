@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Layout rules for 4-up content
+ */
+
+// =============================================================================
+// Basic 4-up Float layout
+// =============================================================================
+
+.l-4up {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include float-span(3);
+  }
+
+  &:nth-of-type(4n+1) {
+    @include breakpoint($bp1) {
+      @include float-span(3, 'first');
+    }
+  }
+
+  &:nth-of-type(4n) {
+    @include breakpoint($bp1) {
+      @include float-span(3, 'last');
+    }
+  }
+}
+
+
+// =============================================================================
+// Basic 4-up Isolation layout
+// =============================================================================
+
+.l-4up--1 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(3, 1, 'both');
+  }
+}
+
+.l-4up--2 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(3, 4, 'none');
+  }
+}
+
+.l-4up--3 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(3, 7, 'none');
+  }
+}
+
+.l-4up--4 {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(3, 10, 'none');
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  {{ include("head.twig") }}
+
+  <body>
+    <a class="element-focusable" href="#main-content">Skip to Main Content</a>
+
+    {% include 'site-header.twig' %}
+
+    <!-- Template content -->
+    <main id="main-content">
+    {% block content_wrapper %}
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+    {% endblock %}
+    </main>
+
+    {{ include('footer.twig') }}
+
+    {{ include("scripts.html") }}
+
+  </body>
+</html>

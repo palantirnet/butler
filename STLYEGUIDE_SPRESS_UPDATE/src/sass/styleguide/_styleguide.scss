@@ -1,0 +1,407 @@
+/**
+ * @file
+ * Define the styles for the styleguide. This is not css for the site.
+ *
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.l-styleguide-column {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp1) {
+    @include isolation-span(8, 1, 'none');
+  }
+
+  @include breakpoint($bp2) {
+    @include isolation-span(7, 1, 'none');
+  }
+}
+
+.l-styleguide-rail {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp2) {
+    @include isolation-span(2, 1, 'both');
+  }
+}
+
+.l-styleguide-body {
+  @include isolation-span(12, 1, 'both');
+
+  @include breakpoint($bp2) {
+    @include isolation-span(10, 3, 'none');
+  }
+}
+
+// Styleguide Navigation
+.sg-nav-container {
+  background-color: $white;
+  border-bottom: 1px solid $gray-light;
+
+  @include breakpoint($bp1) {
+    position: relative;
+  }
+}
+
+.sg-nav {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+  
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include breakpoint($bp1) {
+    display: block;
+  }
+}
+
+.sg-trigger {
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+
+  @include breakpoint($bp1) {
+    display: none;
+  }
+}
+
+.sg-nav__item {
+  @include adjust-font-size-to($label);
+  display: block;
+  padding: 7px 0;
+  border-bottom: 1px solid $gray-light;
+  font-weight: 700;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include breakpoint($bp1) {
+    // position: relative;
+    float: left;
+    padding: 7px 10px;
+    border-left: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    border-bottom: 0;
+
+    span {
+      float: none;
+    }
+  }
+}
+
+.sg-header {
+  margin-top: rhythm(1);
+  margin-bottom: rhythm(1.5);
+}
+
+.sg-logo {
+  margin-top: 0;
+  margin-bottom:0;
+
+  svg {
+    height: 100px;
+    width: 250px;
+  }
+}
+
+// index page wrapper
+.sg-intro {
+  margin-top: rhythm(.75);
+}
+
+// Update this class as needed to differentiate styleguide header from the header component
+.sg-heading {
+  background-color: $gray-dark;
+  padding: 10px 0;
+  margin-bottom: 25px;
+}
+
+.sg-title {
+  @include adjust-font-size-to($text, 1);
+  text-transform: uppercase;
+  margin: 0;
+
+  a:link,
+  a:visited {
+    color: $white;
+  }
+
+  a:active,
+  a:hover,
+  a:focus {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+// Secondary Navigation
+.sg-secondary-nav-container {
+  border: 1px solid $gray-light;
+}
+
+.sg-secondary-nav-trigger {
+  display: block;
+  position: relative;
+  padding: 10px 25px 10px 10px;
+  background-color: $off-white;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:link,
+  &:visited {
+    color: $black;
+  }
+
+  svg {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    height: 15px;
+    width: 15px;
+    fill: $black;
+  }
+
+  &.is-active {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  @include breakpoint($bp2) {
+    display: none;
+  }
+}
+
+.sg-secondary-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+
+  @include breakpoint($bp2) {
+    display: block;
+  }
+}
+
+.sg-secondary-nav__section {
+  @include adjust-font-size-to($label, .75);
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 20px 10px 10px;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    right: 5px;
+    top: 14px;
+    height: 10px;
+    width: 10px;
+  }
+
+  &.is-active {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  @include breakpoint($bp2) {
+    cursor: auto;
+    padding: 10px;
+    border-bottom: 1px solid $gray-light;
+
+    svg {
+      display: none;
+    }
+  }
+}
+
+.sg-secondary-subnav {
+  @include adjust-font-size-to($label, .75);
+  list-style: none;
+  margin: 0;
+  padding: 0 0 20px;
+  border-bottom: 1px solid $gray-light;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+
+  a:link,
+  a:visited {
+    display: block;
+    padding: 5px 10px;
+  }
+
+  @include breakpoint($bp2) {
+    display: block;
+  }
+}
+
+.sg-component-header {
+  background-color: $off-white;
+  padding: 10px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint($bp1) {
+    margin-top: 0;
+  }
+}
+
+.sg-component {
+  @extend %clearfix;
+  position: relative;
+  border: 1px solid $off-white;
+}
+
+.sg-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        text-transform: none;
+        font-weight: regular;
+      }
+    }
+  }
+}
+
+.styleguide-copyright {
+  @include adjust-font-size-to($label, 1.5);
+  color: $gray-medium;
+  padding: rhythm(2) 0;
+  margin-top: rhythm(2);
+  border-top: 1px solid $gray-light;
+}
+
+.styleguide-label {
+  color: $gray-dark;
+}
+
+.styleguide-swatch {
+  padding: 35px;
+  border: 1px solid $off-white;
+}
+
+.styleguide-swatch__code {
+  display: block;
+  margin-top: rhythm(.25);
+  margin-bottom: rhythm(1);
+
+  span {
+    @include adjust-font-size-to($label, .75);
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+  }
+}
+
+.sg-dev-drawer-trigger-wrapper {
+  text-align: right;
+}
+
+.sg-dev-drawer-trigger {
+  @include adjust-font-size-to($crumb, .65);
+  background-color: transparent;
+  text-transform: none;
+  padding: 0;
+  margin: rhythm(.5) 0;
+  font-weight: 400;
+  color: $link-color;
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: $link-hover;
+  }
+}
+
+.sg-dev-drawer {
+  display: none;
+  background-color: $off-white;
+  padding: rhythm(.5);
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.sg-dev-drawer__label {
+  @include leader(.25);
+  @include trailer(0);
+}
+
+.sg-dev-drawer__text {
+  @include adjust-font-size-to($label, .75);
+}
+
+.sg-dev-drawer__list {
+  @extend %list--simple;
+  @include adjust-font-size-to($label, .75);
+}
+
+
+// Grid demo styles
+.demo {
+  background-color: $gray-light;
+  padding: rhythm(1);
+}
+
+// Set example nest wrap styles
+.nest-wrap {
+  @extend %clearfix;
+  background-color: $gray-light;
+  padding: 0;
+}
+
+// Set the column count for nested example
+@include layout(8) {
+  .nest-item {
+    @include isolation-span(8, 1, 'both');
+    background-color: darken($gray-light, 4%);
+    padding: rhythm(1);
+
+    @include breakpoint($bp1) {
+      @include float-span(2);
+      margin-bottom: 0;
+
+      &:last-child {
+        @include float-span(4, "last");
+      }
+    }
+  }
+}

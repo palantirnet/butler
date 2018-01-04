@@ -1,0 +1,162 @@
+/**
+ * @file
+ * Define the forms styles.
+ *
+ * @copyright Copyright (c) 2017 Palantir.net
+ */
+
+.form-row {
+  @extend %clearfix;
+}
+
+.button--container {
+  margin: 24px 0;
+}
+
+.input-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.input-wrapper--half {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 24px;
+
+  @include breakpoint($bp1) {
+    width: 50%;
+    float: left;
+
+    &:first-child {
+      padding-right: 12px;
+    }
+
+    &:last-child {
+      padding-left: 12px;
+    }
+  }
+}
+
+label,
+legend {
+  @include adjust-font-size-to($label, 1);
+  color: $gray-dark;
+  margin-bottom: rhythm(.25);
+}
+ 
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: $gray-dark;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $gray-dark;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $gray-dark;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: $gray-dark;
+}
+
+// input styles
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="range"],
+input[type="datetime"],
+input[type="datetime-local"] {
+  width: 100%;
+  outline: 0;
+  border: 1px solid $gray-light;
+  background-color: transparent;
+  box-sizing: border-box;
+  color: $black;
+  padding: 8px;
+
+  &:active, 
+  &:hover,
+  &:focus {
+    border-color: $gray-dark;
+    transition: border-color .5s ease;
+  }
+}
+
+input[type="color"] {
+  display: block;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  outline: 0;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  color: $black;
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 98% 50%;
+  background-repeat: no-repeat;
+  background-color: $off-white;
+  padding: 8px;
+
+  &:active, 
+  &:hover,
+  &:focus {
+    border-color: $gray-dark;
+    transition: border-color .5s ease;
+  }
+}
+
+// radio and checkbox styles
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline-block;
+
+  & + label {
+    @include adjust-font-size-to($text, 1);
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    margin-bottom: 0;
+    color: $gray-dark;
+    text-transform: none;
+    margin: 0 rhythm(1.25) 0 rhythm(.25);
+  }
+}
+
+textarea {
+  padding: 8px;
+  width: 100%;
+  outline: 0;
+  background-color: $off-white;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  color: $black;
+  appearance: none;
+  border-radius: 0px;
+
+  &:active, 
+  &:hover,
+  &:focus {
+    border-color: $gray-dark;
+    transition: border-color .5s ease;
+  }
+}
+
+fieldset {
+  margin: 24px 0;
+  padding: 0;
+}
+
+

@@ -1,0 +1,35 @@
+# Site configuration
+
+title: 'STYLEGUIDE TEMPLATE'
+url: ''
+
+text_extensions: [ 'htm', 'html', 'html.twig', 'twig.html', 'js', 'less', 'markdown', 'md', 'mkd', 'mkdn', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'ms', 'mustache', 'php', 'rb', 'sass', 'scss', 'slim', 'txt', 'twig', 'xhtml', 'xml', 'svg' ]
+
+server_watch_ext: ['html', 'htm', 'xml', 'css', 'js', 'twig', 'md']
+
+collections:
+  elements:
+    output: true
+    title: "Elements"
+    sort_by: title
+    sort_type: 'ascending'
+
+  components:
+    output: true
+    title: "Components"
+    sort_by: title
+    sort_type: 'ascending'
+
+  comps:
+    output: true
+    title: "High Fidelity Comps"
+    sort_by: title
+    sort_type: 'ascending'
+
+  templates:
+    output: true
+    title: "Templates"
+    sort_by: title
+    sort_type: 'ascending'
+
+categories: ['global', 'rail', 'teaser', 'hero', 'inline', 'general']

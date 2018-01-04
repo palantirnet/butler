@@ -1,0 +1,53 @@
+---
+layout: styleguide-landing
+title: Templates 
+description: Based on the needs of the content, components are arranged into specific layouts to create Templates.
+---
+
+{% block content %}
+
+<div class="container">
+  <main>
+
+    <div class="l-1up">
+      <h2>{{ page.title }}</h2>
+      <p>{{ page.description }}</p>
+    </div> 
+
+    <ul class="sg-list">
+      <li class="l-3up">
+        Landing Pages
+        <ul>
+        {% for template in site.templates %}
+          {% if template.type == 'landing' %}
+          <li><a href="{{ site.url }}{{ template.url }}" target="_blank">{{ template.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </li>
+      <li class="l-3up">
+        Detail Pages 
+        <ul>
+        {% for template in site.templates %}
+          {% if template.type == 'detail' %}
+          <li><a href="{{ site.url }}{{ template.url }}" target="_blank">{{ template.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </li>
+      <li class="l-3up">
+        Listing Pages 
+        <ul>
+        {% for template in site.templates %}
+          {% if template.type == 'list' %}
+          <li><a href="{{ site.url }}{{ template.url }}" target="_blank">{{ template.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </li>
+    </ul>
+
+  </main>
+</div>
+
+{% endblock %}

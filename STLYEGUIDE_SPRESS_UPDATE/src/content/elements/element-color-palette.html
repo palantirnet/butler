@@ -1,0 +1,60 @@
+---
+layout: element
+section: element
+
+title: Color Palette
+description: The Palette outlines the colors used throughout the site.
+primary_colors:
+  - name: '$primary-dark'
+    hex: '000000'
+
+
+gray_colors:
+  - name: '$black'
+    hex: '000000'
+  - name: '$gray-dark'
+    hex: '4c4c4b'
+  - name: '$gray-medium'
+    hex: '999898'
+  - name: '$gray-light'
+    hex: 'd8d8d8'
+  - name: '$off-white'
+    hex: 'f2f2f2'
+  - name: '$white'
+    hex: 'ffffff'
+
+---
+  <div class="l-1up">
+    <h4>Primary Palette</h4>
+  </div>
+  <section>
+    {% for primary_color in page.primary_colors %}
+    <div class="l-4up">
+      <div class="styleguide-swatch" style="background-color: #{{ primary_color.hex }}"></div>
+      <code class="styleguide-swatch__code">
+        <span>Variable</span>
+        {{ primary_color.name }}
+        <span>Hex</span>
+        #{{ primary_color.hex }}
+      </code>
+    </div>
+    {% endfor %}
+  </section>
+
+  <div class="l-1up">
+    <h4>Grayscale Palette</h4>
+  </div>
+  <section>
+    {% for gray_color in page.gray_colors %}
+    <div class="l-4up">
+      <div class="styleguide-swatch" style="background-color: #{{ gray_color.hex }}"></div>
+      <code class="styleguide-swatch__code">
+        <span>Variable</span>
+        {{ gray_color.name }}
+        <span>Hex</span>
+        #{{ gray_color.hex }}
+      </code>
+    </div>
+    {% endfor %}
+  </section>
+

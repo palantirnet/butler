@@ -1,0 +1,16 @@
+{#
+  name: inline video
+  usage: The inline video component is used to add inline video to the WYSIWYG. It includes an embedded video (YouTube or Vimeo). 
+#}
+
+<figure class="inline-video">
+  <div class="inline-video-container">
+    <iframe src="{{ video_url }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+  {% if caption %}
+  <figcaption class="inline-caption">
+    {{ caption }}
+  </figcaption>
+  {% endif %}
+</figure>
+
