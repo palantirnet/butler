@@ -120,6 +120,12 @@ gulp.task('spress-serve', ['sass'], function () {
     .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
 });
 
+gulp.task('spress-serve-vagrant', ['sass'], function () {
+    return gulp.src(defaults.spress_home)
+        .pipe(exec('fuser 4000/tcp --kill || true'))
+        .pipe(exec(defaults.spress_bin + ' site:build --server --env=vagrant --source=' + defaults.spress_home));
+});
+
 gulp.task('spress-build', function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
@@ -161,6 +167,9 @@ gulp.task('watch', function() {
 
 // Set Develop task
 gulp.task('develop', defaults.develop_tasks);
+
+// Set develop-vagrant task
+gulp.task('develop-vagrant', defaults.develop_tasks_vagrant);
 
 // Set a test task
 gulp.task('test', ['lint', 'audit']);

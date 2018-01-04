@@ -1,0 +1,3 @@
+# Site configuration for running Butler and Spress inside of vagrant
+url: ''
+debug: true
