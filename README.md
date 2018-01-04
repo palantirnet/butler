@@ -156,6 +156,14 @@ If you need to write some Javascript, follow the [instructions at `/docs/JS.md`]
 
 ## Troubleshooting
 
+If Butler seems to be timing out on
+
+```
+Message:
+    Command failed: /bin/sh -c ../../vendor/bin/spress site:build --server --source=../../
+```
+Try deleting the `build` directory in the styleguide and running `npm run butler` again.
+
 For immediate concerns, if you have comments/questions/concerns about working with this please talk to Lauren.
 
 To file bug or feature requests, please use the GitHub issue queue for this repository. You can see more about our Issue Guidelines in the [contributing documentation](/docs/CONTRIBUTING.md).
