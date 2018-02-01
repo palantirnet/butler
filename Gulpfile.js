@@ -63,7 +63,7 @@ gulp.task('sass', function() {
   // runs autoprefixer and compresses CSS after compiling
   var processors = [
     autoprefixer(defaults.autoprefixer),
-    cssnano
+    cssnano({ zindex: false })
   ];
   // Run on all file defaults defined in var scsss
   return gulp.src(defaults.scss)
