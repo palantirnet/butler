@@ -31,6 +31,8 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
     echo "overrides.output_dev = '../../build';" >> ../../conf/butler.defaults.js
     echo "overrides.html_files = ['../../build/*.html', '../../build/**/*.html'];" >> ../../conf/butler.defaults.js
     echo "overrides.output_prod = '../../build/**/*';" >> ../../conf/butler.defaults.js
+    echo "// Add any extra watch paths here. This can be useful for ignoring files, like '!**/_*.js' " >> ../../conf/butler.defaults.js
+    echo "overrides.spress_watch_extras = '';" >> ../../conf/butler.defaults.js
   fi;
 
   echo "" >> ../../conf/butler.defaults.js

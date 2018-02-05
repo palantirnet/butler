@@ -108,7 +108,7 @@ gulp.task('sculpin-deploy', ['sculpin-prod'], function() {
 
 // Spress Development
 gulp.task('spress-watch', function() {
-  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js'], ['spress-build']);
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_watch_extras], ['spress-build']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
   });
