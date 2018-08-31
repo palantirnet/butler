@@ -168,3 +168,6 @@ gulp.task('test', ['lint', 'audit']);
 
 //  Set default task
 gulp.task('default', ['develop']);
+
+//  Set CirclCi task
+gulp.task('default', defaults.circle_tasks);
