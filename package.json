@@ -36,6 +36,7 @@
     "postcss-scss": "^0.1.6",
     "singularitygs": "^1.7.0",
     "stylelint": "^4.4.0",
-    "stylelint-selector-bem-pattern": "^0.2.1"
+    "stylelint-selector-bem-pattern": "^0.2.1",
+    "vinyl-fs": "^3.0.3"
   }
 }

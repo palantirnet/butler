@@ -11,6 +11,7 @@ var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
 var a11y = require('gulp-accessibility');
 var rename = require('gulp-rename');
+var vfs = require('vinyl-fs');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -157,6 +158,12 @@ gulp.task('watch', function() {
     .on('change', function (event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
+});
+
+// make symlink of imgs file
+gulp.task('symlink-imgs', function () {
+  return vfs.src('imgs', {followSymlinks: false})
+  .pipe(vfs.symlink('build/assets'));
 });
 
 // Set Develop task
