@@ -11,7 +11,6 @@ var stylelint = require('stylelint');
 var deploy = require('gulp-gh-pages');
 var a11y = require('gulp-accessibility');
 var rename = require('gulp-rename');
-var vfs = require('vinyl-fs');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -109,7 +108,7 @@ gulp.task('sculpin-deploy', ['sculpin-prod'], function() {
 
 // Spress Development
 gulp.task('spress-watch', function() {
-  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js'], ['spress-build']);
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_home + 'imgs/*'], ['spress-build', 'copy-imgs']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
   });
@@ -160,10 +159,10 @@ gulp.task('watch', function() {
     });
 });
 
-// make symlink of imgs file
-gulp.task('symlink-imgs', function () {
-  return vfs.src('imgs', {followSymlinks: false})
-  .pipe(vfs.symlink('build/assets'));
+// Copy the imgs directory to the build
+
+gulp.task('copy-imgs', ['clean'], function () {
+    return gulp.src('imgs/**/*').pipe(gulp.dest('build'));
 });
 
 // Set Develop task
