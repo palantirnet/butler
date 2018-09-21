@@ -117,20 +117,23 @@ gulp.task('spress-watch', function() {
 gulp.task('spress-serve', ['sass'], function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
-    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env='+defaults.environment+' --server --source=' + defaults.spress_home));
 });
 
+
+// Default build tasks/
 gulp.task('spress-build', function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env='+defaults.environment+' --source=' + defaults.spress_home));
 });
 
 gulp.task('spress-build-after-sass', ['sass'], function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env='+defaults.environment+' --source=' + defaults.spress_home));
 });
 
-//Build Spress Production Artifact
+
+//Build Spress Github Artifact
 gulp.task('spress-prod', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
