@@ -108,7 +108,7 @@ gulp.task('sculpin-deploy', ['sculpin-prod'], function() {
 
 // Spress Development
 gulp.task('spress-watch', function() {
-  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_home + 'imgs/*'], ['spress-build', 'copy-imgs']);
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_home + 'media/*'], ['spress-build', 'copy-imgs']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
   });
@@ -159,11 +159,13 @@ gulp.task('watch', function() {
     });
 });
 
-// Copy the imgs directory to the build
+// Copy the media directory to the build.
 
-gulp.task('copy-imgs', ['clean'], function () {
-    return gulp.src('imgs/**/*').pipe(gulp.dest('build'));
+gulp.task('copy-imgs', ['spress-build'], function () {
+    return gulp.src(['../../media/**/*'], { "base" : "." })
+      .pipe(gulp.dest('../../build/**/*'));
 });
+
 
 // Set Develop task
 gulp.task('develop', defaults.develop_tasks);
