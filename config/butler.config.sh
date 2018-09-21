@@ -24,6 +24,7 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
     cp STYLEGUIDE_TEMPLATE_SPRESS/gitignore ../../.gitignore
     composer install --working-dir=../../
 
+    echo "overrides.environment = 'dev';" >> ../../conf/butler.defaults.js
     echo "overrides.develop_tasks = ['sass', 'spress-serve', 'spress-watch', 'watch'];" >> ../../conf/butler.defaults.js
     echo "overrides.scss = ['../../src/sass/*.scss', '../../src/sass/**/*.scss'];" >> ../../conf/butler.defaults.js
     echo "overrides.css = '../../src/content/assets/css/';" >> ../../conf/butler.defaults.js
