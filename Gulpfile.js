@@ -144,7 +144,7 @@ gulp.task('spress-prod', ['sass'],function () {
 // Set a deploy task for spress
 gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
   console.log('Beginning deploy to gh-pages for' + defaults.repo);
-  return ghpages.publish(defaults.output_prod, {
+  return ghpages.publish(defaults.output_dev, {
             repo: defaults.repo
           }, (err) => {
           if (err === undefined) {
@@ -152,6 +152,7 @@ gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
           } else {
             console.log(err);
           }
+        });
 });
 
 // Watch for Changes
