@@ -134,7 +134,7 @@ gulp.task('spress-build-after-sass', ['sass'], function () {
 
 
 //Build Spress Github Artifact
-gulp.task('spress-prod', ['sass'],function () {
+gulp.task('spress-gh-pages', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
   return gulp.src(defaults.spress_home)
@@ -142,8 +142,8 @@ gulp.task('spress-prod', ['sass'],function () {
 });
 
 // Set a deploy task for spress
-gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
-  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pages'], function() {
+  console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return ghpages.publish(defaults.output_dev, {
             repo: defaults.repo
           }, (err) => {
@@ -171,6 +171,11 @@ gulp.task('watch', function() {
 // Copy the media directory to the build.
 
 gulp.task('copy-imgs', ['spress-build'], function () {
+    return gulp.src(['../../media/**/*'], { "base" : "." })
+      .pipe(gulp.dest('../../build/**/*'));
+});
+
+gulp.task('copy-imgs-gh-pages', ['spress-gh-pages'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
 });
