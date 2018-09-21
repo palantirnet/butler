@@ -145,7 +145,8 @@ gulp.task('spress-gh-pages', ['sass'],function () {
 gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pages'], function() {
   console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return ghpages.publish(defaults.output_dev, {
-            repo: defaults.repo
+            repo: defaults.repo,
+            message: 'Auto-generated commit'
           }, (err) => {
           if (err === undefined) {
             console.log('Successfully deployed!');
