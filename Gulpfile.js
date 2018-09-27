@@ -141,7 +141,15 @@ gulp.task('spress-gh-pages', ['sass'],function () {
     .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home));
 });
 
-// Set a deploy task for spress
+//Build Spress Github Prod Artifact
+gulp.task('spress-prod', ['sass'],function () {
+  console.log('Building production artifact...');
+  console.log('WARNING: this will overwrite the existing build');
+  return gulp.src(defaults.spress_home)
+    .pipe(exec(defaults.spress_bin + ' site:build --env=prod --source=' + defaults.spress_home));
+});
+
+// Set a deploy task for spress - gh-pages
 gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pages'], function() {
   console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return ghpages.publish(defaults.output_dev, {
@@ -149,7 +157,23 @@ gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pa
             message: 'Auto-generated commit'
           }, (err) => {
           if (err === undefined) {
-            console.log('Successfully deployed!');
+            console.log('Successfully deployed to gh-pages branch!');
+          } else {
+            console.log(err);
+          }
+        });
+});
+
+// Set a deploy task for spress - production branch
+gulp.task('spress-deploy-prod', ['sass', 'spress-prod', 'copy-imgs-prod'], function() {
+  console.log('Beginning deploy to production branch for ' + defaults.repo);
+  return ghpages.publish(defaults.output_dev, {
+            repo: defaults.repo,
+            message: 'Auto-generated commit',
+            branch: 'production'
+          }, (err) => {
+          if (err === undefined) {
+            console.log('Successfully deployed to production branch!');
           } else {
             console.log(err);
           }
@@ -194,6 +218,10 @@ gulp.task('copy-imgs-gh-pages', ['spress-gh-pages'], function () {
       .pipe(gulp.dest('../../build/**/*'));
 });
 
+gulp.task('copy-imgs-prod', ['spress-prod'], function () {
+    return gulp.src(['../../media/**/*'], { "base" : "." })
+      .pipe(gulp.dest('../../build/**/*'));
+});
 
 // Set Develop task
 gulp.task('develop', defaults.develop_tasks);
