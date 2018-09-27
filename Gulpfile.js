@@ -114,7 +114,7 @@ gulp.task('spress-watch', function() {
   });
 });
 
-gulp.task('spress-serve', ['sass'], function () {
+gulp.task('spress-serve', ['sass', 'copy-imgs-serve'], function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
     .pipe(exec(defaults.spress_bin + ' site:build --env='+defaults.environment+' --server --source=' + defaults.spress_home));
@@ -161,7 +161,7 @@ gulp.task('watch', function() {
   return gulp
   // Watch the scss folder for change
   // and run `compile-sass` task when something happens
-    .watch(defaults.scss, ['sass', 'spress-build-after-sass'])
+    .watch(defaults.scss, ['sass', 'spress-build-after-sass', 'copy-imgs-after-sass'])
     // When there is a change
     // log a message in the console
     .on('change', function (event) {
@@ -174,6 +174,19 @@ gulp.task('watch', function() {
 gulp.task('copy-imgs', ['spress-build'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
+});
+
+gulp.task('copy-imgs-after-sass', ['spress-build-after-sass'], function () {
+    return gulp.src(['../../media/**/*'], { "base" : "." })
+      .pipe(gulp.dest('../../build/**/*'));
+});
+
+gulp.task('copy-imgs-serve', function () {
+    // Add delay so that imgs copy after serve starts.
+    setTimeout(function() {
+      return gulp.src(['../../media/**/*'], { "base" : "." })
+    .pipe(gulp.dest('../../build/**/*'));
+  }, 3000);
 });
 
 gulp.task('copy-imgs-gh-pages', ['spress-gh-pages'], function () {
