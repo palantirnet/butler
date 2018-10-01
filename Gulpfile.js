@@ -11,6 +11,8 @@ var stylelint = require('stylelint');
 var ghpages = require('gh-pages');
 var a11y = require('gulp-accessibility');
 var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 // Fetch config
 var defaults = require('./config/butler.defaults.js');
@@ -78,6 +80,17 @@ gulp.task('sass', function() {
     .pipe(postcss(processors))
     // Put the CSS in the destination dir
     .pipe(gulp.dest(defaults.css));
+});
+
+// Compress js with uglify.
+gulp.task('compress-js', function (cb) {
+  pump([
+        gulp.src('../../src/content/assets/js/*.js'),
+        uglify(),
+        gulp.dest('../../build/assets/js/*.js')
+    ],
+    cb
+  );
 });
 
 
@@ -195,12 +208,12 @@ gulp.task('watch', function() {
 
 // Copy the media directory to the build.
 
-gulp.task('copy-imgs', ['spress-build'], function () {
+gulp.task('copy-imgs', ['spress-build', 'compress-js'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
 });
 
-gulp.task('copy-imgs-after-sass', ['spress-build-after-sass'], function () {
+gulp.task('copy-imgs-after-sass', ['spress-build-after-sass', 'compress-js'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
 });
