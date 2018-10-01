@@ -84,13 +84,17 @@ gulp.task('sass', function() {
 
 // Compress js with uglify.
 gulp.task('compress-js', function (cb) {
-  pump([
-        gulp.src('../../src/content/assets/js/*.js'),
-        uglify(),
-        gulp.dest('../../build/assets/js/*.js')
+  if (defaults.compress_js == true) {
+    setTimeout(function() {
+    return pump([
+      gulp.src('../../src/content/assets/js/*.js'),
+      uglify(),
+      gulp.dest('../../build/assets/js/')
     ],
     cb
-  );
+    );
+  }, 3000);
+  }
 });
 
 
@@ -121,7 +125,7 @@ gulp.task('sculpin-deploy', ['sculpin-prod'], function() {
 
 // Spress Development
 gulp.task('spress-watch', function() {
-  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_home + 'media/*'], ['spress-build', 'copy-imgs']);
+  var watcher = gulp.watch([defaults.spress_home + 'src/content/*', defaults.spress_home + 'src/**/*.html*', defaults.spress_home + 'src/**/*.js', defaults.spress_home + 'media/*'], ['spress-build', 'copy-imgs', 'compress-js']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', updating spress...');
   });
@@ -163,7 +167,7 @@ gulp.task('spress-prod', ['sass'],function () {
 });
 
 // Set a deploy task for spress - gh-pages
-gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pages'], function() {
+gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pages', 'compress-js'], function() {
   console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return ghpages.publish(defaults.output_dev, {
             repo: defaults.repo,
@@ -178,7 +182,7 @@ gulp.task('spress-deploy-gh-pages', ['sass', 'spress-gh-pages', 'copy-imgs-gh-pa
 });
 
 // Set a deploy task for spress - production branch
-gulp.task('spress-deploy-prod', ['sass', 'spress-prod', 'copy-imgs-prod'], function() {
+gulp.task('spress-deploy-prod', ['sass', 'spress-prod', 'copy-imgs-prod', 'compress-js'], function() {
   console.log('Beginning deploy to production branch for ' + defaults.repo);
   return ghpages.publish(defaults.output_dev, {
             repo: defaults.repo,
@@ -208,12 +212,12 @@ gulp.task('watch', function() {
 
 // Copy the media directory to the build.
 
-gulp.task('copy-imgs', ['spress-build', 'compress-js'], function () {
+gulp.task('copy-imgs', ['spress-build'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
 });
 
-gulp.task('copy-imgs-after-sass', ['spress-build-after-sass', 'compress-js'], function () {
+gulp.task('copy-imgs-after-sass', ['spress-build-after-sass'], function () {
     return gulp.src(['../../media/**/*'], { "base" : "." })
       .pipe(gulp.dest('../../build/**/*'));
 });

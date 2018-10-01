@@ -32,6 +32,7 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
     echo "overrides.output_dev = '../../build';" >> ../../conf/butler.defaults.js
     echo "overrides.html_files = ['../../build/*.html', '../../build/**/*.html'];" >> ../../conf/butler.defaults.js
     echo "overrides.output_prod = '../../build/**/*';" >> ../../conf/butler.defaults.js
+    echo "overrides.compress_js = true;" >> ../../conf/butler.defaults.js
   fi;
 
   echo "" >> ../../conf/butler.defaults.js
