@@ -35,6 +35,11 @@ if [ ! -e ../../conf/butler.defaults.js ]; then
 
   echo "" >> ../../conf/butler.defaults.js
   echo "module.exports = overrides;" >> ../../conf/butler.defaults.js
+  
+  if [ ! -e ../../patches ]; then
+    mkdir ../../patches
+    cp -r patches/* ../../patches
+  fi;
 fi;
 
 echo ""

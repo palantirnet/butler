@@ -1,0 +1,25 @@
+patch-package
+--- a/node_modules/singularitygs/stylesheets/singularitygs/_api.scss
++++ b/node_modules/singularitygs/stylesheets/singularitygs/_api.scss
+@@ -56,11 +56,19 @@
+     $Right: ();
+ 
+     @if $Direction == 'both' or $From == 'left' or ($Direction == 'rtl' and $From == 'opposite') {
+-      $Left: call('output-#{$output-style}', map-merge($Span-Map, ('direction': left)));
++      @if (function-exists('get-function')) {
++        $Left: call(get-function('output-#{$output-style}'), map-merge($Span-Map, ('direction': left)));
++      } @else {
++        $Left: call('output-#{$output-style}', map-merge($Span-Map, ('direction': left)));
++      }
+     }
+ 
+     @if $Direction == 'both' or $From == 'right' or ($Direction == 'ltr' and $From == 'opposite') {
+-      $Right: call('output-#{$output-style}', map-merge($Span-Map, ('direction': right)));
++      @if (function-exists('get-function')) {
++        $Right: call(get-function('output-#{$output-style}'), map-merge($Span-Map, ('direction': right)));
++      } @else {
++        $Right: call('output-#{$output-style}', map-merge($Span-Map, ('direction': right)));
++      }
+     }
+ 
+     $Left-Keys: map-keys($Left);
