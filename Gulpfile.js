@@ -8,7 +8,7 @@ var postcss = require('gulp-postcss');
 var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
-var deploy = require('gulp-gh-pages');
+var deploy = require('gulp-gh-pages-will');
 var a11y = require('gulp-accessibility');
 var rename = require('gulp-rename');
 
@@ -140,7 +140,7 @@ gulp.task('spress-prod', ['sass'],function () {
 
 // Set a deploy task for spress
 gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
-  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+  console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return gulp.src(defaults.output_prod)
     .pipe(deploy(defaults.deploy))
     .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });
