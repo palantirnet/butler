@@ -117,17 +117,17 @@ gulp.task('spress-watch', function() {
 gulp.task('spress-serve', ['sass'], function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
-    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 gulp.task('spress-build', function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 gulp.task('spress-build-after-sass', ['sass'], function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 //Build Spress Production Artifact
@@ -135,7 +135,7 @@ gulp.task('spress-prod', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 // Set a deploy task for spress
