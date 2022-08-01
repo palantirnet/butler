@@ -6,7 +6,7 @@
     "prefer-stable": true,
     "preferred-install": "dist",
     "config": {
-        "sort-packages": "true"
+        "sort-packages": true
     },
     "require": {
         "spress/spress": "^2.1"
