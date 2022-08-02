@@ -1,14 +1,17 @@
 {
-    "name": "palantirnet/STYLEGUIDE-TEMPLATE",
+    "name": "palantirnet/styleguide-template",
     "type": "spress-theme",
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "preferred-install": "dist",
     "config": {
-        "sort-packages": "true"
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1"
+        }
     },
     "require": {
-        "spress/spress": "^2.1"
+        "spress/spress": "^3.0"
     }
 }

@@ -8,7 +8,7 @@ var postcss = require('gulp-postcss');
 var reporter = require('postcss-reporter');
 var syntax_scss = require('postcss-scss');
 var stylelint = require('stylelint');
-var deploy = require('gulp-gh-pages');
+var deploy = require('gulp-gh-pages-will');
 var a11y = require('gulp-accessibility');
 var rename = require('gulp-rename');
 
@@ -117,17 +117,17 @@ gulp.task('spress-watch', function() {
 gulp.task('spress-serve', ['sass'], function () {
   return gulp.src(defaults.spress_home)
     .pipe(exec('fuser 4000/tcp --kill || true'))
-    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --server --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 gulp.task('spress-build', function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 gulp.task('spress-build-after-sass', ['sass'], function () {
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 //Build Spress Production Artifact
@@ -135,12 +135,12 @@ gulp.task('spress-prod', ['sass'],function () {
   console.log('Building production artifact...');
   console.log('WARNING: this will overwrite the existing build');
   return gulp.src(defaults.spress_home)
-    .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home));
+    .pipe(exec(defaults.spress_bin + ' site:build --env=github --source=' + defaults.spress_home, {maxBuffer: 1024 * 500}));
 });
 
 // Set a deploy task for spress
 gulp.task('spress-deploy', ['sass', 'spress-prod'], function() {
-  console.log('Beginning deploy to gh-pages for' + defaults.repo);
+  console.log('Beginning deploy to gh-pages for ' + defaults.repo);
   return gulp.src(defaults.output_prod)
     .pipe(deploy(defaults.deploy))
     .on('end', function(){ console.log('Your styleguide has been deployed to' + defaults.repo); });

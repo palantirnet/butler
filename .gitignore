@@ -7,3 +7,5 @@ STYLEGUIDE_TEMPLATE/output_prod/
 node_modules/
 .idea/
 vendor/
+.publish
+styleguide/*

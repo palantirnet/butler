@@ -2020,7 +2020,7 @@
             "HTML_CodeSniffer": {
               "version": "2.0.7",
               "from": "squizlabs/HTML_CodeSniffer#2.0.7",
-              "resolved": "git://github.com/squizlabs/HTML_CodeSniffer.git#d209ce54876657858a8a01528ad812cd234f37f0"
+              "resolved": "https://github.com/squizlabs/HTML_CodeSniffer.git#d209ce54876657858a8a01528ad812cd234f37f0"
             },
             "axios": {
               "version": "0.9.1",
